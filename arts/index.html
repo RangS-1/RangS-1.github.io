@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arts — ./RangS Blog</title>
+  <meta name="description" content="Kumpulan ilustrasi dan studi cepat dalam tata letak masonry ala Pinterest.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="../about/RangS_pfp.png">
+  <style>
+    .arts-filter {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .arts-filter-btn {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .arts-filter-btn:hover,
+    .arts-filter-btn.active {
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      border-color: var(--btn-bg);
+    }
+    .masonry-item[data-hidden="true"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MAIN NAV -->
+  <nav class="main-nav">
+    <a href="../index.html" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">home</a></li>
+      <li><a href="../dashboard/index.html" class="active">dashboard</a></li>
+      <li><a href="../about/index.html">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../index.html">home</a>
+    <a href="../dashboard/index.html" class="active">dashboard</a>
+    <a href="../about/index.html">about</a>
+  </div>
+
+  <!-- SUB NAV -->
+  <nav class="sub-nav">
+    <div class="sub-nav-inner">
+      <a href="../dashboard/index.html">[article]</a>
+      <a href="../projects/index.html">[projects]</a>
+      <a href="../arts/index.html" class="active">[arts]</a>
+      <a href="../cert/index.html">[certificate]</a>
+    </div>
+  </nav>
+
+  <main class="page-wrapper">
+    <div class="breadcrumb">// <span>DASHBOARD</span> / ARTS</div>
+    <h1 class="page-title">Arts</h1>
+    <p class="page-subtitle">
+      Kumpulan sketsa &amp; ilustrasi yang kubuat — Klik gambar untuk melihat detail.
+    </p>
+
+    <!-- Filter Tags -->
+    <div class="arts-filter">
+      <button class="arts-filter-btn active" data-filter="all">semua</button>
+      <button class="arts-filter-btn" data-filter="animal">#animal</button>
+      <button class="arts-filter-btn" data-filter="landscape">#landscape</button>
+      <button class="arts-filter-btn" data-filter="character">#character</button>
+      <button class="arts-filter-btn" data-filter="abstract">#abstract</button>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="masonry-grid" id="artsGrid">
+
+      <div class="masonry-item" data-tag="animal"
+        data-title="Stippled Owl"
+        data-medium="Ink stipple, digital"
+        data-date="2026-04"
+        onclick="openArtLightbox(this)">
+        <img src="images/art-owl.png" alt="Stippled Owl" loading="lazy" onerror="this.style.background='#d4cfc6';this.style.minHeight='200px';">
+        <div class="masonry-overlay">
+          <div class="masonry-overlay-text">🔍 lihat detail</div>
+        </div>
+        <div class="masonry-item-info">
+          <span class="masonry-item-tag">#animal</span>
+          <div class="masonry-item-title">YoLo</div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-tag="animal"
+        data-title="Reading Cat"
+        data-medium="Ink line, digital"
+        data-date="2026-03"
+        onclick="openArtLightbox(this)">
+        <img src="images/art-cat.png" alt="Reading Cat" loading="lazy" onerror="this.style.background='#d4cfc6';this.style.minHeight='200px';">
+        <div class="masonry-overlay">
+          <div class="masonry-overlay-text">🔍 lihat detail</div>
+        </div>
+        <div class="masonry-item-info">
+          <span class="masonry-item-tag">#animal</span>
+          <div class="masonry-item-title">Reading Cat</div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-tag="landscape"
+        data-title="Mountain Sketch"
+        data-medium="Pencil sketch, digital"
+        data-date="2026-02"
+        onclick="openArtLightbox(this)">
+        <img src="images/art-mountain.png" alt="Mountain Sketch" loading="lazy">
+        <div class="masonry-overlay">
+          <div class="masonry-overlay-text">🔍 lihat detail</div>
+        </div>
+        <div class="masonry-item-info">
+          <span class="masonry-item-tag">#landscape</span>
+          <div class="masonry-item-title">Mountain Sketch</div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-tag="character"
+        data-title="Hooded Figure"
+        data-medium="Digital line art"
+        data-date="2026-01"
+        onclick="openArtLightbox(this)">
+        <img src="images/art-character.png" alt="Hooded Figure" loading="lazy">
+        <div class="masonry-overlay">
+          <div class="masonry-overlay-text">🔍 lihat detail</div>
+        </div>
+        <div class="masonry-item-info">
+          <span class="masonry-item-tag">#character</span>
+          <div class="masonry-item-title">Hooded Figure</div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-tag="abstract"
+        data-title="Ink Blot Study"
+        data-medium="Ink wash experiment"
+        data-date="2025-12"
+        onclick="openArtLightbox(this)">
+        <img src="art-abstract.jpg" alt="Ink Blot Study" loading="lazy">
+        <div class="masonry-overlay">
+          <div class="masonry-overlay-text">🔍 lihat detail</div>
+        </div>
+        <div class="masonry-item-info">
+          <span class="masonry-item-tag">#abstract</span>
+          <div class="masonry-item-title">Ink Blot Study</div>
+        </div>
+      </div>
+
+      <div class="masonry-item" data-tag="landscape"
+        data-title="Forest Path"
+        data-medium="Digital sketch"
+        data-date="2025-11"
+        onclick="openArtLightbox(this)">
+        <img src="art-forest.jpg" alt="Forest Path" loading="lazy">
+        <div class="masonry-overlay">
+          <div class="masonry-overlay-text">🔍 lihat detail</div>
+        </div>
+        <div class="masonry-item-info">
+          <span class="masonry-item-tag">#landscape</span>
+          <div class="masonry-item-title">Forest Path</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightboxArts()">✕</button>
+      <img src="" alt="" class="lightbox-img" id="lbImg">
+      <div class="lightbox-body">
+        <div class="lightbox-title" id="lbTitle"></div>
+        <div class="lightbox-meta" id="lbMeta"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; kopi ☕</span>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Arts filter
+    document.querySelectorAll('.arts-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.arts-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.masonry-item').forEach(item => {
+          if (filter === 'all' || item.dataset.tag === filter) {
+            item.dataset.hidden = 'false';
+            item.style.display = '';
+          } else {
+            item.dataset.hidden = 'true';
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox
+    function openArtLightbox(el) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lbImg').src = el.querySelector('img').src;
+      document.getElementById('lbImg').alt = el.dataset.title;
+      document.getElementById('lbTitle').textContent = el.dataset.title;
+      document.getElementById('lbMeta').textContent = `${el.dataset.medium} · ${el.dataset.date}`;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxArts() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightboxArts();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightboxArts();
+    });
+  </script>
+</body>
+</html>

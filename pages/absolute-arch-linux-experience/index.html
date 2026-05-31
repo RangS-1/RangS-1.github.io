@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absolute Arch Linux Experience: Distro yang tak sesulit itu — ./RangS Blog</title>
+  <meta name="description" content="Tak hanya game yang sulit, namun juga penuh dengan emosi dan cerita yang mendalam.">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../index.html" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">home</a></li>
+      <li><a href="../../dashboard/index.html" class="active">dashboard</a></li>
+      <li><a href="../../about/index.html">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../index.html">home</a>
+    <a href="../../dashboard/index.html" class="active">dashboard</a>
+    <a href="../../about/index.html">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/index.html">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-05-30</span>
+        <span>·</span>
+        <span>20 min read</span>
+      </div>
+      <h1 class="article-headline">Absolute Arch Linux Experience: Distro yang tak sesulit itu</h1>
+      <p class="article-summary">
+        Arch Linux mungkin terkenal sulit, tetapi pengalaman menggunakan distro ini jauh lebih menyenangkan dari yang dibayangkan.
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#review</span>
+        <span class="tag">#linux</span>
+        <span class="tag">#distro</span>
+        <span class="tag">#arch</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2>Apa itu Arch Linux?</h2>
+
+      <p>
+        Bagi kalangan antusias akan teknologi, mungkin sudah tidak asing lagi dengan nama Arch Linux. Hanya dengan namanya saja, banyak orang yang sudah membayangkan bahwa distro ini adalah sesuatu yang sulit, rumit, dan hanya untuk pengguna tingkat lanjut. Namun, apakah benar demikian? Apakah Arch Linux benar-benar sekompleks itu, ataukah ada pengalaman yang lebih menyenangkan di baliknya?
+      </p>
+
+      <blockquote>
+        "In Arch, 'simple' is different than what other distros are considering. The learning is more important than getting something easily done."
+        <br>
+        — Judd Vinet, kreator Arch Linux
+      </blockquote>
+
+      <p>
+        Pada segmen kali ini, kita akan bahas tentang pengalaman menggunakan Arch Linux, mulai dari awal instalasi hingga penggunaan sehari-hari. Disclaimer bahwa artikel ini bukan untuk menjelaskan cara instalasi atau konfigurasi Arch Linux secara detail, jadi jika ada yang salah silakan masuk ke <a href="https://wiki.archlinux.org/" target="_blank">dokumentasi Arch Linux</a>.
+      </p>
+
+      <h2>Instalasi Arch Linux</h2>
+
+      <img src="Arch-Installation.png" alt="Screenshot Arch Linux Installation" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Siapa di sini yang mendengar instalasi arch linux itu sulit? Ya, memang sulit "Ucap Orang-Orang". Sebenarnya tidak sesulit itu. Yang perlu kita lakukan adalah membuat installer USB yang berisi ISO Arch Linux. Kau bisa masuk ke tautan ini: <a href="https://archlinux.org/download/" target="_blank">Arch Linux Download</a>. 
+      </p>
+      <p>
+        Setelah menginstall ISO nya, buat bootable USB dengan software seperti <a href="https://rufus.ie/" target="_blank">Rufus</a> atau <a href="https://ventoy.net/" target="_blank">Ventoy</a>. Terserah pilih software apa, tapi aku lebih sering menggunakan Rufus karena lebih ringan dan "cepat".
+      <br>
+      </p>
+      <img src="rufus-ventoy.png" alt="Screenshot Rufus dan Ventoy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Setelah selesai, restart komputer dan masuk ke menu boot. Oh iya, jangan lupa untuk sediakan partisi kosong untuk Arch Linux. Cara membuat partisi bisa dilihat pada artikel dari asus berikut: <a href="https://www.asus.com/id/support/faq/1044688/" target="_blank">Link ke artikel</a>.
+      </p>
+      <p>
+        Kembali ke instalasi, untuk masuk ke menu boot ada beberapa cara, namun yang paling mudah menurutku adalah dengan menekan tombol F2 berulang kali (Jika tidak bisa menggunakan F2, maka coba dengan esc atau F12). Setelah masuk ke menu boot, pilih USB yang sudah dibuat atau ubah posisi boot prioritynya ke paling atas (Jika tidak salah untuk ubah boot priority menggunakan tombol F5 atau F6), Save Changes dan restart.
+      </p>
+      <p>
+        Baik, Nanti akan muncul tampilan seperti pada gambar di bawah ini. INI SANGATLAH PENTING. PERBEDAAN TAMPILAN MENU BOOT MENANDAKAN KAU MEMASUKI MODE APA. KARENA ADA 2 MODE YAITU EFI DAN LEGACY, CATAT ITU BAIK-BAIK!. 
+      </p>
+
+      <img src="legacy-arch.png" alt="Screenshot Legacy Arch Linux" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Tampilan di atas menandakan kalian berada di mode legacy. Jika tidak seperti itu, artinya kalian berada di mode EFI. Untuk pengguna baru, aku sarankan untuk menggunakan mode EFI karena lebih modern dan memiliki fitur yang lebih baik dibandingkan dengan legacy. Namun, pastikan juga bahwa komputer kalian mendukung mode EFI sebelum memilihnya. (Aku juga menggunakan mode EFI untuk instalasi Arch Linux pertama kali)
+      </p>
+      <p>
+        Setelah menekan enter, akan banyak tulisan yang aku pun kurang tahu apa maksudnya namun sepertinya sedang mengaktifkan beberapa service tertentu. Setelah selesai selamat, kalian sudah masuk ke bagian instalasi Arch Linux. Layar akan terlihat seperti pada gambar di awal artikel ini.
+      </p>
+
+      <h2>Real Installation</h2>
+      <p>
+        Pemula pasti akan sangat-sangat bingung dengan apa yang harus dilakukan. Tapi tenang, tidak sesulit itu kok. Pertama-tama kita harus menyambungkan ke internet. Berbeda dengan Windows dan MacOS yang menyambungkan ke internet dengan GUI, di Arch Linux kita menggunakan terminal yang disebut Console dan software bernama iwctl.
+      </p>
+
+      <p>
+        Masukkan iwctl pada console, lalu ketik station list untuk melihat daftar jaringan wifi yang tersedia. Setelah itu, ketik station "nama-station" connect "nama-wifi" untuk menyambungkan ke wifi. Jika berhasil, akan muncul pesan "Connected to 'nama-wifi'". Jika tidak ada pesan Connected, kemungkinan besar memang sudah terconnect. Keluar dari iwctl dengan CTRL+D. Masukkan kode ping ping.archlinux.org untuk memastikan bahwa koneksi internet sudah berhasil. Jika muncul balasan seperti "64 bytes from archlinux.org: icmp_seq=1 ttl=56 time=10.2 ms", berarti koneksi internet sudah berhasil. Jika tidak, coba ulangi langkah-langkah di sebelumnya atau periksa kembali nama wifi dan password yang dimasukkan.
+        Untuk dokumentasi lengkap tentang iwctl bisa melalui link berikut: <a href="https://wiki.archlinux.org/title/Iwd" target="_blank">Link ke dokumentasi</a>.
+      </p>
+
+      <img src="iwctl.png" alt="Screenshot iwctl" style="width:100%;border-radius:8px;margin:24px 0;">
+
+      <p>
+        Setelah berhasil tersambung ke internet, ada dua cara untuk melanjutkan instalasi yaitu dengan Archinstall dan Manual. Aku sarankan untuk menggunakan Archinstall untuk yang "absolute bayi" sama takut akan kebebasan. Namun, jika kalian ingin merasakan pengalaman instalasi yang lebih mendalam dan belajar lebih banyak tentang sistem operasi, maka manual adalah pilihan yang tepat. (Aku sendiri menggunakan manual untuk instalasi Arch Linux pertama kali karena... kenapa enggak?).
+      </p>
+      <p>
+        Saatnya membuat partisi (Inilah yang paling menegangkan dari instalasi Arch Linux karena jika salah langkah sedikit saja, maka komputermu bisa saja tidak bisa booting atau bahkan kehilangan data penting. Jadi pastikan untuk mengikuti langkah-langkahnya dengan benar dan hati-hati).</p>
+      <p>
+        Aku tak sarankan menggunakan fdisk untuk partisi karena akan lama jika tidak benar-benar paham dengan apa yang terjadi. Kusarankan menggunakan cfdisk.
+        Masukkan perintah cfdisk, lalu pilih gpt (yang paling umum). Nanti akan muncul tampilan seperti pada gambar di bawah ini.
+      </p>
+
+      <img src="cfdisk.png" alt="Screenshot cfdisk" style="width:100%;border-radius:8px;margin:24px 0;">
+
+      <p>
+        Pastikan pilih disk yang ingin dijadikan Arch Linux (Partisi yang dibuat sebelumnya sebelum restart).
+        Buat 2 partisi yaitu swap dengan ukuran RAM x 2 dan root sebagai sisanya. CATATAN PENTING, INGAT DENGAN TAMPILAN BOOT SEBELUMNYA? YA, JIKA TAMPILAN LEGACY YA SUDAH HANYA BUAT 2 PARTISI, SEMENTARA JIKA TAMPILAN EFI MAKA BUAT SATU PARTISI UNTUK EFI. Disarankan 1 GB untuk partisi EFI.
+        Setelah selesai, pilih Write (Hati-hati karena cfdisk ini agak menyebalkan, jika tidak hati-hati kita bisa saja menekan tombol quit daripada menekan tombol write. Aku melakukannya kalau tidak salah 3 kali menekan tombol quit -_-). Ketik yes untuk konfirmasi
+        Akan muncul tulisan "the partition has been altered". Lalu tekan quit. 
+      <br>
+      </p>
+
+      <p>
+        Oke, itu yang paling penting, sekarang kita perlu memastikan partisi sudah dibuat, ketik lsblk untuk lihat partisi yang sudah dibuat sebelumnya. Jika sudah ada 2 partisi (untuk legacy) atau 3 partisi (untuk EFI), maka kita lanjut ke langkah selanjutnya yaitu Format Partisi. Masukkan kode dibawah untuk tiap partisi yang dibuat:
+      </p>
+      <pre><code>mkfs.ext4 /dev/sdX1 (Ganti sdX1 dengan partisi root yang sudah dibuat sebelumnya)
+mkswap /dev/sdX2 (Ganti sdX2 dengan partisi swap yang sudah dibuat sebelumnya)
+swapon /dev/sdX2 (Aktifkan partisi swap)
+
+(Jika menggunakan EFI, maka format partisi EFI dengan kode berikut)
+mkfs.fat -F 32 /dev/sdX3 (Ganti sdX 3 dengan partisi EFI yang sudah dibuat sebelumnya)</code></pre>
+      <p>
+        Setelah selesai, saatnya mount partisi yang sudah diformat. Mount itu semacam menyambungkan partisi yang sudah dibuat ke sistem operasi agar bisa digunakan. Masukkan kode berikut untuk mount partisi:
+      </p>
+      <pre><code>mount /dev/sdX1 /mnt (Ingat ya, Root Partisi)
+mount --mkdir /dev/sdX3 /mnt/boot (untuk EFI)
+swapon /dev/sdX2</code></pre>
+      <p>
+        Oke, sekarang verifikasi dengan lsblk, nanti akan terlihat tampilan seperti berikut:
+      </p>
+      <pre><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 232.9G  0 disk 
+├─sda1   8:1    0   100M  0 part /mnt/boot
+├─sda2   8:2    0     8G  0 part [SWAP]
+└─sda3   8:3    0 224.9G  0 part /mnt
+</code></pre>
+
+      <p>
+        Jika sudah seperti itu, berarti partisi sudah berhasil dibuat, diformat, dan dimount. Selanjutnya kita perlu menginstall base system Arch Linux ke partisi yang sudah dibuat. Masukkan kode berikut untuk menginstall base system:
+      </p>
+      <pre><code>pacstrap /mnt base linux linux-firmware sof-firmware grub efibootmgr networkmanager nano</code></pre>
+      <p>
+        Sebagai catatan, perintah di atas akan menginstall base system Arch Linux beserta beberapa paket penting seperti kernel linux, firmware, bootloader grub, dan networkmanager.
+      </p>
+      <p>
+        Setelahnya, kita perlu generate Fstab dengan perintah berikut:
+      </p>
+      <pre><code>genfstab -U /mnt >> /mnt/etc/fstab</code></pre>
+      <p>
+        Fstab itu semacam file konfigurasi yang berisi informasi tentang partisi dan mount point
+      </p>
+      <p>
+        Dengan melakukan semua itu, kita akhirnya akan masuk ke sistem yang kita buat. Kita akan gunakan arch-chroot untuk masuk ke sistem.
+        Ya, dari tadi kita belum berada dalam sistem dan hanya berada di installer.
+      </p>
+      <pre><code>arch-chroot /mnt</code></pre>
+      <h2>Konfigurasi Sistem</h2>
+      <p>
+        Tampilan console akan berubah warna menjadi keabu-abuan. Itu artinya selamat, kita masuk ke sistem yang sudah kita buat. Sekarang kita buat hostname. Hostname itu semacam nama asli komputer kita, bukan nama user ya harus dicatat. Masukkan perintah berikut untuk membuat hostname dan mengatur passwordnya:
+      </p>
+      <pre><code>echo "boy" > /etc/hostname
+(untuk nama hostname terserah sih)
+passwd
+
+New password: (Masukkan password terserah, tapi harus mudah diingat, kusarankan jangan pakai huruf kapital
+Confirm password: (Masukkan password yang sama dengan sebelumnya)
+passwd: password updated successfully
+</code></pre>
+      <p>
+        Tunggu sebentar, setelah kita selesai mengatur hostname dan passwordnya, Coba cek internet dengan ping ping.archlinux.org. 99% yang menggunakan wifi akan terputus, karena itu kita harus mengaktifkannya lagi. Ingat networkmanager yang sudah kita install sebelumnya? Kita akan gunakan itu untuk mengaktifkan wifi. Masukkan perintah berikut untuk mengaktifkan wifi:
+      </p>
+      <pre><code>systemctl enable NetworkManager
+nmtui
+</code></pre>
+      <p>
+        nmtui itu semacam tool berbasis teks untuk menyambungkan ke wifi. Cukup mirip dengan GUI jadi tanpa dijelaskanpun pasti sudah bisa menggunakannya. Saatnya install GRUB.
+      </p>
+      <p>
+        GRUB itu semacam bootloader, ingat dengan tampilan diawal untuk memastikan kita berada di mode legacy atau UEFI?
+        Ya, cukup mirip dengan menu seperti itu. Masukkan kode berikut: 
+      </p>
+      <pre><code>grub-install --target=i386-pc /dev/sdX (Untuk Legacy, ganti sdX dengan disk yang digunakan untuk instalasi)
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</code></pre>
+      <p>
+        Setelah selesai, kita perlu generate konfigurasi GRUB dengan perintah berikut:
+      </p>
+      <pre><code>grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
+      <p>
+        Tak ada masalah? bagus! waktu exit dari sistem dan masuk kembali ke Console. ketik umount -a untuk melepaskan partisi yang dibuat. Kita pun masukk ke moment of truth dengan mengetik "reboot now" untuk restart.
+      </p>
+      <h2>Moment of Truth</h2>
+      <p>
+        Setelah restart, kita akan masuk ke menu GRUB. Pilih Arch Linux dan tekan enter. Jika berhasil, kita akan masuk ke tampilan login console Arch Linux. Masukkan username dan password yang sudah dibuat sebelumnya untuk login.
+      </p>
+      <p>
+        Selamat, kalian sudah berhasil menginstall Arch Linux! Sekarang kita sudah berada di sistem operasi yang kita buat sendiri. Namun, ini baru permulaan. Jangan seperti pemula yang menggunakan mode root untuk semuanya. Kita akan membuat user baru.
+        Masukkan perintah berikut:
+      </p>
+      <pre><code>useradd -m -G wheel -s /bin/bash boy
+passwd boy
+New password: (Masukkan password untuk user boy)
+Confirm password: (Masukkan password yang sama dengan sebelumnya)
+passwd: password updated successfully
+</code></pre>
+      <p>
+        Aku lupa bilang sebelumnya untuk menginstall 1 package penting lain yaitu sudo, masukkan perintah pacman -S sudo untuk install sudo. Seperti sebelumnya, 99% pengguna pasti tak mendapatkan internet, jadi gunakan nmtui untuk mengaktifkan wifinya... lagi.
+      </p>
+      <p>
+        Setelah itu, kita perlu memberikan izin sudo kepada user yang sudah dibuat. Masukkan perintah berikut untuk memberikan izin sudo:
+      </p>
+      <pre><code>EDITOR=nano visudo</code></pre>
+      
+      <p>
+        Setelah itu, cari baris # %wheel ALL=(ALL:ALL) ALL dan hapus tanda # di depannya. Simpan dengan CTRL+O lalu keluar dengan CTRL+X.
+      </p>
+      <p>
+        Sekarang kita sudah memiliki user dengan izin sudo. Coba logout dengan perintah exit, lalu login kembali dengan user yang sudah dibuat. Masukkan perintah berikut untuk memastikan bahwa user sudah memiliki izin sudo:
+      </p>
+      <pre><code>su boy
+sudo pacman -Syu</code></pre>
+      <p>
+        Jika muncul pesan "Password for boy: " dan setelah memasukkan password muncul pesan "error: failed to synchronize all databases (could not connect to server)", berarti user sudah memiliki izin sudo, tapi koneksi internetnya masih belum aktif. Gunakan nmtui untuk mengaktifkan wifi... lagi.
+      </code></pre>
+      <h2>Desktop Environment alias make up Arch Linux</h2>
+      <p>
+        Oke, sekarang kita sudah memiliki sistem operasi yang berjalan, tapi masih dalam bentuk console yang sangat tidak user-friendly. Kita perlu menginstall desktop environment untuk membuatnya lebih mudah digunakan. Ada banyak desktop environment yang bisa dipilih, seperti GNOME, KDE, XFCE, dan lain-lain.
+      </p>
+      <p>
+        Ketik exit untuk masuk ke root user. Lalu masukkan kode dibawah ini:
+      </p>
+      <pre><code>pacman -S lxqt sddm konsole thunar firefox neofetch kitty</code></pre>
+      <p>
+        Klik tombol Enter saja terus sampai proses instalasi dimulai. Sebagai catatan, berikut maksud dari kode di atas.
+      </p>
+      <ul>
+        <li>lxqt = Desktop Environment yang kupilih</li>
+        <li>sddm = Login Manager agar tampilan login tidak hanya terminal</li>
+        <li>konsole = Konsole</li>
+        <li>thunar = File manager paling umum</li>
+        <li>firefox = Web Browser</li>
+        <li>neofetch = Untuk melakukan ritual linux</li>
+        <li>kitty = Terminal (PENTING YA, HARUS DIINSTALL)</li>
+      </ul>
+      <h2>Kesimpulan</h2>
+
+      <p>
+        </p>
+
+      <blockquote>
+        An Apparation
+        <br>
+        Not of this world
+        <br>
+        But because of it
+        <br>
+        Lurking out of frame
+        <br>
+        <br>
+        Awake, my heart is a fortress
+        <br>
+        In dreams I am vulnerable
+      </blockquote>
+
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/index.html" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; kopi ☕</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'article1')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

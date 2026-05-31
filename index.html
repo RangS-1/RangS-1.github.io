@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>./RangS Blog</title>
+  <meta name="description" content="Sebuah ruang baca tenang di sudut internet. Untuk siapa saja yang suka belajar pelan-pelan, membaca tanpa pop-up, dan menemukan ide-ide kecil yang berguna.">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" href="./about/RangS_pfp.png">
+</head>
+<body>
+
+  <!-- MAIN NAV -->
+  <nav class="main-nav">
+    <a href="./index.html" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="./index.html" class="active">home</a></li>
+      <li><a href="./dashboard/index.html">dashboard</a></li>
+      <li><a href="./about/index.html">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="./index.html" class="active">home</a>
+    <a href="./dashboard/index.html">dashboard</a>
+    <a href="./about/index.html">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-label">// <span>RangS Blog</span> · V1.0</p>
+      <h1 class="hero-title">Secarik Kertas sederhana untuk dibaca.</h1>
+      <p class="hero-desc">
+        Hanya ruang baca sederhana nan tenang di sudut internet. Untuk siapa saja
+        yang suka <a href="./dashboard/index.html">belajar pelan-pelan</a>, membaca tanpa pop-up, dan
+        menemukan ide-ide kecil yang berguna.
+      </p>
+      <div class="hero-actions">
+        <a href="./dashboard/index.html" class="btn btn-dark">baca artikel →</a>
+        <a href="./about/index.html" class="btn btn-outline">tentang penulis</a>
+      </div>
+    </section>
+
+    <hr class="home-divider">
+
+    <!-- UNTUK SIAPA -->
+    <section>
+      <p class="section-label">// Untuk siapa?</p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <div class="card-title">Developer &amp; Pelajar Kode</div>
+          <p class="card-body">Artikel tentang HTML, CSS, JavaScript, dan cara berpikir seperti programmer. Cocok untuk pemula maupun yang ingin mengisi ulang pemahaman.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎮</div>
+          <div class="card-title">Penggemar Game</div>
+          <p class="card-body">Review mendalam, esai tentang desain game, dan catatan dari sudut pandang seorang pemain yang juga suka nulis.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎨</div>
+          <div class="card-title">Penghobi Seni Digital</div>
+          <p class="card-body">Kumpulan ilustrasi, catatan workflow, dan galeri karya. Untuk yang suka menggambar sambil ngopi.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📖</div>
+          <div class="card-title">Pembaca Santai</div>
+          <p class="card-body">Tidak ada notifikasi, tidak ada iklan. Cukup tulisan dan gambar. Buka kapan mau, baca seperlunya.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="home-divider">
+
+    <!-- APA YANG AKAN KAMU DAPAT -->
+    <section>
+      <p class="section-label">// Apa yang tersedia?</p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">✍️</div>
+          <div class="card-title">Artikel</div>
+          <p class="card-body">Tulisan yang terstruktur tentang topik teknologi, game, dan seni. Bisa dicari berdasarkan kata kunci, kategori, atau tanggal.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <div class="card-title">Projects</div>
+          <p class="card-body">Dokumentasi proyek yang sedang dikerjakan dan yang sudah selesai, lengkap dengan tautan ke GitHub.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🖼️</div>
+          <div class="card-title">Arts</div>
+          <p class="card-body">Galeri ilustrasi dan sketsa digital dengan tata letak masonry gaya Pinterest. Klik untuk melihat lebih detail.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📜</div>
+          <div class="card-title">Sertifikat</div>
+          <p class="card-body">Dokumentasi kursus dan pelatihan yang telah saya selesaikan, lengkap dengan skill yang didapat dari setiap sertifikasi.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="home-divider">
+
+    <!-- ARTIKEL TERBARU PREVIEW -->
+    <section>
+      <p class="section-label">// Artikel Baru</p>
+      <div class="article-list" id="homeRecentArticles"></div>
+      <div style="margin-top: 20px;">
+        <a href="./dashboard/index.html" class="btn btn-outline">lihat semua artikel →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; kopi ☕</span>
+  </footer>
+
+  <script src="./assets/js/articles-data.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script>
+    // Render 3 artikel terbaru di homepage
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('homeRecentArticles');
+      if (!container || typeof ARTICLES === 'undefined') return;
+      const recent = [...ARTICLES].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+      recent.forEach(article => {
+        const item = document.createElement('div');
+        item.className = 'article-item';
+        item.style.cursor = 'pointer';
+        item.innerHTML = `
+          <div class="article-meta">
+            <span>${article.date}</span>
+            <span>·</span>
+            <span class="cat-tag">[${article.category}]</span>
+            <span>·</span>
+            <span>${article.readTime}</span>
+          </div>
+          <div class="article-item-title">${article.title}</div>
+          <div class="article-item-summary">${article.summary}</div>
+        `;
+        item.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(item);
+      });
+    });
+  </script>
+</body>
+</html>
