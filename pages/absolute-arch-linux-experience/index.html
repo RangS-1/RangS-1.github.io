@@ -279,25 +279,73 @@ sudo pacman -Syu</code></pre>
         <li>neofetch = Untuk melakukan ritual linux</li>
         <li>kitty = Terminal (PENTING YA, HARUS DIINSTALL)</li>
       </ul>
+      <p>
+        Habis Gelap Terbitlah Terang, Saatnya menerangi layar dengan desktop environment yang sudah diinstall. Masukkan perintah berikut untuk mengaktifkan sddm:
+      </p>
+      <pre><code>systemctl enable sddm
+systemctl start sddm
+</code></pre>
+      <p>
+        Boom! Kita sudah masuk ke tampilan login sddm. Masukkan username dan password untuk login ke desktop environment.
+      </p>
+      <h2>Ritual Pengguna Linux</h2>
+      <p>
+        Ingat bahwa kita sudah install neofetch sebelumnya? Saatnya melakukan ritual linux dengan mengetik neofetch di terminal.
+        Buka terminal kitty yang sudah diinstall sebelumnya. Lalu ketik neofetch dan enter. Selamat! Kalian sudah menjadi pengguna Arch Linux yang sesungguhnya!
+      </p>
+      <img src="arch.png" alt="Screenshot Neofetch" style="width:100%;border-radius:8px;margin:24px 0;">
+      <h2>Pengalaman Sehari-hari dengan Arch Linux</h2>
+      <p>
+        Senang rasanya bisa menggunakan sistem operasi yang kita buat sendiri. Namun, bagaimana dengan pengalaman sehari-hari menggunakan Arch Linux? Apakah benar-benar nyaman atau justru merepotkan? Aku akan jelaskan berdasarkan pengalamanku.
+      </p>
+      <h3>Pacman?</h3>
+      <p>
+        Saat aku pertama kali menggunakan Arch Linux, aku terkejut dengan kecepatan dan kemudahan penggunaan pacman, package manager default Arch Linux. Dengan hanya beberapa perintah sederhana, aku bisa menginstall, mengupdate, dan menghapus paket dengan sangat cepat.
+        Sangat berbeda jauh dengan package manager seperti apt dan dnf yang entah kenapa terasa lebih lambat. Saat aku menginstall package dengan pacman, sebenarnya internetku saat itu sedang sangat-sangat tidak stabil. Namun, pacman tetap bisa menginstall package yang diinginkan dengan lancar.
+      </p>
+      <p>
+        Selain itu, Arch Linux juga memiliki AUR (Arch User Repository) yang mirip dengan pacman hanya saja dengan nama yang agak ngawur yaitu "yay". Like what the hell? kalau tak salah yay itu singkatan dari "Yet Another Yogurt", seolah kita dihidangkan yogurt lain untuk install package.
+        Jujur saja yay ini sangat membantu karena tidak semua package ada di pacman, terutama package yang berhubungan dengan driver seperti nvidia.
+      </p>
+      <p>
+        Tapi . . ., yay inikan dari komunitas, tidak semua package di dalamnya aman. Jadi pastikan kalau yang diinstall dengan yay itu benar-benar package yang dibutuhkan.
+      </p>
+      <h3>Stabilitas</h3>
+      <p>
+        Aku menginstall Arch Linux untuk laptop tuaku yang hanya memiliki RAM 2 GB dan intel celeron. Aku tak berharap banyak dari komputer tersebut, tetapi Arch Linux mengubah pandanganku tentang apa yang bisa dilakukan dengan hardware yang terbatas.
+      </p>
+      <p>
+        Aku dari dulu ingin punya komputer untuk belajar Linux, konfigurasi sana-sini tanpa takut merusak sistem. Aku pun memberanikan diri untuk melakukan virtualisasi dengan laptop tuaku itu.
+        Aku menggunakan software QEMU untuk virtualisasi tampilan menu boot Grub dan damn ... Benar-benar selancar itu (virtualisasi menu boot grub menggunakan <a href="https://github.com/dracos/grub2-theme-preview" target="_blank">grub2-theme-preview</a>). 
+        Aku tak menyangka kalau laptopku bisa menjalankan virtualisasi yang lancar.
+      </p>
+      <p>
+        Dimana ada kesenangan, di situ ada masalah. Laptopku mengalami beberapa freeze yang cukup sering, saat itu aku mengecek penggunaan RAM dengan perintah htop,
+        Dan penggunaannya hanya sedikit, sekitar 500 MB. Bahkan 500 MB tersebut saat aku membuka firefox dengan 5 tab sekaligus. Lalu Boom! freeze. Entah kenapa bisa terjadi, tapi aku menghiraukannya sampai saat ini. 
+      </p>
+      <p>Aku tak tahu cara restart Laptopku saat freeze terjadi. Biasanya saat menggunakan <a href="https://ubuntu.com/" target="_blank">Ubuntu</a> aku bisa restart dengan mudah. Yaitu dengan menahan tombol Alt + SysRq, REISUB. Di Arch tidak bisa dan aku tak tahu mengapa. Jadi setiap freeze aku hanya menekan tombol power dan menunggu hingga laptop menyala kembali.</p>
+      <h3>Desktop Environment</h3>
+      <p>
+        Aku menggunakan desktop environment LXQT yang terkenal ringan. Tak ada yang bisa dibanggakan dengan DE LXQT yang memang diperuntukkan untuk laptop tua.
+        Namun lancar kok karena seperti yang dibilang sebelumnya, hanya menggunakan 500 MB RAM itupun saat membuka firefox dengan 5 tab sekaligus. Aku tak menyangka kalau desktop environment yang ringan bisa memberikan pengalaman yang cukup baik untuk laptop tuaku itu.
+      </p>
+      <h3>Konfigurasi dan Kustomisasi</h3>
+      <p>
+        Seperti yang dikatakan sebelumnya, aku menggunakan DE LXQT yang dimana bukan diperuntukkan untuk kustomisasi. Jadi menurutku, alasan orang-orang menganggap Arch Linux itu bagus karena bisa menjalankan DE yang kustomisasi full seperti KDE Plasma dan tentu saja Goatnya Arch Linux, "Hyprland".
+        Berbeda halnya dengan ubuntu yang menggunakan GNOME yang memang terkenal sulit untuk dikustomisasi. Aku sendiri tidak terlalu suka dengan GNOME karena menurutku terlalu berat dan kurang fleksibel untuk dikustomisasi. Namun, aku tetap menghargai pilihan orang lain yang lebih suka menggunakan GNOME.
+      </p>
+      <p>
+        Tak ada yang spesial dari Arch Linux. Menurutku yang spesial adalah Package Managernya yaitu Pacman yang benar-benar cepat dalam install aplikasi/package. 
+      </p>
       <h2>Kesimpulan</h2>
+      <p>
+        Apakah sebagus itu? enggak. Apakah sesulit itu? enggak. Kenapa aku berani mengatakan hal itu? karena memang begitu. Arch Linux tidaklah sulit untuk diinstall. Yang hanya perlu diperhatikan adalah mode boot, partisi dan yang paling penting "Internet". Terkadang kebanyakan yang sulit itu adalah ketika menyambung ke internet.
+        Mengapa? ya karena kebanyakan video tutorial YouTube menggunakan LAN untuk tersambung ke internet. Jadi good luck untuk tersambung ke internet.  
+      </p>
 
       <p>
-        </p>
 
-      <blockquote>
-        An Apparation
-        <br>
-        Not of this world
-        <br>
-        But because of it
-        <br>
-        Lurking out of frame
-        <br>
-        <br>
-        Awake, my heart is a fortress
-        <br>
-        In dreams I am vulnerable
-      </blockquote>
+      </p>
 
     </div>
 
