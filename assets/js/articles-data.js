@@ -14,7 +14,7 @@ const ARTICLES = [
     tags: ["review", "indie-game", "celeste", "game"],
     date: "2026-05-20",
     readTime: "15 min",
-    url: "/pages/celeste-game-review/index.html"
+    url: "/pages/celeste-game-review/"
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const ARTICLES = [
     tags: ["review", "linux", "distro", "arch"],
     date: "2026-05-30",
     readTime: "20 min",
-    url: "/pages/absolute-arch-linux-experience/index.html"
+    url: "/pages/absolute-arch-linux-experience/"
   }
 ];
 
