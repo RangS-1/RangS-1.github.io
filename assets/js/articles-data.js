@@ -26,6 +26,17 @@ const ARTICLES = [
     date: "2026-05-30",
     readTime: "20 min",
     url: "/pages/absolute-arch-linux-experience/"
+  },
+  {
+    id: 3,
+    title: "Programming yang sebenarnya: Seperti apa cara pikir Programmer?",
+    slug: "programming-yang-sebenarnya",
+    summary: "Bagaimana cara seorang programmer yang baik itu berfikir?",
+    category: "technology",
+    tags: ["review", "linux", "distro", "arch"],
+    date: "2026-06-7",
+    readTime: "20 min",
+    url: "/pages/programming-yang-sebenarnya/"
   }
 ];
 

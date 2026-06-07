@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming yang sebenarnya — ./RangS Blog</title>
+  <meta name="description" content="Programming bukan hanya soal menulis kode. Pelajari mindset programmer, penggunaan Git, terminal, struktur proyek dan konsep dasar bahasa pemrograman.">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/programming-yang-sebenarnya">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cara Menjadi Programmer yang Lebih Baik">
+  <meta property="og:description" content="Programming bukan hanya soal menulis kode. Pelajari mindset programmer, Git, terminal dan konsep dasar pemrograman.">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../index.html">home</a>
+    <a href="../../dashboard/index.html" class="active">dashboard</a>
+    <a href="../../about/index.html">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/index.html">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-06-7</span>
+        <span>·</span>
+        <span>20 min read</span>
+      </div>
+      <h1 class="article-headline">Programming yang sebenarnya: Seperti apa cara pikir Programmer?</h1>
+      <p class="article-summary">
+        Bagaimana cara seorang programmer yang baik itu berfikir?
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#tips</span>
+        <span class="tag">#programming</span>
+        <span class="tag">#development</span>
+        <span class="tag">#coding</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <h2>Apa itu Programming?</h2>
+
+      <p>
+        Sebelum membahas lebih jauh, kita harus tahu dulu apa itu programming. Programming adalah proses menulis instruksi-instruksi yang dapat dimengerti oleh komputer untuk melakukan tugas tertentu.
+      </p>
+
+      <blockquote>
+        "Talk is cheap. Show me the code."
+        <br>
+        — Linus Torvalds, pencipta Linux
+      </blockquote>
+
+      <p>
+        Apa yang sebenarnya membuat programmer itu baik? Kode etik apa yang dipegang dan bagaimana cara berfikir sebagai programmer sejati? kita akan membahasnya dalam artikel ini.
+      </p>
+
+      <h2>File Management</h2>
+
+      <p>
+        Salah satu aspek penting dalam programming adalah manajemen file. Seorang programmer yang baik harus tahu bagaimana mengatur file dan folder dengan rapi.
+      </p>
+      <p>
+        Biar ku tebak, selama Anda membuat kode, anda pasti menyimpannya dalam satu folder, bukan dengan folder-folder lain seperti assets, components, utils kan? Tampilan VS Code Anda pasti seperti ini:
+      </p>
+      <pre><code>
+MyProject/
+├── index.html
+├── style.css
+├── script.js
+├── image.png
+      </code></pre>
+      <p>
+        Nah, sebenarnya cara seperti itu tidaklah salah, tapi bisa menjadi masalah ketika proyek Anda mulai berkembang dan memiliki banyak file. Bayangkan jika Anda memiliki 100 file dalam satu folder, aku yakin Anda akan kesulitan untuk menemukan mana file yang hendak dijadikan referensi, file yang dijadikan style, file yang dijadikan script, dan lain-lain. Ini bisa membuat proyek Anda menjadi berantakan dan sulit untuk dikelola.
+      </p>
+      <p>
+        Cobalah untuk mengatur file Anda dengan lebih baik, aku yakin hal tersebut akan sangat berguna! Bahkan Framework modern seperti Vite, Angular dan Laravel pun sudah memiliki struktur foldernya sendiri.
+      </p>
+      <pre><code>MyProject/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
+│       └── image.png
+├── components/
+│   └── Header.js
+├── utils/
+│   └── helper.js
+      </code></pre>
+      <p>
+        Di atas adalah contoh struktur folder yang terorganisir daripada tidak sama sekali. Sekarang muncul pertanyaan, Bagaimana cara saya menyambungkan satu file dengan file lainnya? Apa yang harus saya tulis pada:
+      <pre><code>&lt;link rel="stylesheet" href="?"&gt;</code></pre>
+      <p>
+        Sudah pasti Anda akan mendapat masalah karena tidak tahu cara menyambungkan file dengan benar. Maka dari itu kita masuk ke segment penting berikutnya!
+      </p>
+      <h2>Terminal</h2>
+
+      <p>
+        "Apaan sih pake terminal segala, terminal tuh gak penting!". Itulah yang saya dengar dari banyak orang entah itu dari grup coding atau bahkan teman kelas sendiri.
+        Apa yang salah dari Terminal? Terminal adalah alat yang sangat penting untuk seorang programmer. Fungsinya cukup mirip dengan GUI, yang membedakan hanyalah menggunakan tulisan. 
+      </p>
+
+      <p>
+        Terdapat banyak sekali perintah yang bisa kamu gunakan di terminal. Berikut adalah penjelasannya:
+      </p>
+      <pre><code>ls - untuk melihat daftar file dan folder dalam direktori saat ini
+cd - untuk berpindah direktori
+mkdir - untuk membuat folder baru
+touch - untuk membuat file baru
+rm - untuk menghapus file atau folder
+cp - untuk menyalin file atau folder
+mv - untuk memindahkan atau mengganti nama file atau folder
+cat - untuk menampilkan isi file
+</code></pre>
+
+      <p>
+        Sebagai catatan, perintah-perintah di atas adalah perintah yang hanya ada di terminal berbasis <a href="https://en.wikipedia.org/wiki/Unix" target="_blank">Unix</a> seperti Linux dan MacOS. Jika kamu menggunakan Windows, kamu bisa menggunakan Command Prompt atau PowerShell yang memiliki perintah yang sedikit berbeda.
+      </p>
+
+      <p>
+        Oke, setelah tahu tentang Terminal, Apa yang harus kita lakukan untuk menyelesaikan masalah yang tadi? Berikut adalah contoh implementasinya:
+      </p>
+
+      <pre><code>Bayangkan kamu memiliki proyek seperti berikut:
+MyProject/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
+│       └── image.png
+
+Bukalah index.html, lalu untuk menyambungkan style.css, kamu bisa menulis:
+&lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+
+Cukup sederhana bukan? Kode di atas mengartikan bahwa
+file index.html ingin mengambil file dari folder assets ke folder css dan ke file style.css
+</code></pre>
+      <p>
+        Sekarang muncul pertanyaan baru lagi, bagaimana jika file style.css berada di atas file index.html? Misalnya seperti ini:
+      </p>
+      <pre><code>MyProject/
+├── pages/
+│   └── index.html
+├── style.css
+
+Bagaimana cara kita menyambungkan file style.css ke index.html?
+Inilah pentingnya belajar terminal!
+Jika sudah tahu perintah cd, Pasti tidak asing dengan "cd .."
+
+Untuk menyambungkan file style.css ke index.html, kamu bisa menulis:
+&lt;link rel="stylesheet" href="../style.css"&gt;
+Kode di atas mengartikan bahwa 
+file index.html ingin mengambil file dari folder di atasnya (../) 
+lalu ke file style.css
+
+Analoginya seperti ini:
+Kamu adalah seorang index.html,
+Kamu ingin bertemu style.css,
+Tapi style.css berada di lantai atasmu,
+Tidak mungkin kau terbang kan?
+Maka dari itu kamu harus menaiki tangga dulu (../)
+Setelah naik tangga dengan (../)
+Barulah kamu bisa bertemu dengan style.css
+</code></pre>
+      <p>
+        Bagaimana? masih pusing? Berlatihlah dengan membuat folder, lalu buat file di dalamnya dengan hanya menggunakan Terminal.
+      </p>
+      <p>
+        Dengan menguasai Terminal, kamu akan menjadi lebih efisien dalam mengelola proyekmu. Kamu tidak perlu lagi membuka file explorer untuk mencari file yang ingin kamu edit, cukup dengan beberapa perintah di terminal, kamu bisa langsung menuju file tersebut dan membukanya dengan editor favoritmu.
+      </p>
+      <p>
+        Bahkan, ketika aku ingin membuka proyek yang sudah aku buat sebelumnya dengan VS Code. Aku tinggal masuk ke folder proyek tersebut dan ketik "code ."
+        Nanti VS Code akan langsung terbuka dengan proyek yang sudah aku buat sebelumnya. Cukup praktis bukan? Apakah hanya terminal? Tentu saja tidak, kita masuk ke segment yang tak kalah pentingnya yaitu
+      </p>
+      <h2>Git atau Version Control System (VCS)</h2>
+      <p>
+        Pada bagian atas artikel ini, aku mengambil quote dari Linus Torvalds. Mengapa harus Linus Torvalds? Karena dia adalah pencipta Linux, salah satu Kernel sistem operasi paling populer di dunia, dan juga yang paling penting ia menciptakan Git
+      </p>
+      <p>
+        Seolah tak asing dengan kata tersebut tapi tidak tahu apa itu Git, Version Control System (VCS) atau Git yang kita bahas pada artikel ini adalah sistem yang digunakan untuk mengelola perubahan pada kode sumber proyek. Dengan menggunakan VCS, kamu bisa melacak perubahan yang terjadi pada kode sumber, melihat siapa yang melakukan perubahan, dan bahkan kembali ke versi sebelumnya jika terjadi kesalahan.
+      </p>
+      <p>
+        Terdengar aneh dan buang-buang waktu? simpelnya seperti ini!
+      </p>
+<pre><code>Bayangkan kamu bekerja sebagai bidang IT di sebuah perusahaan.
+Bos mu ingin kamu mengubah tampilan website perusahaan.
+Kamu pun mulai mengubah kode sumber website tersebut,
+Tapi setelah mengubahnya, bos mu tidak suka.
+Ia pun memintamu untuk mengembalikan tampilan website seperti semula.
+
+Kau berfikir "Waduh, gimana cara balikinnya?"
+Di saat inilah Git bersinar!
+</code></pre>
+      <p>
+        Untuk mengatasi masalah tersebut, kamu harus menggunakan Git dari awal untuk melacak perubahan kode yang kau buat.
+      </p>
+      <p>
+        Git tidak terinstall otomatis di komputer, kamu harus menginstallnya terlebih dahulu. Berikut adalah link untuk menginstall Git: <a href="https://git-scm.com/install" target="_blank">https://git-scm.com/install</a>
+      </p>
+      <p>
+        Setelah menginstall Git, waktunya kita menggunakannya. Buka VS Code atau editor apa pun terserah (Pastikan yang sudah ada Integrated Terminal, bukan Text Editor yang tak memiliki Integrated Terminal seperti Notepad, Vim dan Nano (Bentar, di sini ada yang pake Vim?)), lalu buka terminal dan ketik perintah berikut untuk menginisialisasi Git di proyekmu:
+      </p>
+<pre><code>git init</code></pre>
+      <p>
+        Setelah itu, kamu bisa mulai menambahkan file yang ingin kamu lacak dengan perintah berikut:
+      </p>
+      <pre><code>git add .
+git commit -m "Pesan atau catatanmu tentang perubahan yang kamu buat"
+</code></pre>
+
+      <p>
+        Apa maksud dari kode diatas?
+        <ul>
+          <li><code>git add . = Menambahkan semua file yang telah diubah ke staging area</code></li>
+          <li><code>git commit -m "Pesan" = Menyimpan perubahan yang telah ditambahkan ke repository</code></li>
+        </ul>
+      </p>
+      <p>
+        Jika sudah pelajari terminal, kamu pasti tahu kalau tanda . itu artinya semua. Jadi git akan menambahkan semua file ke staging area.
+        Masih bingung apa Staging Area? Staging Area adalah tempat sementara di mana kamu bisa menambahkan perubahan yang ingin kamu commit. Jadi, kamu bisa memilih perubahan mana yang ingin kamu simpan dan mana yang tidak.
+      </p>
+      <p>
+        Lakukanlah perintah di atas setiap kali membuat perubahan pada kode sumbermu. Sulit untuk membiasakan diri menggunakan Git dalam terminal?
+        Jangan Khawatir, VSCode sudah menyediakan ekstensi Git yang memudahkan kamu untuk menggunakan Git tanpa harus mengetik perintah di terminal. Kamu bisa menginstall ekstensi Git di VS Code dan mulai menggunakan fitur-fitur Git seperti commit, push, pull, dan lain-lain dengan mudah melalui antarmuka grafis.
+        Untuk cara installnya cari saja di Extensions dengan kata kunci "Git" atau "Git Extension".
+      </p>
+      <p>
+        Ingin melihat kegunaan Git secara langsung? Coba lihat foto berikut:
+      </p>
+      <img src="implementasi-git.png" alt="Screenshot Git Usage Example" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Pada gambar tersebut, terlihat jelas bahwa aku menggunakan ekstensi Git di VS Code. Pada bagian kiri bawah adalah daftar yang telah ku buat (yang git add dan git commit itu).
+        Di bagian kiri atas adalah file yang telah di ubah. Di bagian kanan (Lebih tepatnya Text Box) berisi perbandingan kode sebelum dan sesudah diubah.
+      </p>
+      <p>
+        Namun, tidak sembarangan juga menggunakan Git, kamu harus tahu kapan waktu yang tepat untuk melakukan commit (Semacam Save File). Yang paling penting dari Git adalah pesan commit.
+        Jangan pernah menulis pesan commit yang tidak jelas atau bahkan ngawur seperti "Update file", "Masukkin Commit" atau yang paling sering adalah "Selesai". Come On Bro! Pesan commit haruslah jelas dan deskriptif, sehingga orang lain (atau bahkan dirimu sendiri di masa depan) bisa memahami perubahan apa yang telah kamu buat hanya dengan membaca pesan commit tersebut.
+      </p>
+      <p>Coba lihat gambar sebelumnya, Aku selalu menulis pesan commit yang jelas dan deskriptif Sehingga aku tahu apa yang telah aku ubah.
+      </p>
+      <p>
+        Baca Juga Artikel:
+        <a href="/pages/absolute-arch-linux-experience/">absolute arch linux experience</a>
+      </p>
+
+      <h2>Absolute Basics</h2>
+      <p>
+        Jangan menganggap bahwa kode yang ditulis dengan bahasa pemrograman yang berbeda itu sulit! Semua kode itu pada dasarnya sama saja. Kok saya berani mengatakan hal tersebut? Berikut penjelasannya
+      </p>
+
+      <h3>Variable, Declaration</h3>
+      <p>
+        Setiap bahasa pemrograman pasti memiliki konsep variable dan declaration.
+        Berikut adalah contoh variable dan declaration dalam beberapa bahasa pemrograman:
+      </p>
+      <pre><code>// JavaScript
+let name = "RangS di JS";
+
+// Python
+name = "RangS di Python"
+
+// PHP
+$name = "RangS di PHP";
+
+// C++
+std::string name = "RangS di C++";
+</code></pre>
+
+      <p>
+        Seperti yang kamu lihat, semua bahasa pemrograman memiliki konsep variable dan declaration. Hanya saja sintaksnya yang berbeda-beda. Jadi, jika kamu sudah menguasai satu bahasa pemrograman, kamu akan lebih mudah untuk belajar bahasa pemrograman lainnya karena konsep dasarnya sama saja.
+      </p>
+      <p>
+        Ada dua jenis variable, yaitu variable yang bisa diubah (mutable) dan variable yang tidak bisa diubah (immutable). Contohnya seperti ini:
+      </p>
+<pre><code>// JavaScript
+let mutableVariable = "Saya bisa diubah";
+const immutableVariable = "Saya tidak bisa diubah";
+
+// C++
+std::string mutableVariable = "Saya bisa diubah";
+const std::string immutableVariable = "Saya tidak bisa diubah";
+</code></pre>
+      <p>
+        Seperti yang kamu lihat, variable yang mutable bisa diubah nilainya, sedangkan variable yang immutable tidak bisa diubah nilainya setelah dideklarasikan. Jadi, jika kamu ingin membuat variable yang nilainya tidak boleh berubah, gunakanlah variable yang immutable.
+        Dari contoh di atas, kita hanya menambahkan const di depan variable. Di setiap bahasa pemrograman, cara untuk membuat variable immutable itu berbeda-beda. Tapi intinya sama saja, kita hanya perlu menambahkan keyword tertentu di depan variable untuk membuatnya immutable.
+      </p>
+      <h3>Data Types, Loop</h3>
+      <p>
+        Konsep Data Types adalah konsep paling sederhana, hanya untuk membuat variable tersebut memiliki tipe data tertentu.
+        Data Types sendiri terdapat banyak sekali jenisnya, mulai dari String, Number, Boolean, Array, Object, dan lain-lain. Berikut adalah contoh Data Types dalam beberapa bahasa pemrograman:
+      </p>
+      <pre><code>// JavaScript
+let stringVariable = "Saya adalah string";
+let numberVariable = 42;
+let booleanVariable = true;
+
+// Python
+stringVariable = "Saya adalah string"
+numberVariable = 42
+booleanVariable = True
+
+// PHP
+$stringVariable = "Saya adalah string";
+$numberVariable = 42;
+$booleanVariable = true;
+
+// C++
+std::string stringVariable = "Saya adalah string";
+int numberVariable = 42;
+bool booleanVariable = true;
+</code></pre>
+      <p>
+        Seperti yang kamu lihat, semua bahasa pemrograman memiliki konsep Data Types. Hanya saja sintaksnya yang berbeda-beda. Jadi, jika kamu sudah menguasai satu bahasa pemrograman, kamu akan lebih mudah untuk belajar bahasa pemrograman lainnya karena konsep dasarnya sama saja.
+      </p>
+      <p>
+        Kita masuk ke loops, Loop adalah konsep untuk mengulang kode sampai kondisi tertentu terjadi. Berikut implementasinya:
+      </p>
+<pre><code>// PHP
+for (i = 0; i < 5; i++){}
+
+// Python
+for i in range(5):
+
+Inti dari kode di atas adalah
+Selama data berada kurang dari 5,
+Maka melakukan sesuatu
+</code></pre>
+      <p>
+        Maksud dari kode diatas untuk mengulang data sebanyak yang diketahui. Lebih sering menggunakan For untuk melakukan loop. Lalu ada konsep kedua loop yaitu While. Berikut
+      </p>
+<pre><code>// PHP
+while (kondisi){}
+
+// Python
+while True:
+
+Kode di atas akan melakukan perulangan atau Loop
+Terus-menerus sampai kondisi tertentu tercapai.
+</code></pre>
+      <p>
+        Dari tadi kita bahas kondisi tertentu tapi tak tahu apa itu kondisi,
+        Karena itu kita lanjut ke pembahasan selanjutnya
+      </p>
+
+      <h3>If Statements / Jika</h3>
+      <p>
+        Seperti namanya, If Statement! Jika kode berada dalam kondisi tertentu, maka ia akan melakukan hal yang ada dalam kondisi tertentu.
+        Berikut contohnya:
+      </p>
+<pre><code>// Python
+if a < 5:
+  print("Kurang dari lima")
+elif a == 0:
+  print("Nilai sama dengan Nol")
+else:
+  print("Lebih dari lima")
+
+// C++
+if (a < 5){
+  std::cout << "Kurang dari lima";
+} else if (a == 0){
+  std::cout << "Nilai sama dengan Nol";
+} else{
+  std::cout << "Lebih dari lima";
+}
+
+Maksud dari kode di atas adalah Jika
+Nilai a kurang dari 5 maka print "Kurang dari lima".
+Begitu seterusnya sesuai dengan nilai a pada di luar fungsi If. 
+</code></pre>
+      <p>
+        Intinya If Statements digunakan untuk mengecek jika nilai sama dengan tertentu maka akan melakukan tertentu.
+      </p>
+
+      <h3>Array</h3>
+      <p>
+        Ini adalah konsep tersulit dalam pembahasan kali ini, Array adalah Variabel yang menyimpan banyak data sekaligus.
+        Array sangat berguna untuk menyimpan data yang dapat diakses dengan index. Contohnya seperti berikut:
+      </p>
+<pre><code>// Python
+mobil = ["Toyota", "BMW", "Ford GT"]
+print(mobil[0])
+
+Apa maksud dari mobil[0]
+Artinya adalah mengambil nilai pada mobil yang paling awal.
+Dari kebanyakan bahasa pemrograman,
+Data Array biasanya dimulai dari 0
+
+mobil = ["Toyota", "BMW", "Ford GT"]
+            ^        ^        ^
+            |        |        |
+            0        1        2
+
+Tapi hati-hati juga, terkadang ada bahasa pemrograman
+Yang memulai dengan angka 1. Contohnya saja Lua.
+</code></pre>
+      <h2>Fungsi Bahasa Pemrograman</h2>
+      <p>
+        Semua bahasa pemrograman memiliki fungsinya masing-masing. Misalnya Python untuk Machine Learning, AI dan Cybersecurity. Lalu C untuk System Design. Lalu PHP untuk Web Apps.
+        Dari semua yang dibahas, cobalah pelajari Javascript. Javascript bukanlah bahasa pemrograman biasa, melainkan juga bahasa pemrograman paling rakus diantara semuanya.
+        Javascript bisa menjadi Web Apps, Manipulasi HTML, Desktop Application dan bahkan Mobile Apps, Meski begitu aku tak tahu bagaimana performanya.
+      </p>
+      <h2>Kesimpulan</h2>
+      <p>
+        Bahasa pemrograman tidaklah sesulit yang kita kira selama ini. Jika sudah paham konsep mendasar seperti yang dijelaskan di atas
+        sudah pasti akan sangat-sangat mudah untuk mempelajari bahasa pemrograman lain.
+      </p>
+
+      <p>
+        Jika tertarik untuk mempelajari lebih lanjut, kusarankan belajar dari Channel <a href="https://www.youtube.com/@BroCodez">Bro Code</a> dan <a href="https://www.youtube.com/@freecodecamp">FreeCodeCamp.org.</a>
+        Atau jika ingin pelajari sejarah bisa tonton video berikut: <a href="https://youtu.be/0vNTT18gsJY?si=gkceoPoBqDArtBHW">
+          <img src="programming.png" alt="Thumbnail Video dari Diteknoin" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/index.html" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; kopi ☕</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'article1')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
