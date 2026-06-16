@@ -37,6 +37,17 @@ const ARTICLES = [
     date: "2026-06-7",
     readTime: "20 min",
     url: "/pages/programming-yang-sebenarnya/"
+  },
+  {
+  id: 4,
+    title: "Terminal: Kawan Sejati Programmer",
+    slug: "terminal-sang-kawan-programmer",
+    summary: "Terminal tidak unggul karena UI yang cantik, tapi unggul karena efisiensinya.",
+    category: "technology",
+    tags: ["terminal", "shell", "linux", "programming"],
+    date: "2026-06-16",
+    readTime: "20 min",
+    url: "/pages/terminal-sang-kawan-programmer/"
   }
 ];
 
