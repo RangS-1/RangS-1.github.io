@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terminal: Kawan Sejati Programmer — ./RangS Blog</title>
-  <meta name="description" content="Pelajari cara menggunakan Terminal untuk pemula, mulai dari sejarah Terminal, perbedaan Terminal dan Shell hingga command dasar Linux yang wajib diketahui programmer.">
-  <link rel="canonical" href="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer">
+  <title>Android Studio: Pengalaman pahit manisnya Android Developer — ./RangS Blog</title>
+  <meta name="description" content="Mempelajari dasar android studio dan pengalaman berbasis proyek.">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/android-studio-experience">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Belajar Terminal untuk Pemula: Cara Menggunakan Terminal">
-  <meta property="og:description" content="Terminal adalah konsep dasar untuk masuk ke dunia programming.">
+  <meta property="og:title" content="Android Studio: Pengalaman manis pahitnya android developer">
+  <meta property="og:description" content="Android Developer dengan Android Studio">
   <meta name="robots" content="index, follow">
-  <meta property="og:image" content="ogimg.png">
+  <meta property="og:image" content="https://rangs-1.github.io/pages/android-studio-experience/android-ide.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Belajar Terminal untuk Pemula">
-  <meta name="twitter:description" content="Pelajari command dasar dan konsep Terminal Linux untuk programmer.">
-  <meta name="twitter:image" content="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer/ogimg.png">
+  <meta name="twitter:title" content="Pengalaman Android Studio">
+  <meta name="twitter:description" content="Belajar pemahaman dan instalasi Android Studio">
+  <meta name="twitter:image" content="https://rangs-1.github.io/pages/android-studio-experience/android-ide.png">
 
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="icon" href="../../about/RangS_pfp.png">
@@ -132,7 +132,7 @@
       </p>
 
       <h2>Kotlin</h2>
-      <img src="programiz-kotlin.png" alt="Tampilan website Programiz untuk belajar Kotlin" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">      
+      <img src="programiz-kotlin.png" alt="Tampilan website Programiz untuk belajar Kotlin" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
       <p>
         Jujur saja dari dulu aku tidak tertarik untuk belajar android development. Namun karena ingin menambah wawasan,
         Aku pun belajar bahasa pemrogramannya yaitu Kotlin. Kotlin adalah bahasa pemrograman yang dikembangkan
@@ -197,30 +197,209 @@
       </p>
       <p>Baca juga: <a href="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer/">Terminal: Sang Kawan Programmer!</a></p>
 
-      <h2>Ferminal</h2>
-      <img src="ferminal.png" alt="Bash" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <h2>Virtualisasi</h2>
       <p>
-        Apakah menurutmu menggunakan Terminal itu ribet? tenang! Saya sudah membuat solusi yang tepat.
-        Anda bisa menginstall aplikasi buatan saya yang disebut sebagai <b><a href="https://github.com/RangS-1/Ferminal">Ferminal</a></b>.
+        Hanya dengan mendengar kata Virtualisasi, aku sudah mencium bau-bau Error. 
+        Jadi Android Studio ini memerlukan virtualisasi atau device android virtual 
+        untuk menjalankan aplikasi android. Di bagian kanan, terdapat Device Manager.
+        Aku klik itu dan klik tombol +. Lalu aku install device mana yang kuinginkan.
+      </p>
+      <img src="new-device.png" alt="Pilihan Device untuk diinstall" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Aku pilih Medium Phone karena ya... Medium, Pertengahan gitu. Aku Next-Next saja 
+        dan serius dah, ukuran filenya bisa sebesar itu. sekitaran 3 GB kalau tidak salah.
+        Sejauh ini terdengar lancar-lancar saja ya? Waktunya kita masuk ke bagian paling menyebalkan dari Android Development.
+      </p>
+
+      <h2>Error Pertama</h2>
+      <p>
+        Saat aku klik tombol Run App (Shift+F10), masalah bertubi-tubi mulai muncul. Pertama adalah error berikut:
+<pre><code>1. Dependency 'androidx.core:core:1.19.0' requires libraries and applications that 
+depend on it to compile against version 37 or later of the Android APIs. 
+:app is currently compiled against android-36.1. 
+Recommended action: Update this project to use a newer compileSdk of 37. 
+Note that updating a library or application's compileSdk (which allows newer APIs to be used) can be done separately from updating 
+targetSdk (which opts the app in to new runtime behavior) and minSdk (which determines which devices the app can be installed on). 
+
+2. Dependency 'androidx.core:core-ktx:1.19.0' requires libraries and applications that depend on it to compile against version 37 or later of the Android APIs. 
+:app is currently compiled against android-36.1. 
+Recommended action: Update this project to use a newer compileSdk of 37. 
+Note that updating a library or application's compileSdk 
+(which allows newer APIs to be used) can be done separately from updating targetSdk (which opts the app in to new runtime behavior) and minSdk (which determines which devices the app can be installed on).
+</code></pre>
       </p>
       <p>
-        Ferminal adalah sebuah Custom Wrapper CLI yang dibuat khusus untuk efisiensi pengguna.
-        Kenapa namanya Ferminal? ya, Ferminal adalah singkatan dari F*ck Terminal. Jangan tanyakan lagi kenapa harus nama itu -_-.
-        Lalu apa saja keunggulannya? Saat artikel ini dibuat, Ferminal ini hanya menguntungkan untuk menggunakan Git aliases. Untuk penjelasan lebih lengkap,
-        silakan kunjungi website berikut untuk dokumentasinya: <a href="https://rangs-1.github.io/Ferminal/documentation%201.0/">Ferminal Documentation</a>
+        Inti dari pesan tersebut adalah kesalahan dependency. Mungkin terdengar sepele,
+        Tapi tahu berapa lama aku harus memperbaiki hal ini? Sekitar 5-7 Jam hanya untuk membereskan hal ini!
+        Ingat ya, aku tidak tahu apa-apa soal android studio apalagi tentang Konfigurasi sistem sana-sini. 
+        Yang aku tahu hanyalah Kotlin sebagai bahasa pemrogramannya dan android studio sebagai alat untuk membuat aplikasi android, Hanya itu.
+      </p>
+      <p>
+        Untungnya sudah kuselesaikan dengan INSTALL ULANG DARI AWAL dan mengubah konfigurasi pada file 
+        build.gradle.kts menjadi seperti berikut:
+<pre><code>app/src/build.gradle.kts
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
+}
+
+android {
+    namespace = "com.azrielstech.androidtodo"
+    compileSdk {
+        version = release(36) {
+            minorApiLevel = 1
+        }
+    }
+
+    defaultConfig {
+        applicationId = "com.azrielstech.androidtodo"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            optimization {
+                enable = false
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        compose = true
+    }
+}
+
+dependencies {
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+}
+</code></pre>
+      </p>
+
+      <h2>Error Kedua</h2>
+      <p>
+        Error kedua adalah Virtualisasi. Yes, seperti yang kukatakan sebelumnya bahwa aku 
+        sudah mencium bau-bau error. Setelah aku klik tombol Run App (Shift+F10), Device Manager
+        terus menerus loading tak tahu kenapa. Aku restart beberapa kali Device Managernya. 
+        Dalam beberapa momen, aku tak bisa restart karena device sedang berjalan. Namun ditunjukkan PIDnya.
+        Jika tak tahu PID, PID itu semacam kode proses yang sedang berjalan di windows.
+      </p>
+      <img src="qemu.png" alt="Contoh tampilan penggunaan QEMU" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Aku buka task manager dan hendak mematikannya, aku masukkan PIDnya pada pencarian dan aku menemukan masalahnya.
+        Ternyata Android Studio ini menggunaan QEMU untuk menjalankan Virtual Android Device.
+        Kenapa aku tahu ini masalahnya? karena QEMU itu adalah emulator yang berjalan lancar jika menggunakan KVM, dan KVM hanya ada di Linux.
+      </p>
+      <p>
+        Aku menggunakan Windows yang kalau tidak salah menggunakan Intel-Vtx. Yang dimana QEMU akan kewalahan untuk virtualisasi.
+        Jadi ya, masalah ku atasi setelah AI menyarankanku untuk menggunakan HP android asli yang disambungkan ke laptop dengan USB.
+        Lebih tepatnya melakukan USB Debugging, untungnya HP ku yang merek Realme sudah support Developer Mode, jadi aku bisa lanjut belajar.
+      </p>
+
+      <h2>Project Pertama: Nilai Siswa</h2>
+      <p>
+        Untuk project pertama, AI menyarankanku untuk membuat aplikasi penghitung nilai siswa sederhana.
+        Yang dimana siswa memasukkan nilai harian, UTS dan UAS lalu diproses menghasilkan output grade/nilai tertentu.
+      </p>
+      <p>
+        Untuk membuat inputan, di android studio bisa menggunakan TextField. Lalu data dari TextField diproses 
+        menggunakan if statements. Namun aku belajar hal baru tentang TextField, seperti namanya "TextField" atau kolom teks yang artinya 
+        akan menghasilkan nilai/data berupa String, bukan integer. Jadi untuk ubah menjadi integer, harus menggunakan fungsi khusus yaitu
+        toIntOrNull(). Tidak hanya itu, aku juga belajar tentang mutableStateOf() yang berfungsi untuk mengubah UI oleh JetPack Compose. 
+      </p>
+<pre><code>var nilaiAkhir by remember { mutableStateOf("")}
+val nUTSInt = nilaiUTS.toIntOrNull() ?: 0
+val nUASInt = nilaiUAS.toIntOrNull() ?: 0
+val nilaiRataRata = (nHarianInt + nUTSInt + nUASInt) / 3
+nilaiAkhir = if (nilaiRataRata in 90..100){
+    "A"
+} else if (nilaiRataRata in 80..89) {
+    "B (Baik)"
+} else if (nilaiRataRata in 70..79) {
+    "C (Cukup)"
+} else if (nilaiRataRata in 60..69) {
+    "D (Kurang)"
+} else {
+    "E (Tidak Lulus)"
+}
+</code></pre>
+      <p>
+        Oh iya, aku hampir lupa tentang JetPack Compose. JetPack Compose itu semacam
+        toolkit UI modern dari google untuk membuat antarmuka aplikasi secara native.
+        Dan juga kode utama dari aplikasi android ini berada di 
+<pre><code>/app/src/main/java/com/azrielstech/nilaisiswa/MainActivity.kt</code></pre>
+      </p>
+      <p>
+        Jika ingin cek project ini, bisa lihat di Githubku: <a href="https://github.com/RangS-1/Learning/blob/main/Something/Wikrama1Garut_Project/AndroidStudioProject/NilaiSiswa/app/src/main/java/com/azrielstech/nilaisiswa/MainActivity.kt">Link ke Repo/Source Code</a>
+      </p>
+
+      <h2>Project Kedua: Android Calculator</h2>
+      <p>
+        Pada project kedua, aku membuat aplikasi Calculator sederhana untuk android.
+        Sebenarnya project ini paling gampang dari sebelumnya, hanya saja aku punya masalah 
+        ketika hendak ubah tipe data. Mengingat dalam kalkulator, jika user memasukkan nilai yang tak bisa dibagi, Kalau 
+        tidak salah menghasilkan nilai 0. Misalnya 2 / 5 = 0. Anehkan? jadi dari pada menggunakan Integer, aku menggunakan Float.
+      </p>
+      <p>
+        Pada project ini juga aku belajar untuk membuat tombol reset yang dimana 
+        akan menghapus isi dari TextField atau inputan user menjadi kosong.
+      </p>
+      <p>
+        Jika ingin cek project ini, bisa lihat di Githubku: <a href="https://github.com/RangS-1/Learning/blob/main/Something/Wikrama1Garut_Project/AndroidStudioProject/AndroidCalc/app/src/main/java/com/azrielstech/androidcalc/MainActivity.kt">Link ke Repo/Source Code</a>
+      </p>
+
+      <h2>Project Ketiga: Android To-Do List</h2>
+      <p>
+        Pada Project ketiga ini, aku membuat aplikasi To-Do List sederhana.
+        Project ketiga ini mengajarkan cara membuat Array, mengisi data dan menghapus data pada Array.
+        Berbeda dengan project sebelumnya, untuk menyimpan Array di sini menggunakan mutableStateListOf(). 
+      </p>
+      <p>
+        Tidak hanya itu, project ini juga mengajarkanku untuk mengubah data Array menjadi String
+<pre><code>val tasklist = remember { mutableStateListOf()}</code></pre>
+      </p>
+      <p>
+        Jika ingin cek project ini, bisa lihat di Githubku: <a href="https://github.com/RangS-1/Learning/blob/main/Something/Wikrama1Garut_Project/AndroidStudioProject/AndroidTodo/app/src/main/java/com/azrielstech/androidtodo/MainActivity.kt">Link ke Repo/Source Code</a>
       </p>
 
       <h2>Kesimpulan</h2>
       <p>
-        Dunia teknologi saat ini berlomba-lomba untuk menciptakan UI yang cantik, mengorbankan performa dan menghilangkan sejarah bahwa apa yang dibuat sekarang adalah hasil dari kerja keras yang dibangun selama puluhan tahun.
-        Terminal ini merupakan peninggalan masa lalu yang menolak mati, dan kini menjadi teman sejati bagi seorang programmer. Terminal dianggap jelek karena hanya tulisan, tapi programmer seolah tutup mata dengan apa yang mereka tulis juga merupakan sebuah tulisan dan baris kode sederhana.
+        Bisa dibilang membuat aplikasi Android ini memang menyenangkan, hanya saja 
+        masalah seperti dependency benar-benar membingungkan terutama jika menggunakan IDE yang baru.
+        Dan juga virtualisasi yang sering tidak berjalan mulus menjadi pembelajaran sendiri. 
+        Terakhir kali aku menggunakan QEMU (Saat artikel ini dibuat) adalah saat virtualisasi grub.
+        You know lah, Tipikal pengguna Arch Linux, apa saja pengen di kustomisasi, bahkan Bootloader sekalipun.
       </p>
-      <p>Masih bingung dengan cara menggunakan Terminal? Itu wajar dan bukan mengartikan bahwa kau bukanlah seorang programmer, semua orang perlu proses untuk belajar. Artikel ini cukup singkat ya, jadi kusarankan untuk tonton video berikut: 
-        <a href="https://youtu.be/3U6TTAJbJf8?si=pKvi_qlsy9MSz7LM">link video
-          <img src="thumbnail.png" alt="Witzdome: Bersahabat dengan terminal" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jika ingin mempelajari tentang Android Development, cobalah gunakan AI. Namun, bukan meminta AI untuk membuat kode yang benar secara langsung melainkan beritahu konsep dasar apa saja hal yang perlu dimengerti,
+        cukup tanyakan pada AI apa yang harus dibuat. Syntax apa yang harus digunakan atau apapun itu. 
+        Selama membuat ketiga project tersebut, aku menggunakan AI tapi tidak minta untuk memberi kode yang benar melainkan untuk mengarahkan sampai project selesai. 
+        Mintalah saran dan tunjukkan kode yang telah kau buat dan biarkan AI memberi saran. Bisa tonton video berikut untuk belajar Kotlin:
+        <a href="https://youtu.be/dzUc9vrsldM?si=3S7VkcivnwxHO72-" target="_blank">Link ke video
+        <img src="thumbnail.png" alt="Thumbnail Video" style="width:100%;border-radius:8px;margin:24px 0;">
         </a>
       </p>
-
     </div>
 
     <div class="article-nav-row">
