@@ -48,6 +48,17 @@ const ARTICLES = [
     date: "2026-06-16",
     readTime: "20 min",
     url: "/pages/terminal-sang-kawan-programmer/"
+  },
+  {
+  id: 5,
+    title: "Android Studio: Pengalaman Pahit Manisnya Android Developer",
+    slug: "android-studio-experience",
+    summary: "Bagaimana cara kerja dari Android Studio? Seperti apa rasanya?",
+    category: "technology",
+    tags: ["android", "developer", "kotlin", "programming"],
+    date: "2026-06-30",
+    readTime: "15 min",
+    url: "/pages/android-studio-experience/"
   }
 ];
 
