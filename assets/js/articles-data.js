@@ -59,6 +59,17 @@ const ARTICLES = [
     date: "2026-06-30",
     readTime: "15 min",
     url: "/pages/android-studio-experience/"
+  },
+  {
+  id: 6,
+    title: "The Bird Song: Menyelami Makna Lagu dan Teori Musik di Baliknya",
+    slug: "the-bird-song",
+    summary: "Apa yang membuat lagu ini begitu menyentuh hati? Begitu berbeda dengan lagu cinta lainnya?",
+    category: "music",
+    tags: ["music", "song", "theory", "love"],
+    date: "2026-06-30",
+    readTime: "15 min",
+    url: "/pages/the-bird-song/"
   }
 ];
 
