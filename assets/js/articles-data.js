@@ -69,6 +69,7 @@ const CATEGORIES = [
   { value: "all", label: "semua kategori" },
   { value: "technology", label: "technology" },
   { value: "game", label: "game" },
+  { value: "music", label: "music" },
   { value: "art", label: "art" },
   { value: "life", label: "life" }
 ];
