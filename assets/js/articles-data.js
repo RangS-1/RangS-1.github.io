@@ -70,6 +70,5 @@ const CATEGORIES = [
   { value: "technology", label: "technology" },
   { value: "game", label: "game" },
   { value: "music", label: "music" },
-  { value: "art", label: "art" },
-  { value: "life", label: "life" }
+  { value: "art", label: "art" }
 ];
