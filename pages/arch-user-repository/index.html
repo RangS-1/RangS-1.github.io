@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arch User Repository: Pengalaman ekosistem AUR di Arch Linux — ./RangS Blog</title>
+  <meta name="description" content="Pengalaman menggunakan AUR, cara kerja dibaliknya dan membuat package sendiri sebagai pengguna Arch Linux">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/arch-user-repository/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Arch User Repository: Pengalaman ekosistem AUR di Arch Linux">
+  <meta property="og:description" content="Pengalaman menggunakan AUR, cara kerja dibaliknya dan membuat package sendiri sebagai pengguna Arch Linux">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs-1.github.io/pages/arch-user-repository/pacman.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Arch User Repository: Pengalaman ekosistem AUR di Arch Linux">
+  <meta name="twitter:description" content="Pengalaman menggunakan AUR, cara kerja dibaliknya dan membuat package sendiri sebagai pengguna Arch Linux">
+  <meta name="twitter:image" content="https://rangs-1.github.io/pages/arch-user-repository/pacman.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Arch User Repository: Pengalaman ekosistem AUR di Arch Linux",
+    "description":"Pengalaman menggunakan AUR, cara kerja dibaliknya dan membuat package sendiri sebagai pengguna Arch Linux",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-07-18",
+    "dateModified":"2026-07-18",
+    "keywords":[
+      "Music",
+      "Song",
+      "theory",
+      "love"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../index.html">home</a>
+    <a href="../../dashboard/index.html" class="active">dashboard</a>
+    <a href="../../about/index.html">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/index.html">← semua artikel</a>
+        <span>·</span>
+        <span>[music]</span>
+        <span>·</span>
+        <span>2026-07-18</span>
+        <span>·</span>
+        <span>10 min read</span>
+      </div>
+      <h1 class="article-headline">Arch User Repository: Pengalaman ekosistem AUR di Arch Linux</h1>
+      <p class="article-summary">
+        Pengalaman menggunakan AUR, cara kerja dibaliknya dan membuat package sendiri sebagai pengguna Arch Linux
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#linux</span>
+        <span class="tag">#arch</span>
+        <span class="tag">#aur</span>
+        <span class="tag">#package</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <h2>Apa itu Arch User Repository (AUR)?</h2>
+      <p>
+        Arch User Repository (AUR) adalah repositori yang dikelola oleh komunitas pengguna Arch Linux. AUR memungkinkan pengguna untuk berbagi dan menginstal package yang tidak tersedia di repositori resmi Arch Linux.
+      </p>
+      <blockquote>
+        "The AUR is not supported by Arch. So there's like a huge disclaimer saying that if you're installing a package from this platform... you should verify the contents yourself because we don't verify anything here."
+        <br>
+        — Orhun Parmaksiz, Developer Advocate di Arch Linux
+      </blockquote>
+      <p>
+        Sebelum mempelajari lebih lanjut, kita akan bahas dulu tentang apa itu package
+      </p>
+
+      <h2>Package Manager</h2>
+      <p>
+        Jadi apa itu Package Manager? Package Manager adalah sebuah software yang digunakan untuk mengelola package di sistem operasi. Package Manager memudahkan pengguna untuk menginstal, menghapus, dan memperbarui software di sistem operasi mereka.
+      </p>
+      <p>Ada banyak Package Manager yang tersedia untuk sistem operasi manapun. Berikut adalah beberapa contohnya:</p>
+      <ol>
+        <li>APT (Advanced Package Tool) - digunakan di Debian dan Ubuntu</li>
+        <li>YUM (Yellowdog Updater Modified) - digunakan di CentOS dan Fedora</li>
+        <li>pacman - digunakan di Arch Linux</li>
+        <li>brew (HomeBrew) - digunakan di MacOS</li>
+        <li>winget (Windows Package Manager) - digunakan di Windows</li>
+      </ol>
+      <p>
+        Siapa di sini baru tahu kalau windows punya package manager sendiri?
+        Aku juga baru tahu saat aku hendak membuat Custom Wrapper CLI untuk windows.
+        Oh ya, jika ingin lihat proyek Custom Wrapper CLI-ku, bisa klik link berikut: <a href="https://github.com/RangS/Ferminal" target="_blank">Ferminal</a>
+      </p>
+
+      <h2>Pacman</h2>
+      <img src="pacman.png" alt="Logo Pacman Package Manager untuk Arch Linux" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Kita akan bahas package manager di arch linux yaitu Pacman. Jadi apa itu Pacman?
+        Pacman adalah package manager default arch linux. Dibuat dengan bahasa pemrograman C,
+        mengkombinasikan simplicity binary package format (.pkg.tar.zst) dengan sistem build pada Arch Linux,
+        Serta biasa dipakai untuk menginstall, menghapus dan update software.
+      </p>
+      <p>
+        Jujur saja saat aku menggunakan package manager di arch linux, aku agak kaget dengan kecepatannya.
+        Karena sebelumnya aku menggunakan package manager di ubuntu yaitu APT, dan menurutku APT itu agak lambat.
+        Dari yang kucari tahu, ternyata pacman menggunakan algoritma yang lebih efisien dibandingkan APT.
+        berfokus murni pada instalasi dan penyelesaian dependensi dasar tanpa otomatisasi berlebih.
+      </p>
+      <p>
+        Pacman tidak memproses pembaruan konfigurasi yang rumit atau skrip pasca-instalasi yang berat, serta langsung mengunduh dan mengekstrak tarball terkompresi secara efisien dengan manajemen basis data yang sederhana.
+      </p>
+      <p>Berikut contoh penggunaan Pacman:</p>
+      <pre><code>sudo pacman -Syu #Digunakan untuk update sistem
+sudo pacman -S package_name #Digunakan untuk menginstall package
+sudo pacman -Rns package_name #Digunakan untuk menghapus package
+sudo pacman -Qs package_name #Digunakan untuk mencari package yang terinstall
+sudo pacman -Ss package_name #Digunakan untuk mencari package secara online</code></pre>
+      <p>
+        Menurutku, kelebihan dari Arch Linux bukan hanya karena ia menganut filosofi 
+        KISS (Keep It Simple, Stupid!) dan rolling release, tapi juga karena pacman yang cepat dan efisien.
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/absolute-arch-linux-experience/" target="_blank">Absolute Arch Linux Experience</a></p>
+
+      <h2>Arch User Repository</h2>
+      <p>
+        Cukup sudah membahas pacman, saatnya kita bahas AUR.
+        Arch User Repository atau AUR adalah package manager buatan komunitas.
+        Dibuat dengan kecepatan yang sama dengan Pacman, AUR memungkinkan pengguna untuk menginstall package yang tidak tersedia di repositori resmi Arch Linux.
+        AUR menggunakan format package yang sama dengan Pacman, sehingga pengguna dapat menginstall package.
+      </p>
+      <p>
+        Untuk menggunakan AUR, kita harus menggunakan AUR Helper seperti Yay atau Paru.
+        AUR Helper adalah alat yang memudahkan pengguna dalam mengelola package dari AUR.
+        Oh ya, jika ingin tahu lebih lanjut tentang AUR Helper, bisa klik link berikut: <a href="https://wiki.archlinux.org/title/AUR_helpers" target="_blank">AUR Helper</a>
+      </p>
+      <p>
+        Cara menggunakannya cukup sama, misalnya untuk install package tinggal ketik yay -S package_name di terminal.
+        Seperti yang kusebut sebelumnya, AUR ini package dari komunitas, jadi soal keamanan pikirkan sendiri.
+        Sesuai dengan tujuan Arch Linux, sistem dikontrol penuh oleh pengguna.
+      </p>
+      <p>
+        Jika ingin install AUR Helper seperti yay atau paru bisa klik link berikut:
+        <ul>
+          <li><a href="https://github.com/jguer/yay" target="_blank">Yet Another Yogurt</a></li>
+          <li><a href="https://github.com/morganamilo/paru" target="_blank">Paru</a></li>
+        </ul>
+      </p>
+
+      <h2>SSH Key Public dan Private untuk AUR</h2>
+      <img src="ssh.png" alt="Logo SSH" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Aku punya aplikasi python dengan nama <a href="https://github.com/RangS-1/Ferminal" target="_blank">Ferminal</a>.
+        Jadi aku akan membuat aplikasi python ini bisa diinstall dengan AUR helper (yay dan paru).
+      </p>
+      <p>
+        Pertama aku membuat akun di website <a href="https://aur.archlinux.org/" target="_blank">AUR</a>
+        Aku masukkan email, username dan lain-lain, miriplah dengan membuat akun di website lain.
+        Setelahnya aku harus memasukkan SSH Public Key ke akun AUR-ku, karena untuk mengupload package ke AUR harus menggunakan SSH.
+      </p>
+      <p>
+        Untuk membuat SSH Public Key, aku menggunakan perintah ssh-keygen di terminal seperti berikut:
+      </p>
+      <pre><code>ssh-keygen -t ed25519 -f ~/.ssh/aur</code></pre>
+      <p>
+        Inti dari perintah tersebut bertujuan untuk membuat ssh key ke file ~/.ssh/aur, dengan tipe ed25519 (Semacam RSA).
+        Setelah itu aku menyalin isi dari file ~/.ssh/aur.pub ke akun AUR-ku, dan menambahkan SSH Key ke akun AUR-ku.
+        Oh, sebelum itu, harus install dulu package openssh di arch linux, karena package ini belum terinstall secara default.
+        Dan juga saat membuat ssh key, jangan lupa untuk menambahkan passphrase agar lebih aman, atau kalau tidak mau juga tidak apa-apa.
+      </p>
+      <p>
+        Kira-kira isi dari file ~/.ssh/aur.pub seperti ini:
+      </p>
+      <pre><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEEXhdVlKGPDumLNQbrXI0E/NUyBgikBvkyi1tWdFe7i rangs@rangs</code></pre>
+      <p>
+        Ingat bahwa ini adalah contoh, jadi jangan menyalin isi dari file ~/.ssh/aur.pub-ku, karena itu adalah SSH Key-ku.
+        Tapi tak apa sih, karena ini adalah SSH Public Key. Jadi saat kau membuat SSH Key, akan ada dua kunci.
+        Kunci publik (public key) dan kunci privat (private key). Kunci publik bisa dibagikan ke orang lain, tapi kunci privat harus dijaga kerahasiaannya.
+        kunci publik tersimpan di file ~/.ssh/aur.pub, sedangkan kunci privat tersimpan di file ~/.ssh/aur.
+      </p>
+      <p>
+        Satu lagi, setelah copas isi dari file ~/.ssh/aur.pub ke akun AUR, jangan lupa untuk update account.
+        Bodohnya aku malah lupa update account, dan waktuku yang terbuang untuk troubleshooting sampai 1 jam lebih. Jadi jangan sampai lupa update account setelah menambahkan SSH Key (Public Key tentunya).
+      </p>
+      <p>
+        Aku lupa mengatakan apa itu SSH. Jadi SSH (Secure Shell) adalah protokol jaringan yang digunakan untuk mengakses komputer secara aman melalui jaringan yang tidak aman. SSH menggunakan enkripsi untuk melindungi data yang dikirimkan antara komputer klien dan server.
+        Bisa dibilang remote kendali jarak jauh, tapi aman.
+      </p>
+
+      <h2>PKGBUILD, .SRCINFO, pyproject.toml</h2>
+      <p>
+        Kita mulai masuk ke inti dari AUR, yaitu PKGBUILD. PKGBUILD adalah file skrip yang digunakan untuk membangun package di Arch Linux. File ini berisi informasi tentang package, seperti nama, versi, deskripsi, dependensi, dan cara membangunnya.
+        PKGBUILD ditulis dalam bahasa pemrograman Bash, dan biasanya disimpan di direktori package. PKGBUILD digunakan oleh AUR Helper untuk membangun package dari source code.
+      </p>
+      <p>
+        Berikut adalah contoh struktur folder yang kugunakan untuk Ferminal:
+      </p>
+      <pre><code>Ferminal/
+  └── docs/
+  └── src/
+    └── ferminal/
+      ├── __init__.py
+      ├── main.py
+      └── utils.py
+  ├── .SRCINFO
+  ├── PKGBUILD
+  ├── pyproject.toml
+  ├── LICENSE
+  ├── README.md
+</code></pre>
+      <p>
+        Kita bahas satu persatu dari file PKGBUILD-ku. Berikut adalah isi dari file PKGBUILD-ku:
+      </p>
+      <pre><code>pkgname=ferminal
+_repo=Ferminal
+pkgver=1.3.3
+pkgrel=1
+pkgdesc="Custom Wrapper CLI to make your work faster"
+arch=('any')
+url="https://github.com/RangS-1/ferminal"
+license=('MIT')
+
+depends=(
+    'python'
+    'python-requests'
+    'python-colorama'
+)
+
+makedepends=(
+    'python-build'
+    'python-installer'
+    'python-wheel'
+    'python-setuptools'
+)
+
+source=(
+    "$pkgname-$pkgver.tar.gz::https://github.com/RangS-1/${_repo}/archive/refs/tags/v$pkgver.tar.gz"
+)
+
+sha256sums=('14a0a1315ff969871d0cd47be5bdcd779a52427ad33ab2e9fbbee408132784ba')
+
+build() {
+    cd "$srcdir/${_repo}-${pkgver}"
+    python -m build --wheel --no-isolation
+}
+
+package() {
+    cd "$srcdir/${_repo}-${pkgver}"
+
+    python -m installer \
+        --destdir="$pkgdir" \
+        dist/*.whl
+
+    install -Dm644 LICENSE \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}</code></pre>
+    <p>
+      Mulai dari baris pertama, pkgname adalah nama package yang akan diinstall.
+      Untuk pkgname harus menggunakan huruf kecil semua, sesuai pedoman Arch Linux.
+      variabel _repo untuk nama repository github yang ada huruf kapital. Tapi seperti yang guruku katakan,
+      lebih baik menggunakan huruf kecil untuk nama repo. Aku jadi tahu alasannya ternyata untuk ini.
+      pkgver untuk versi package, pkgrel untuk release package, pkgdesc untuk deskripsi package, arch untuk arsitektur package, url untuk link ke website package, license untuk lisensi package.
+      depends untuk dependensi package, makedepends untuk dependensi build package, source untuk sumber package, sha256sums untuk checksum package.
+      build() adalah fungsi untuk membangun package, package() adalah fungsi untuk menginstall package.
+    </p>
+    <p>Baca Juga: <a href="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer/" target="_blank">Terminal: Kawan Sejati Programmer</a></p>
+    <p>
+      Sebelum membuat PKGBUILD, kau harus membuat github release dan github tag agar bisa digunakan.
+      fungsi source() digunakan untuk menginstall source code dari repository github.
+      Sementara sha256sum digunakan untuk validasi file. 
+    </p>
+    <p>
+      Untuk mendapatkan sha256sum, buka github lalu ke github release (Berikut contoh link ke github release: <a href="https://github.com/RangS-1/Ferminal/releases/tag/v1.3.3">Ferminal v1.3.3</a>).
+      Klik Source Code (tar.gz) untuk mendownload source code, lalu buka terminal dan ketik perintah berikut:
+    </p>
+    <pre><code>sha256sum ferminal-1.3.3.tar.gz</code></pre>
+      <p>
+        Setelah itu akan muncul output seperti ini:
+      </p>
+      <pre><code>14a0a1315ff969871d0cd47be5bdcd779a52427ad33ab2e9fbbee408132784ba  ferminal-1.3.3.tar.gz</code></pre>
+      <p>
+        Nah, yang diambil adalah bagian sebelum nama file, yaitu 14a0a1315ff969871d0cd47be5bdcd779a52427ad33ab2e9fbbee408132784ba.
+        Itu adalah sha256sum dari file ferminal-1.3.3.tar.gz. sha256sum ini cukup penting untuk validasi file, agar tidak ada yang mengubah file tersebut dan sesuai dengan source code.
+      </p>
+      <p>
+        Setelahnya kita buat file .SRCINFO dengan command berikut:
+      </p>
+      <pre><code>makepkg --printsrcinfo > .SRCINFO</code></pre>
+      <p>Itu akan otomatis membuat file .SRCINFO, .SRCINFO ini semacam file teks metadata dalam ekosistem Arch Linux (dan distro berbasis Arch seperti ALPM/Makedeb).</p>
+      <p>
+        Oh ya, file pyproject.toml itu digunakan untuk membangun package python, dan file README.md itu digunakan untuk deskripsi package di Github. Berikut contoh isi pyproject.toml
+      </p>
+      <pre><code>[project]
+name = "ferminal"
+version = "1.3.3"
+description = "Custom Wrapper CLI to make your work faster"
+authors = [
+    {name="RangS"}
+]
+
+dependencies = [
+    "requests",
+    "colorama",
+]
+
+[project.scripts]
+ferminal = "ferminal.main:main"
+
+[build-system]
+requires = [
+    "setuptools>=61",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"</code></pre>
+    <p>
+      Ingat pada bagian depends? bagian itu digunakan untuk dependensi apa yang digunakan dalam aplikasi yang kita buat.
+      Aku hanya menggunakan dependensi eksternal dengan nama colorama, tapi di arch linux namanya python-colorama. Jadi harus sesuaikan antara nama package python dan nama package arch linux.
+    </p>
+    <p>
+      Setelah semua siap, kita masukkan kode berikut:
+    </p>
+    <pre><code>makepkg -si</code></pre>
+    <p>
+      Ini digunakan untuk membangun package di sistem komputer kita. Jadi makepkg akan membaca file PKGBUILD dan membangun package sesuai dengan instruksi yang ada di dalamnya.
+      Sebelum selesai, aku sarankan untuk menginstall namcap dengan perintah sudo pacman -S namcap. Namcap ini digunakan untuk memeriksa package yang kita buat, apakah ada kesalahan atau tidak.
+    </p>
+    <pre><code>namcap PKGBUILD</code></pre>
+    <p>
+      Jika tidak ada error, kita bisa masuk ke langkah berikutnya.
+    </p>
+
+    <h2>Kloning Repository AUR</h2>
+    <p>
+      Aku agak bingung saat pertama kali kloning repository AUR.
+      Karena aku pikir AUR itu mirip dengan github. Kita klik New Repository lalu tinggal clone, ternyata tidak seperti itu.
+      Di AUR, kita langsung cloning tanpa klik New Repository seperti Github. Misalnya tinggal masukkan kode berikut: 
+    </p>
+    <pre><code>git clone ssh://aur@aur.archlinux.org/nama_aplikasimu.git</code></pre>
+    <p>
+      Ini secara otomatis membuat repository untuk AUR jika belum ada.
+      Loh, kalau sudah ada? Kalau sudah ada yang kau masih bisa clone, hanya saja kau tidak punya akses untuk push ke repository tersebut.
+      Jadi sebelumnya, buka dulu website <a href="aur.archlinux.org" target="_blank">aur.archlinux.org</a>,
+      Di sebelah kanan cari dulu packagenya. Jika sudah ada yang pakai, ya mau tak mau cari nama lain.
+      Untungnya saatku ingin upload package Ferminal, tidak ada package AUR dengan nama ferminal juga.
+    </p>
+    <p>
+      Setelah git clone, kan akan ada folder kosong tuh. misalnya folder dengan nama ferminal. 
+      Kita tinggal copy file PKGBUILD dan .SRCINFO kedalamnya.
+      Jika sudah copy paste, tinggal masukkan kode berikut:
+    </p>
+    <pre><code>git add .
+git commit -m "Pesan commit apa ajalah bebas."
+git push origin master</code></pre>
+    <p>
+      Bagi kalangan programmer, pasti menyadari sesuatu yang unik di sini.
+      Kenapa kita harus push dengan nama master? bukankah di Github bernama Main?.
+      Dari yang kutanyakan pada AI, nama master sudah lama digunakan pada awal pengembangan Git.
+      Tapi hari kehari komunitas programmer mulai mengubah nama branch utama mereka dengan Main.
+      Alasannya adalah karena namanya lebih netral saja. Sebenarnya branch main dan master tidak ada bedanya sama sekali.
+    </p>
+    <p>Baca Juga: <a href="https://rangs-1.github.io/pages/programming-yang-sebenarnya/" target="_blank">Programming yang Sebenarnya</a></p>
+    <p>
+      Waduh, aku lupa bahwa kau harus membuat file config di folder ~/.ssh/.
+      Intinya buat file kosong dengan perintah touch atau semacamnya dengan nama config. lalu masukkan kode berikut:
+    </p>
+    <pre><code>Host aur.archlinux.org
+    HostName aur.archlinux.org
+    User aur
+    IdentityFile ~/.ssh/aur
+    IdentitiesOnly yes</code></pre>
+    <p>Jadi itu digunakan agar kloning ssh bisa dilakukan dan otomatis disamakan antara public key dan private key.
+      Tahukan kalau file ~/.ssh/aur itu private key-mu?
+    </p>
+    <p>
+      jika kau tidak bisa push, coba lihat kau sedang di branch mana. Ubah branch dengan git branch -M master.
+      Setelah selesai semua proses panjang tersebut, waktunya kita cek di AUR.
+    </p>
+    <img src="recent.png" alt="Screenshot Recent Updates website AUR Arch Linux" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+    <p>
+      Di sebelah kanan, ada Recent Updates. Nah jika packagemu ada, berarti berhasil. Waktunya install dengan Yay!.
+    </p>
+    <pre><code>yay -Rns nama_package #Digunakan untuk hapus package sebelumnya
+Siapa tahu kau masih menyimpan hasil dari makepkg -si sebelumnya.
+
+Masukkan kode berikut:
+yay -S nama_package</code></pre>
+    <p>
+      Jika berhasil, harusnya aplikasimu sudah bisa digunakan dengan mengetik nama aplikasi/packagenya di terminal.
+      Yay! berhasil mengupload dan menginstall aplikasi ke AUR. Oh, jika diminta passphrase saat push tinggal masukkan saja passphrasenya, jangan bilang lupa sama passphrase sendiri -_-.
+    </p>
+
+    <h2>Kesimpulan</h2>
+    <p>
+      Jujur saja saat aku melakukan semua ini terasa sangat menyenangkan.
+      Aku belajar apa itu AUR, sejarah git tentang nama main dan master, tak lupa juga pengalaman Upload Aplikasi/Package ini katanya tidak akan diajarkan diperkuliahan.
+      Murni pengalaman pribadi. Intinya disini kita hanya perlu clone repository aur, lalu masukkan file PKGBUILD dan .SRCINFO saja. Jika ingin belajar lebih lanjut, silakan tonton video berikut: 
+      <a href="https://youtu.be/crnGzF43aoc?si=2g99vevDM98jWbbs">Link ke Video
+        <img src="thumbnail.png" alt="Thumbnail Youtube from Brodie Robertson" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      </a>
+    </p>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/index.html" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'arch-user-repository')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

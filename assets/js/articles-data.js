@@ -67,9 +67,20 @@ const ARTICLES = [
     summary: "Apa yang membuat lagu ini begitu menyentuh hati? Begitu berbeda dengan lagu cinta lainnya?",
     category: "music",
     tags: ["music", "song", "theory", "love"],
-    date: "2026-06-30",
+    date: "2026-07-11",
     readTime: "15 min",
     url: "/pages/the-bird-song/"
+  },
+  {
+  id: 7,
+    title: "Arch User Repository: Pengalaman ekosistem AUR di Arch Linux",
+    slug: "arch-user-repository",
+    summary: "Pengalaman menggunakan AUR, cara kerja dibaliknya dan membuat package sendiri sebagai pengguna Arch Linux",
+    category: "technology",
+    tags: ["linux", "arch", "aur", "package", "repository", "yay"],
+    date: "2026-07-18",
+    readTime: "10 min",
+    url: "/pages/arch-user-repository/"
   }
 ];
 
