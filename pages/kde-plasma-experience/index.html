@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KDE Plasma: Desktop Environment paling user friendly untuk Linux — ./RangS Blog</title>
+  <meta name="description" content="Pengalaman menggunakan KDE Plasma, Kelebihan dan Kekurangannya dibahas di sini!">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/arch-user-repository/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="KDE Plasma: Desktop Environment paling user friendly untuk Linux">
+  <meta property="og:description" content="Pengalaman menggunakan KDE Plasma, Kelebihan dan Kekurangannya dibahas di sini!">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs-1.github.io/pages/arch-user-repository/pacman.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KDE Plasma: Desktop Environment paling user friendly untuk Linux">
+  <meta name="twitter:description" content="Pengalaman menggunakan KDE Plasma, Kelebihan dan Kekurangannya dibahas di sini!">
+  <meta name="twitter:image" content="https://rangs-1.github.io/pages/arch-user-repository/pacman.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"KDE Plasma: Desktop Environment paling user friendly untuk Linux",
+    "description":"Pengalaman menggunakan KDE Plasma, Kelebihan dan Kekurangannya dibahas di sini!",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-07-26",
+    "dateModified":"2026-07-26",
+    "keywords":[
+      "Arch",
+      "Linux",
+      "Environment",
+      "KDE Plasma"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../index.html">home</a>
+    <a href="../../dashboard/index.html" class="active">dashboard</a>
+    <a href="../../about/index.html">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/index.html">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-07-26</span>
+        <span>·</span>
+        <span>15 min read</span>
+      </div>
+      <h1 class="article-headline">Arch User Repository: Pengalaman ekosistem AUR di Arch Linux</h1>
+      <p class="article-summary">
+        Pengalaman menggunakan AUR, cara kerja dibaliknya dan membuat package sendiri sebagai pengguna Arch Linux
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#linux</span>
+        <span class="tag">#arch</span>
+        <span class="tag">#aur</span>
+        <span class="tag">#package</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      
+      
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/index.html" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'kde-plasma-experience')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

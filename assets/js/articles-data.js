@@ -79,8 +79,19 @@ const ARTICLES = [
     category: "technology",
     tags: ["linux", "arch", "aur", "package", "repository", "yay"],
     date: "2026-07-18",
-    readTime: "10 min",
+    readTime: "25 min",
     url: "/pages/arch-user-repository/"
+  },
+  {
+  id: 8,
+    title: "KDE Plasma: Desktop Environment paling user friendly untuk Linux",
+    slug: "kde-plasma-experience",
+    summary: "Pengalaman menggunakan KDE Plasma, Kelebihan dan Kekurangannya dibahas di sini!",
+    category: "technology",
+    tags: ["linux", "arch", "environment", "package", "desktop environment", "KDE Plasma"],
+    date: "2026-07-26",
+    readTime: "15 min",
+    url: "/pages/kde-plasma-experience/"
   }
 ];
 
