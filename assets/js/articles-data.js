@@ -90,7 +90,7 @@ const ARTICLES = [
     category: "technology",
     tags: ["linux", "arch", "environment", "package", "desktop environment", "KDE Plasma"],
     date: "2026-07-26",
-    readTime: "15 min",
+    readTime: "10 min",
     url: "/pages/kde-plasma-experience/"
   }
 ];
