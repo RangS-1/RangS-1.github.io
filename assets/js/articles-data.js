@@ -92,6 +92,17 @@ const ARTICLES = [
     date: "2026-07-26",
     readTime: "10 min",
     url: "/pages/kde-plasma-experience/"
+  },
+  {
+  id: 9,
+    title: "Root: Mode paling berbahaya di Linux",
+    slug: "mode-root-linux",
+    summary: "Penjelasan lengkap tentang mode root di Linux!",
+    category: "technology",
+    tags: ["linux", "root", "sudo"],
+    date: "2026-08-1",
+    readTime: "10 min",
+    url: "/pages/mode-root-linux/"
   }
 ];
 
