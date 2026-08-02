@@ -97,7 +97,7 @@ const ARTICLES = [
   id: 9,
     title: "Root: Mode paling berbahaya di Linux",
     slug: "mode-root-linux",
-    summary: "Penjelasan lengkap tentang mode root di Linux!",
+    summary: "Penjelasan lengkap tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.",
     category: "technology",
     tags: ["linux", "root", "sudo"],
     date: "2026-08-1",
