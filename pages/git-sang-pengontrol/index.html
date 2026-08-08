@@ -97,75 +97,130 @@
         <span>·</span>
         <span>[technology]</span>
         <span>·</span>
-        <span>2026-07-26</span>
+        <span>2026-08-08</span>
         <span>·</span>
-        <span>10 min read</span>
+        <span>25 min read</span>
       </div>
-      <h1 class="article-headline">Root: Mode paling berbahaya di Linux</h1>
+      <h1 class="article-headline">Git: Sang pengontrol versi terbaik andalan programmer</h1>
       <p class="article-summary">
-        Penjelasan lengkap tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.
+        Apa itu Git? seberapa penting ia bagi developer? kita bahas lengkap di artikel ini.
       </p>
       <div class="article-tags-row">
         <span class="tag">#linux</span>
-        <span class="tag">#arch</span>
-        <span class="tag">#root</span>
-        <span class="tag">#sudo</span>
+        <span class="tag">#git</span>
+        <span class="tag">#version-control</span>
+        <span class="tag">#programming</span>
       </div>
     </div>
 
     <div class="article-body">
-      <h2>Apa itu Mode Root?</h2>
-      <p>Mode root adalah mode di mana pengguna memiliki akses penuh ke sistem operasi, termasuk kemampuan untuk mengubah atau menghapus file penting.</p>
+      <h2>Apa itu Git?</h2>
+      <p>Git adalah sistem kontrol versi yang digunakan untuk melacak perubahan dalam file dan koordinasi kerja antara beberapa developer.</p>
       <blockquote>
-        With great power comes great responsibility.
+        "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'"
         <br>
+        — Linus Torvalds, pencipta Git 
       </blockquote>
       <p>
-        Pada artikel ini, kita akan bahas tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.
+        Pada artikel ini, kita akan bahas tentang Git, kegunaannya dalam keseharian developer.
       </p>
 
-      <h2>Mode Root</h2>
-      <img src="sudo.png" alt="Root Mode Logo" style="width:100%;border-radius:8px;margin:24px 0;">
+      <h2>Git</h2>
+      <img src="gitlogo.png" alt="Git Logo" style="width:100%;border-radius:8px;margin:24px 0;">
       <p>
-        Mode root adalah mode di mana pengguna memiliki akses penuh ke sistem operasi, termasuk kemampuan untuk mengubah atau menghapus file penting.
+        Jadi apa itu Git? Git adalah sistem kontrol versi yang digunakan untuk melacak perubahan dari dalam file. 
+        Kenapa file? karena Git tidak hanya melacak perubahan dari source code, tetapi juga bisa melacak perubahan dari file lain seperti dokumen, gambar, video dan lainnya.
+        Apapun file yang kau buat, Git bisa melacaknya. Bahkan Git bisa melacak perubahan dari file yang tidak sengaja dihapus.
       </p>
       <p>
-        Linux memiliki filosofi bahwa "Everything is a File", mengartikan bahwa semua hal entah itu service, software, config adalah file yang bisa dipakai bebas oleh pengguna Linux.
+        Git juga bisa digunakan untuk mengembalikan file yang sudah dihapus, atau mengembalikan file ke versi sebelumnya.
+        Git juga bisa digunakan untuk menggabungkan perubahan dari beberapa orang yang bekerja pada proyek yang sama.
+        Jadi Git sangat berguna bagi developer yang bekerja dalam tim, karena Git bisa melacak perubahan dari setiap orang yang bekerja pada proyek tersebut.
       </p>
 
-      <h2>Cara masuk mode root</h2>
+      <h2>Install Git</h2>
       <p>
-        Untuk masuk ke mode root, pengguna hanya perlu mengetik perintah sudo di terminal.
+        Tapi sebelum menggunakannya, kita harus menginstall Git terlebih dahulu. Bagi pengguna Windows silakan kunjungi website <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a> Lalu klik bagian install dan pilih untuk windows.
+        Begitu pula dengan MacOS, tinggal klik bagian install dan pilih untuk MacOS. Bagi pengguna Linux, silakan buka terminal dan install dengan package manager masing-masing:
       </p>
-      <pre><code>sudo su</code></pre>
-      <p>
-        Setelahnya, pengguna akan diminta untuk memasukkan password (Itupun jika mode root pernah diberi password sebelumnya).
-        Biasanya saat masuk mode root, tampilan shell di terminal ada tulisan root di belakangnya.
-      </p>
-      <img src="root.png" alt="Root Mode Logo" style="width:100%;border-radius:8px;margin:24px 0;">
-      <p>
-        Jika sudah masuk dalam mode root, itu artinya kalian sudah masuk sebagai orang yang dapat melakukan apapun di dalam sistem.
-      </p>
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/absolute-arch-linux-experience/" target="_blank">Absolute Arch Linux Experience</a></p>
+      <pre><code># Distro berbasis Debian/Ubuntu
+sudo apt update && sudo apt install git
 
-      <h2>Kegunaan mode root</h2>
+# Distro berbasis Arch Linux
+sudo pacman -Syu git
+
+# Distro berbasis Fedora
+sudo dnf install git</code></pre>
       <p>
-        Mode root memiliki banyak kegunaan, terutama dalam mengakses file yang ada didalam sistem linux. Contohnya seperti mengakses bootloader grub, mengakses mkinitcpio untuk membuat initramfs image, update sistem dan masih banyak lagi.
+        Setelah menginstall Git, silakan buka terminal. jika di Windows bisa menggunakan Git Bash, PowerShell atau bahkan CMD.
+        Lalu cek versi dengan perintah:
+      </p>
+      <pre><code>git --version</code></pre>
+      <img src="gitversion.png" alt="Git Version Logo" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jika sudah muncul versi Git, berarti Git sudah terinstall.
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer/" target="_blank">Terminal sang kawan programmer</a></p>
+
+      <h2>Penggunaan Git</h2>
+      <p>
+        Kita sudah bisa menggunakan git sekarang. Tapi sebelum itu, kita harus mengatur nama dan email terlebih dahulu. Karena Git akan menggunakan nama dan email tersebut untuk menandai setiap perubahan yang kita lakukan.
       </p>
       <p>
-        Tidak hanya itu, Mode Root juga sering digunakan untuk membuat user, menambah user kedalam group atau sekedar menghapus user.
-        Yang paling penting adalah mode root dapat menjalankan perintah yang memerlukan akses root. Sebagai contoh coba lihat kode bash berikut:
+        Buka terminal dan ketik perintah berikut:
       </p>
-      <pre><code>#!/bin/bash
-if [[ $EUID -ne 0 ]]; then
-    echo "Error: Sudo is needed!"
-    exit 1
-fi</code></pre>
+      <pre><code>git config --global user.name "Nama mu"
+git config --global user.email "emailmu@gmail.com"</code></pre>
       <p>
-        Dari kode tersebut, mengartikan bahwa file/script tersebut hanya bisa diakses dengan root.
-        kedengarannya powerful ya, tetapi muncul masalah yang lebih besar jika tidak berhati-hati.
+        Setelah mengatur nama dan email, kita bisa mulai menggunakan Git.
+        Git tidak akan tahu apa yang perlu dilacak olehnya, karena itu kita harus memberitahu Git dengan perintah:
       </p>
-      
+      <pre><code>git init</code></pre>
+      <p>
+        Oh ya, jika kau menggunakan VSCode, kau bisa menggunakan terminal bawaan VSCode dengan menekan tombol Ctrl+Shift+` (backtick) atau klik menu Terminal > New Terminal.
+      </p>
+      <p>
+        Setelah memberitahu Git, kita perlu menambahkan file ke staging area. Apa itu Staging Area?
+      </p>
+
+      <h2>Staging Area</h2>
+      <p>
+        Staging Area adalah area sementara yang digunakan untuk menampung perubahan yang akan dikommit. Jadi sebelum kita mengkommit perubahan, kita harus menambahkan file ke Staging Area terlebih dahulu.
+        Untuk menambahkan file ke Staging Area, kita bisa menggunakan perintah:
+      </p>
+      <pre><code>git add .
+#Tanda titik diatas mengatakan bahwa kita memasukkan
+#Semua file ke staging area</code></pre>
+      <p>
+        Bayangkan sebuah kotak berisi laporan, dan kita ingin mengirimkan laporan tersebut ke atasan. Kita harus menaruh laporan tersebut ke dalam kotak terlebih dahulu sebelum mengirimkannya.
+        Begitu pula dengan Git, kita harus menaruh perubahan yang kita lakukan ke Staging Area terlebih dahulu sebelum mengkommitnya. Nah, apa itu commit?
+      </p>
+
+      <h2>Commit</h2>
+      <p>
+        Commit adalah perintah yang digunakan untuk menyimpan perubahan yang kita lakukan. Ingat staging area sebelumnya? ya, commit akan menyimpan perubahan yang ada di Staging Area ke dalam repository Git.
+        Untuk melakukan git commit, masukkan perintah:
+      </p>
+      <pre><code>git commit -m "Pesan Kommit"</code></pre>
+      <p>
+        Bayangkan kotak laporan sementara sebelumnya. Setelah kita yakin dengan perubahan yang dilakukan sebelumnya.
+        Git atau bisa kita anggap sebagai manajer akan mendatangi kita untuk menyimpan hasil perubahan oleh Git.
+        Lalu kita tidak hanya memberikan laporan tersebut kepada manajer (Git), tetapi juga memberinya pesan.
+        Misalnya "Pak Manajer, ini laporan saya tolong dicatat ya!", lalu pak manajer berkata "Sip!".
+      </p>
+      <p>
+        Sejauh ini kita hanyalah menggunakan Git dengan diri sendiri, lalu bagaimana dengan orang lain? Disitulah Git Branch muncul.
+      </p>
+
+      <h2>Git Branch</h2>
+      <p>
+        Bayangkan seperti ini, Bos kita memiliki ruangan utama dengan nama main/master.
+        Tentunya kita sebagai pegawai tidak bisa mengubah hasil kerja bos kita kan?
+        Nah, kita harus membuat kantor sendiri untuk membuat perubahan sendiri. Kurang lebih itulah konsep dari Git Branch.
+        Untuk membuat Branch, masukkan perintah berikut:
+      </p>
+      <pre><code>git branch</code></pre>
+
       <h2>Bahaya mode root</h2>
       <p>
         Kita masuk ke bagian bahaya dari mode root. Seperti yang kukatakan sebelumnya, bahwa "Everything is a file".
