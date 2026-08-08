@@ -219,53 +219,53 @@ git config --global user.email "emailmu@gmail.com"</code></pre>
         Nah, kita harus membuat kantor sendiri untuk membuat perubahan sendiri. Kurang lebih itulah konsep dari Git Branch.
         Untuk membuat Branch, masukkan perintah berikut:
       </p>
-      <pre><code>git branch</code></pre>
-
-      <h2>Bahaya mode root</h2>
+      <pre><code>git branch <i>nama_branch</i></code></pre>
       <p>
-        Kita masuk ke bagian bahaya dari mode root. Seperti yang kukatakan sebelumnya, bahwa "Everything is a file".
-        Artinya, semua hal yang ada di linux adalah file. Bahkan sesuatu yang penting sekalipun seperti bootloader dianggap sebagai file.
+        Nah, kita bisa membuat perubahan di sini. Seperti tadi, kita masukkan ke staging area lalu commit.
+        Ingat bahwa kode diatas hanya membuat branch, kita belum masuk ke dalamnya. Untuk itu, kita harus masuk ke branch atau kantor kita sendiri dengan checkout.
       </p>
+      
+      <h2>Git Checkout</h2>
       <p>
-        Bagi orang awam yang baru terjun ke dunia linux, ingat satu kalimat ini "Jangan mudah percaya dengan pengguna linux".
-        Mengapa? karena terkadang pengguna linux yang senior ataupun yang sehar-hari menggunakan linux memintamu untuk memasukkan perintah-perintah khusus seperti:
+        Bayangkan Git Checkout adalah rute jalan. Git Checkout digunakan untuk pindah dari satu branch ke branch lainnya.
+        Seolah kita masuk kantor orang lain. Dengan berada di kantor orang lain, kita bisa melihat kode yang mereka ubah.
+        Untuk menggunakan git checkout, masukkan perintah berikut:
       </p>
-      <pre><code>sudo rm -rf /</code></pre>
+      <pre><code>git checkout <i>nama_branch</i></code></pre>
       <p>
-        perintah tersebut mungkin terlihat sederhana, terutama bagi pengguna awam yang berkemungkinan menjalankannya di terminal.
-        Tak ada yang salah dari perintah tersebut, hanya saja huruf "/" bisa sangat berbahaya.
+        Sedikit tips di sini, jika kita ingin membuat branch atau kantor sendiri sekaligus masuk ke dalamnya. Kita bisa gunakan: 
       </p>
+      <pre><code>git checkout -b <i>nama_branch</i></code></pre>
       <p>
-        Biar kujelaskan, perintah tersebut adalah perintah untuk menghapus file tanpa kompromi.
-        sudo mengartikan bahwa kau menjalankan ini sebagai root, rm untuk hapus file, -rf untuk menghapus file secara paksa dan / adalah directory atau folder.
-      </p>
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Pengalaman Arch User Repository</a></p>
-      <p>
-        Ini tak bisa dianggap main-main loh, karena kode tersebut akan menghapus semua file yang ada di dalam komputermu tanpa terkecuali.
-        Bahkan sempat terjadi kesalahan yang dilakukan oleh pegawai website gitlab (website CI/CD terbesar).
-        Hanya karena salah ketik ia tak sengaja menghapus sistem yang berjalan 6 jam sebelumnya.
-        Jadi 6 jam sebelumnya yang berisi commit message, pull request dan lainnya terhapus seketika.
+        Dengan begitu, kita bisa membuat sekaligus masuk ke kantor sendiri. Jika bos kita ingin mengambil hasil pekerjaan kita bagaimana?
+        Di situlah git merge beraksi.
       </p>
 
-      <h2>Mitigasi mode root</h2>
+      <h2>Git Merge</h2>
       <p>
-        Saat ini, para hacker di seluruh dunia mulai mencari celah di dalam server linux, terutama celah untuk melakukan privilege escalation atau yang membuat hacker berada dalam mode root.
-        Jadi gunakan password yang sulit untuk ditebak atau hati-hati dengan aplikasi yang kau install.
+        Git Merge digunakan untuk menggabungkan hasil kerja orang lain dengan milik kita.
+        Misal bos kita berada di branch main, maka ia hanya perlu menggunakan perintah:
       </p>
+      <pre><code>git merge <i>nama_branch</i></code></pre>
       <p>
-        Aku pernah ikut tantangan capture the flag, yang dimana aku harus masuk ke dalam sebuah sistem dengan ssh dan masuk sebagai root user.
-        Aku di sini menggunakan vim untuk masuk ke dalam mode root. Aku tak akan memberikan kodenya di sini karena sebuah sistem linux yang memiliki celah privilege escalation dianggap kerentanan kritis.
+        Selesai, dengan begitu branch milik kita sudah digabungkan dengan milik bos.
       </p>
+
+      <h2>Git di VSCode</h2>
+      <img src="screenshotgit.png" alt="Screenshot Git di VSCode" style="width:100%;border-radius:8px;margin:24px 0;">
       <p>
-        Semenjak kejadian di Gitlab, developer linux sadar bahwa yang mereka buat ini adalah sesuatu yang berbahaya.
-        Sekarang kebanyakan distro linux sudah memberikan peringatan jika tak sengaja melakukan perintah tersebut. Tetapi perintah tersebut masih bisa dilakukan dengan memasukkan flag:
+        Biasanya, VSCode memiliki git yang sudah terpasang. Jadi seharusnya penggunaan Git lebih mudah.
+        Dan juga, kau bisa melihat perubahan kode atau file secara visual.
       </p>
-      <pre><code>--no-preserve-root</code></pre>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/programming-yang-sebenarnya/" target="_blank">Programming yang sebenarnya</a></p>
 
       <h2>Kesimpulan</h2>
       <p>
-        Berhati-hatilah saat menggunakan linux. Setiap perintah yang dijalankan di terminal linux akan menghasilkan yang kau minta sebelumnya. Juga menurutku jika komputer atau laptopmu adalah komputer dengan spek gahar dan kau bukan seorang developer, kau tak punya alasan untuk masuk dunia linux. Kecuali jika kau memang ingin belajar ya silakan saja. Kusarankan untuk tonton video berikut:
-        <a href="https://youtu.be/ZhQKDe8zz7Q?si=QA7lmLmGZ2i0HjZc" target="_blank">
+        Jujur saja Git adalah alat yang sangat powerful. Di era AI sekalipun, Git tetap bertahan dengan kegunaannya yang tidak bisa digantikan.
+        Mungkin sulit diawal-awal, tapi lama-kelamaan juga akan terbiasa, terlebih lagi dengan banyaknya extensi, plugin ataupun mod Git, harusnya tidak akan sesulit itu.
+        Jika ingin paham lebih lanjut silakan cek video berikut:
+        <a href="https://youtu.be/mAFoROnOfHs?si=X31-iyavqil8nhPW" target="_blank">
+          Link ke Video.
           <img src="thumbnail.png" alt="Thumbnail Youtube from Witzdome" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
         </a>
       </p>
@@ -292,7 +292,7 @@ git config --global user.email "emailmu@gmail.com"</code></pre>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof ARTICLES === 'undefined') return;
-      const related = ARTICLES.filter(a => a.slug !== 'kde-plasma-experience')
+      const related = ARTICLES.filter(a => a.slug !== 'git-sang-pengontrol')
         .sort(() => Math.random() - 0.5).slice(0, 3);
       const container = document.getElementById('relatedList');
       related.forEach(article => {
