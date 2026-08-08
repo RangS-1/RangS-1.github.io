@@ -100,9 +100,20 @@ const ARTICLES = [
     summary: "Penjelasan lengkap tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.",
     category: "technology",
     tags: ["linux", "root", "sudo"],
-    date: "2026-08-1",
+    date: "2026-08-01",
     readTime: "10 min",
     url: "/pages/mode-root-linux/"
+  },
+  {
+  id: 10,
+    title: "Git: Sang pengontrol versi terbaik andalan programmer",
+    slug: "git-sang-pengontrol",
+    summary: "Apa itu Git? seberapa penting ia bagi developer? kita bahas lengkap di artikel ini.",
+    category: "technology",
+    tags: ["linux", "git", "version control", "programming"],
+    date: "2026-08-08",
+    readTime: "25 min",
+    url: "/pages/git-sang-pengontrol/"
   }
 ];
 

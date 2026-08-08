@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Root: Mode paling berbahaya di Linux — ./RangS Blog</title>
+  <meta name="description" content="Penjelasan lengkap tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/mode-root-linux/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Root: Mode paling berbahaya di Linux">
+  <meta property="og:description" content="Penjelasan lengkap tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs-1.github.io/pages/mode-root-linux/root.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Root: Mode paling berbahaya di Linux">
+  <meta name="twitter:description" content="Penjelasan lengkap tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.">
+  <meta name="twitter:image" content="https://rangs-1.github.io/pages/mode-root-linux/root.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Root: Mode paling berbahaya di Linux",
+    "description":"Penjelasan lengkap tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-08-02",
+    "dateModified":"2026-08-02",
+    "keywords":[
+      "Arch",
+      "Linux",
+      "Environment",
+      "KDE Plasma"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../">home</a>
+    <a href="../../dashboard/" class="active">dashboard</a>
+    <a href="../../about/">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-07-26</span>
+        <span>·</span>
+        <span>10 min read</span>
+      </div>
+      <h1 class="article-headline">Root: Mode paling berbahaya di Linux</h1>
+      <p class="article-summary">
+        Penjelasan lengkap tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#linux</span>
+        <span class="tag">#arch</span>
+        <span class="tag">#root</span>
+        <span class="tag">#sudo</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2>Apa itu Mode Root?</h2>
+      <p>Mode root adalah mode di mana pengguna memiliki akses penuh ke sistem operasi, termasuk kemampuan untuk mengubah atau menghapus file penting.</p>
+      <blockquote>
+        With great power comes great responsibility.
+        <br>
+      </blockquote>
+      <p>
+        Pada artikel ini, kita akan bahas tentang mode root di Linux, kegunaannya sampai bahayanya jika tidak berhati-hati.
+      </p>
+
+      <h2>Mode Root</h2>
+      <img src="sudo.png" alt="Root Mode Logo" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Mode root adalah mode di mana pengguna memiliki akses penuh ke sistem operasi, termasuk kemampuan untuk mengubah atau menghapus file penting.
+      </p>
+      <p>
+        Linux memiliki filosofi bahwa "Everything is a File", mengartikan bahwa semua hal entah itu service, software, config adalah file yang bisa dipakai bebas oleh pengguna Linux.
+      </p>
+
+      <h2>Cara masuk mode root</h2>
+      <p>
+        Untuk masuk ke mode root, pengguna hanya perlu mengetik perintah sudo di terminal.
+      </p>
+      <pre><code>sudo su</code></pre>
+      <p>
+        Setelahnya, pengguna akan diminta untuk memasukkan password (Itupun jika mode root pernah diberi password sebelumnya).
+        Biasanya saat masuk mode root, tampilan shell di terminal ada tulisan root di belakangnya.
+      </p>
+      <img src="root.png" alt="Root Mode Logo" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jika sudah masuk dalam mode root, itu artinya kalian sudah masuk sebagai orang yang dapat melakukan apapun di dalam sistem.
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/absolute-arch-linux-experience/" target="_blank">Absolute Arch Linux Experience</a></p>
+
+      <h2>Kegunaan mode root</h2>
+      <p>
+        Mode root memiliki banyak kegunaan, terutama dalam mengakses file yang ada didalam sistem linux. Contohnya seperti mengakses bootloader grub, mengakses mkinitcpio untuk membuat initramfs image, update sistem dan masih banyak lagi.
+      </p>
+      <p>
+        Tidak hanya itu, Mode Root juga sering digunakan untuk membuat user, menambah user kedalam group atau sekedar menghapus user.
+        Yang paling penting adalah mode root dapat menjalankan perintah yang memerlukan akses root. Sebagai contoh coba lihat kode bash berikut:
+      </p>
+      <pre><code>#!/bin/bash
+if [[ $EUID -ne 0 ]]; then
+    echo "Error: Sudo is needed!"
+    exit 1
+fi</code></pre>
+      <p>
+        Dari kode tersebut, mengartikan bahwa file/script tersebut hanya bisa diakses dengan root.
+        kedengarannya powerful ya, tetapi muncul masalah yang lebih besar jika tidak berhati-hati.
+      </p>
+      
+      <h2>Bahaya mode root</h2>
+      <p>
+        Kita masuk ke bagian bahaya dari mode root. Seperti yang kukatakan sebelumnya, bahwa "Everything is a file".
+        Artinya, semua hal yang ada di linux adalah file. Bahkan sesuatu yang penting sekalipun seperti bootloader dianggap sebagai file.
+      </p>
+      <p>
+        Bagi orang awam yang baru terjun ke dunia linux, ingat satu kalimat ini "Jangan mudah percaya dengan pengguna linux".
+        Mengapa? karena terkadang pengguna linux yang senior ataupun yang sehar-hari menggunakan linux memintamu untuk memasukkan perintah-perintah khusus seperti:
+      </p>
+      <pre><code>sudo rm -rf /</code></pre>
+      <p>
+        perintah tersebut mungkin terlihat sederhana, terutama bagi pengguna awam yang berkemungkinan menjalankannya di terminal.
+        Tak ada yang salah dari perintah tersebut, hanya saja huruf "/" bisa sangat berbahaya.
+      </p>
+      <p>
+        Biar kujelaskan, perintah tersebut adalah perintah untuk menghapus file tanpa kompromi.
+        sudo mengartikan bahwa kau menjalankan ini sebagai root, rm untuk hapus file, -rf untuk menghapus file secara paksa dan / adalah directory atau folder.
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Pengalaman Arch User Repository</a></p>
+      <p>
+        Ini tak bisa dianggap main-main loh, karena kode tersebut akan menghapus semua file yang ada di dalam komputermu tanpa terkecuali.
+        Bahkan sempat terjadi kesalahan yang dilakukan oleh pegawai website gitlab (website CI/CD terbesar).
+        Hanya karena salah ketik ia tak sengaja menghapus sistem yang berjalan 6 jam sebelumnya.
+        Jadi 6 jam sebelumnya yang berisi commit message, pull request dan lainnya terhapus seketika.
+      </p>
+
+      <h2>Mitigasi mode root</h2>
+      <p>
+        Saat ini, para hacker di seluruh dunia mulai mencari celah di dalam server linux, terutama celah untuk melakukan privilege escalation atau yang membuat hacker berada dalam mode root.
+        Jadi gunakan password yang sulit untuk ditebak atau hati-hati dengan aplikasi yang kau install.
+      </p>
+      <p>
+        Aku pernah ikut tantangan capture the flag, yang dimana aku harus masuk ke dalam sebuah sistem dengan ssh dan masuk sebagai root user.
+        Aku di sini menggunakan vim untuk masuk ke dalam mode root. Aku tak akan memberikan kodenya di sini karena sebuah sistem linux yang memiliki celah privilege escalation dianggap kerentanan kritis.
+      </p>
+      <p>
+        Semenjak kejadian di Gitlab, developer linux sadar bahwa yang mereka buat ini adalah sesuatu yang berbahaya.
+        Sekarang kebanyakan distro linux sudah memberikan peringatan jika tak sengaja melakukan perintah tersebut. Tetapi perintah tersebut masih bisa dilakukan dengan memasukkan flag:
+      </p>
+      <pre><code>--no-preserve-root</code></pre>
+
+      <h2>Kesimpulan</h2>
+      <p>
+        Berhati-hatilah saat menggunakan linux. Setiap perintah yang dijalankan di terminal linux akan menghasilkan yang kau minta sebelumnya. Juga menurutku jika komputer atau laptopmu adalah komputer dengan spek gahar dan kau bukan seorang developer, kau tak punya alasan untuk masuk dunia linux. Kecuali jika kau memang ingin belajar ya silakan saja. Kusarankan untuk tonton video berikut:
+        <a href="https://youtu.be/ZhQKDe8zz7Q?si=QA7lmLmGZ2i0HjZc" target="_blank">
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Witzdome" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'kde-plasma-experience')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
