@@ -114,6 +114,17 @@ const ARTICLES = [
     date: "2026-08-08",
     readTime: "25 min",
     url: "/pages/git-sang-pengontrol/"
+  },
+  {
+  id: 11,
+    title: "Linux: Sistem Operasi yang bukan sistem operasi",
+    slug: "linux-adalah-kernel",
+    summary: "Apa itu Linux? seberapa penting ia bagi pengguna? Apakah ia bisa disebut sebagai sistem operasi?",
+    category: "technology",
+    tags: ["linux", "operating system", "kernel"],
+    date: "2026-08-15",
+    readTime: "20 min",
+    url: "/pages/linux-adalah-kernel/"
   }
 ];
 
