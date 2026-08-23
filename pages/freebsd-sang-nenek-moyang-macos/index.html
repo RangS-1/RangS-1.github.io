@@ -126,72 +126,138 @@
       <h2>Berkeley Software Distribution</h2>
       <img src="freebsdlogo.png" alt="Linux Logo" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Jadi apa itu Linux? Linux adalah kernel yang digunakan dalam sistem operasi GNU/Linux.
-        Yang dimaksud dari kernel adalah inti dari sistem operasi. Kernel bertugas untuk mengatur semua sumber daya yang ada di komputer, seperti CPU, RAM, dan komunikasi perangkat keras lainnya.
+        Jadi apa itu BSD? Berkeley Software Distribution adalah sistem operasi mirip Unix yang pertama kali dikembangkan oleh Computer Systems Research Group (CSRG) di Universitas California, Berkeley, mulai akhir tahun 1970-an
       </p>
       <p>
-        Linux diciptakan oleh Linus Torvalds pada tahun 1991. Ia awalnya membuat Linux sebagai proyek pribadi untuk membuat sistem operasi yang Free dan Open Source.
-        Maksud dari Open Source di sini adalah kode sumber dari Linux dapat diakses, dimodifikasi, dan didistribusikan oleh siapa saja.
+        BSD dibuat, dikembangkan, dan digunakan secara “Bebas” sebagai perlawanan terhadap lisensi UNIX yang dimiliki oleh AT&T dan oleh karena itu BSD mempunyai lisensi tersendiri yang memungkinkan setiap orang bebas melakukan pengembangan, dan menggunakan kode sumber BSD.
       </p>
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/git-sang-pengontrol/" target="_blank">Git: Version Control andalah programmer</a></p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/linux-adalah-kernel/" target="_blank">Linux: Sistem operasi yang bukan sistem operasi</a></p>
 
-      <h2>Unix</h2>
+      <h2>FreeBSD</h2>
       <p>
-        Linux terinspirasi dari sistem operasi Unix. Unix adalah sistem operasi yang tidak bersifat open source.
-        Artinya kode sumber Unix tidak dapat dilihat oleh orang lain, dan merupakan hak cipta sepenuhnya dipegang oleh AT&T.
+        Lalu apa bedanya dengan FreeBSD? FreeBSD adalah turunan dari BSD yang sangat kuat dalam networking. 
       </p>
       <p>
-        Linux mirip dengan Unix karena memiliki filosofi yang mirip yaitu "Everything is a File". Yang lebih membuatnya mirip dengan Unix adalah filesystemnya yang menggunakan system hierarki
+        Jika dibedakan dengan Linux, perbedaannya adalah Linux memiliki networking ecosystem yang lebih luas dan lebih powerful untuk infrastructure modern, sedangkan BSD memiliki networking stack dan tooling yang sangat matang untuk firewall, router, dan network appliance.
       </p>
-      <img src="hirarki.png" alt="Struktur File System Linux" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer/" target="_blank">Terminal sang kawan programmer</a></p>
+      <img src="strukturfolder.png" alt="Struktur File System FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Linux menggunakan Lisensi <a href="https://opensource.org/license/gpl-2.0">GNU General Public License (GPL) version 2</a>. Mengartikan bahwa sistem yang dibuat dengan source code Linux bebas diubah, dimodifikasi secara gratis tetapi pengguna lain berhak melihat kembali source code dari hasil modifikasinya.
-        Tidak boleh dibuat Closed Source.
+        Jika dilihat sekilas, filesystem dari FreeBSD memang mirip dengan Linux. Tetapi jika diperhatikan, ada folder rescue dan file entropy.
+        Folder rescue berisi alat atau binary cadangan jika terjadi kerusakan pada sistem. Sementara file entropy aku kurang tahu isinya apa, tapi ucap orang-orang di internet, entropy digunakan untuk kriptografi acak atau bisa dibilang mengamankan data seperti SSH.
       </p>
 
-      <h2>Dampak Linux</h2>
+      <h2>Instalasi FreeBSD</h2>
+      <img src="installfreebsd.png" alt="Tampilan Install FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Linux menjadi pondasi besar internet di dunia. lebih dari 95% server di dunia menggunakan Linux.
-        Kenapa harus linux? karena linux bersifat open source sehingga setiap ada celah keamanan, komunitas linux akan memperbaikinya dengan cepat.
+        Jika kau membaca dari atas, aku sempat berkata bahwa FreeBSD merupakan sistem operasi penuh. Kenapa? berbeda halnya dengan Linux, FreeBSD memiliki Kernel, Userland Tools dan bahkan Driver yang built-in.
+        Karena itulah FreeBSD bisa disebut sebagai sistem operasi.
       </p>
       <p>
-        Contoh yang paling sering digunakan untuk server adalah distribusi debian.
-        Debian dikenal sebagai distribusi linux yang stabil dan mudah dipahami, terlebih lagi karena package managernya memiliki komunitas yang sangat luas.
+        Untuk instalasi FreeBSD sebenarnya cukup gampang, hanya perlu next-next saja. Tetapi yang terpenting saat instalasi adalah jaringan internet.
+        Jujur saja aku harus menginstall dua kali karena saat tidak ada jaringan internet, entah kenapa tidak bisa boot.
       </p>
       <p>
-        Linux adalah contoh paling nyata dalam Open Source project yang benar-benar sukses.
-        Jika kau pikir kau tidak menggunakan linux, bagaimana dengan HP mu?
+        Setelah selesai menginstall FreeBSD, nanti akan diminta untuk login, tinggal login saja dengan root atau dengan user yang sudah kau buat.
+        Perlu dicatat juga bahwa setelah membuat user baru, ubah visudo agar user bisa menjalankan perintah sebagai root.
+        Setelah login, coba jalankan perintah:
       </p>
-      
-      <h2>Android</h2>
-      <img src="android.png" alt="Logo Android" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <pre><code>which $SHELL</code></pre>
       <p>
-        Android adalah sistem operasi yang dibuat di atas kernel Linux.
-        Android menjadi sistem operasi yang paling sering digunakan di dunia. Siapa sih orang yang tidak pernah menggunakan Android?
-      </p>
-      <p>
-        Seperti yang kukatakan sebelumnya, Linux Kernel memiliki lisensi yang mengharuskan orang-orang berhak melihat source code jika menggunakannya.
-        Karena itu juga Android memiliki banyak versi ColorOS, One UI, HyperOS, Realme UI dan masih banyak lagi.
+        Kau akan menyadari bahwa FreeBSD menggunakan "sh" dan bukan "bash".
       </p>
 
-      <h2>Linux = Operating System?</h2>
+      <h2>Membuat Package di FreeBSD</h2>
+      <img src="ports.png" alt="FreeBSD github ports collection screenshot" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Ini adalah hal yang paling sering disalahpahami oleh orang-orang. Linux sebenarnya bukanlah Sistem Operasi,
-        Ia adalah Kernel yang menjadi inti dari sistem operasi. Contohnya saja Windows yang menggunakan Windows NT sebagai kernelnya.
+        Jujur saja aku agak bingung dengan cara kerja dari FreeBSD beserta ports collectionnya (ports collection tuh semacam koleksi resmi dari FreeBSD yang menyimpan Makefile dan lain-lain).
+        Di sini akan kujelaskan sejauh pengalamanku. Untuk membuat package FreeBSD, masukkan perintah berikut:
+      </p>
+      <pre><code>git clone https://git.freebsd.org/ports.git /usr/ports</code></pre>
+      <p>
+        Tunggu sampai selesai dan jika sudah selesai, masukkan perintah
+      </p>
+      <pre><code>cd /usr/ports</code></pre>
+      <p>
+        Mengingat ini berada di file sistem, aku sarankan untuk berada dalam mode root. Setelah masuk ke folder ports, coba lihat foto di bawah ini, akan ada banyak sekali ports atau bisa dibilang aplikasi. 
+      </p>
+      <img src="portsstructure.png" alt="Struktur folder ports di FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Setelahnya, cukup buat folder misalnya folder <i>misc/namaaplikasi</i>.
+        Lalu di dalam folder tersebut, cukup buat Makefile dan isi dengan konfigurasi aplikasimu.
+        Sebagai contoh di sini aku menggunakan project <a href="https://github.com/RangS-1/Ferminal">Ferminal</a> yang kubuat dengan python.
+        Kurang lebih isi dari Makefilenya seperti berikut:
+      </p>
+      <pre><code>PORTNAME=ferminal
+DISTVERSION=1.4.2
+CATEGORIES=misc
+
+DISTNAME=$(PORTNAME)-$(DISTVERSION)
+
+MAINTAINER-rangga19sj@gmail.com
+COMMENT=Custom Wrapper CLI to make your work faster
+WWW=https://github.com/RangS-1/Ferminal
+
+LICENSE=MIT
+USE_GITHUB=yes
+GH_ACCOUNT=RangS-1
+GH_PROJECT=Ferminal
+GH_TAGNAME=v$(DISTVERSION)
+
+USES=python
+USE_GITHUB=yes
+USE_PYTHON-autoplist pep517
+RUN_DEPENDS=
+            $(PYTHON_PKGNAMEPREFIX)colorama>0:devel/py-colorama@$(PY_FLAVOR)
+            $(PYTHON_PKGNAMEPREFIX)prompt-toolkit>0:devel/py-prompt-toolkit@$(PY_FLAVOR)
+
+include &lt;bsd.port.mk&gt;</code></pre>
+      <p>
+        Inti dari kode tersebut adalah Makefile mengambil file dari Github release berdasarkan versi, lalu build python dengan autoplist dan PEP517.
+        Setelah membuat Makefile, lanjut buat pkg-descr. pkg-descr berisi deskripsi dari aplikasi yang kau buat.
+        Isi apa sajalah bebas.
       </p>
       <p>
-        Linux sering dianggap operating system karena distribusi yang membuatnya menjadi sistem operasi penuh seperti Arch, Debian dan Fedora.
-        Linux bisa dianggap sebagai sistem operasi yang penuh jika ia bergabung dengan GNU. GNU adalah sistem operasinya sementara Linux adalah Kernel atau inti.
-        Oleh sebab itu <a href="https://itsfoss.com/">Free Open Source Software</a> sering menyebutnya sebagai GNU/Linux. 
+        Jika sudah membuat kedua file tersebut, cukup lakukan:
+      </p>
+      <pre><code>make makesum</code></pre>
+      <p>
+        Nanti ia akan membuat file berada distinfo. Aku kurang tahu distinfo untuk apa. Setelah membuat distinfo, saatnya install dengan:
+      </p>
+      <pre><code>make install clean</code></pre>
+      <p>
+        Nanti akan otomatis menginstall aplikasinya sekaligus buildnya, build tergantung dari source code yang kau buat, jika menggunakan C++ biasanya menggunakan CMake.
+      </p>
+      <p>
+        Akan ada folder dengan nama work-py312, jika folder tersebut sudah tergenerate, cukup lakukan:
+      </p>
+      <pre><code>make package</code></pre>
+      <p>
+        File package FreeBSD akan tergenerate pada work-py312/pkg/<i>namaaplikasi-version</i>.pkg. Sekarang coba hapus dengan
+      </p>
+      <pre><code>pkg remove namaaplikasi
+pkg install namaaplikasi-version.pkg</code></pre>
+      <p>
+        Jika berhasil, artinya kamu sudah membuat package untuk FreeBSD dan bisa mengatakan "I Use FreeBSD BTW".
+        Kau bisa membagikan file .pkg tersebut pada orang lain dan mereka bisa menjalankan perintah yang sama, dengan catatan mereka menggunakan FreeBSD.
+      </p>
+
+      <h2>Lisensi FreeBSD</h2>
+      <p>
+        Jujur saja aku penasaran kenapa MacOS tidak menggunakan Linux sebagai Kernelnya. Ternyata alasannya adalah lisensi.
+        Linux menggunakan lisensi GPLv2 yang mengartikan bahwa perusahaan dapat menggunakan Linux, tetapi mereka harus membuatnya tetap Open Source alias kode sumbernya terbuka dan bisa dilihat oleh orang lain.
+        Apple kurang suka dengan hal ini, karena itu ia memilih FreeBSD karena lisensi FreeBSD bersifat permisif, artinya perusahaan boleh menggunakan dan membuatnya tertutup.
+      </p>
+      <p>
+        Karena itu Apple kini menggunakan Berkeley Software Distribution sebagai kerangka utama dalam terciptanya Darwin, MacOS maupun Iphone.
+        Jadi Iphone yang biasa digunakan merupakan turunan dari BSD.
       </p>
       <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository Experience</a></p>
 
       <h2>Kesimpulan</h2>
       <p>
-        Anggapan bahwa Linux adalah sistem operasi merupakan hal yang umum bagi komunitasnya. Linux menjadi fondasi besar dalam perkembangan internet sampai-sampai 95% server diatasi olehnya.
-        Jika ingin mempelajari Linux lebih dalam, bisa cek video berikut:
-        <a href="https://youtu.be/sWbUDq4S6Y8?si=zwPAos7WQg3P4Nzh" target="_blank">
+        MacOS memiliki sejarah yang ketat dengan BSD. Sebuah sistem operasi terdahulu yang kini dipakai oleh perusahaan besar merupakan hal yang sangat luar biasa. 
+        Jika kamu pengguna MacOS, kau mungkin menyadari bahwa filesystemnya mirip dengan Unix karena BSD terinspirasi dari Unix. Jika ingin mempelajari lebih lanjut, bisa cek video berikut:
+        <a href="https://youtu.be/jmWq0gMx20o?si=p7THZRRSg6KyhbRm" target="_blank">
           Link ke Video.
           <img src="thumbnail.png" alt="Thumbnail Youtube from Freecodecamp.org" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
         </a>
@@ -219,7 +285,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof ARTICLES === 'undefined') return;
-      const related = ARTICLES.filter(a => a.slug !== 'linux-adalah-kernel')
+      const related = ARTICLES.filter(a => a.slug !== 'freebsd-sang-nenek-moyang-macos')
         .sort(() => Math.random() - 0.5).slice(0, 3);
       const container = document.getElementById('relatedList');
       related.forEach(article => {
