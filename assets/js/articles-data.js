@@ -125,6 +125,17 @@ const ARTICLES = [
     date: "2026-08-15",
     readTime: "20 min",
     url: "/pages/linux-adalah-kernel/"
+  },
+  {
+  id: 12,
+    title: "FreeBSD: Nenek moyang dari MacOS",
+    slug: "freebsd-sang-nenek-moyang-macos",
+    summary: "Apa itu FreeBSD? seberapa penting ia bagi masa depan Appple? kita bahas lengkap di artikel ini.",
+    category: "technology",
+    tags: ["freebsd", "operating system", "apple"],
+    date: "2026-08-15",
+    readTime: "20 min",
+    url: "/pages/freebsd-sang-nenek-moyang-macos/"
   }
 ];
 
