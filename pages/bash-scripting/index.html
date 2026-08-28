@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bash: Mencoba scripting terminal dengan Bash — ./RangS Blog</title>
+  <meta name="description" content="Apa itu Bash? Bagaimana ia menjadi andalan developer dalam pekerjaan yang diulang-ulang?">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/bash-scripting/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Bash: Mencoba scripting terminal dengan Bash">
+  <meta property="og:description" content="Apa itu Bash? Bagaimana ia menjadi andalan developer dalam pekerjaan yang diulang-ulang?">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs-1.github.io/pages/bash-scripting/bashlogo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bash: Mencoba scripting terminal dengan Bash">
+  <meta name="twitter:description" content="Apa itu Bash? Bagaimana ia menjadi andalan developer dalam pekerjaan yang diulang-ulang?">
+  <meta name="twitter:image" content="https://rangs-1.github.io/pages/bash-scripting/bashlogo.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Bash: Mencoba scripting terminal dengan Bash",
+    "description":"Apa itu Bash? Bagaimana ia menjadi andalan developer dalam pekerjaan yang diulang-ulang?",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-08-28",
+    "dateModified":"2026-08-28",
+    "keywords":[
+      "Bash",
+      "Terminal",
+      "Shell"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../">home</a>
+    <a href="../../dashboard/" class="active">dashboard</a>
+    <a href="../../about/">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-08-28</span>
+        <span>·</span>
+        <span>20 min read</span>
+      </div>
+      <h1 class="article-headline">Bash: Mencoba scripting terminal dengan Bash</h1>
+      <p class="article-summary">
+        Apa itu Bash? Bagaimana ia menjadi andalan developer dalam pekerjaan yang diulang-ulang?  
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#bash</span>
+        <span class="tag">#terminal</span>
+        <span class="tag">#shell</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2>Apa itu Bash?</h2>
+      <p>FreeBSD adalah salah satu turunan dari Berkeley Software Distribution (BSD) dan merupakan sistem operasi penuh.</p>
+      <blockquote>
+        "The BSD license is the ultimate open source license: do whatever you want with it, just don't sue us."
+        <br>
+        — Marshall Kirk McKusick, pemimpin riset BSD
+      </blockquote>
+      <p>
+        Pada artikel ini, kita akan bahas tentang BSD terutama FreeBSD, membuat package di FreeBSD dan pengaruhnya dalam terciptanya MacOS.
+      </p>
+
+      <h2>Berkeley Software Distribution</h2>
+      <img src="freebsdlogo.png" alt="Linux Logo" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jadi apa itu BSD? Berkeley Software Distribution adalah sistem operasi mirip Unix yang pertama kali dikembangkan oleh Computer Systems Research Group (CSRG) di Universitas California, Berkeley, mulai akhir tahun 1970-an
+      </p>
+      <p>
+        BSD dibuat, dikembangkan, dan digunakan secara “Bebas” sebagai perlawanan terhadap lisensi UNIX yang dimiliki oleh AT&T dan oleh karena itu BSD mempunyai lisensi tersendiri yang memungkinkan setiap orang bebas melakukan pengembangan, dan menggunakan kode sumber BSD.
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/linux-adalah-kernel/" target="_blank">Linux: Sistem operasi yang bukan sistem operasi</a></p>
+
+      <h2>FreeBSD</h2>
+      <p>
+        Lalu apa bedanya dengan FreeBSD? FreeBSD adalah turunan dari BSD yang sangat kuat dalam networking. 
+      </p>
+      <p>
+        Jika dibedakan dengan Linux, perbedaannya adalah Linux memiliki networking ecosystem yang lebih luas dan lebih powerful untuk infrastructure modern, sedangkan BSD memiliki networking stack dan tooling yang sangat matang untuk firewall, router, dan network appliance.
+      </p>
+      <img src="strukturfolder.png" alt="Struktur File System FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jika dilihat sekilas, filesystem dari FreeBSD memang mirip dengan Linux. Tetapi jika diperhatikan, ada folder rescue dan file entropy.
+        Folder rescue berisi alat atau binary cadangan jika terjadi kerusakan pada sistem. Sementara file entropy aku kurang tahu isinya apa, tapi ucap orang-orang di internet, entropy digunakan untuk kriptografi acak atau bisa dibilang mengamankan data seperti SSH.
+      </p>
+
+      <h2>Instalasi FreeBSD</h2>
+      <img src="installfreebsd.png" alt="Tampilan Install FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jika kau membaca dari atas, aku sempat berkata bahwa FreeBSD merupakan sistem operasi penuh. Kenapa? berbeda halnya dengan Linux, FreeBSD memiliki Kernel, Userland Tools dan bahkan Driver yang built-in.
+        Karena itulah FreeBSD bisa disebut sebagai sistem operasi.
+      </p>
+      <p>
+        Untuk instalasi FreeBSD sebenarnya cukup gampang, hanya perlu next-next saja. Tetapi yang terpenting saat instalasi adalah jaringan internet.
+        Jujur saja aku harus menginstall dua kali karena saat tidak ada jaringan internet, entah kenapa tidak bisa boot.
+      </p>
+      <p>
+        Setelah selesai menginstall FreeBSD, nanti akan diminta untuk login, tinggal login saja dengan root atau dengan user yang sudah kau buat.
+        Perlu dicatat juga bahwa setelah membuat user baru, ubah visudo agar user bisa menjalankan perintah sebagai root.
+        Setelah login, coba jalankan perintah:
+      </p>
+      <pre><code>which $SHELL</code></pre>
+      <p>
+        Kau akan menyadari bahwa FreeBSD menggunakan "sh" dan bukan "bash".
+      </p>
+
+      <h2>Membuat Package di FreeBSD</h2>
+      <img src="ports.png" alt="FreeBSD github ports collection screenshot" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jujur saja aku agak bingung dengan cara kerja dari FreeBSD beserta ports collectionnya (ports collection tuh semacam koleksi resmi dari FreeBSD yang menyimpan Makefile dan lain-lain).
+        Di sini akan kujelaskan sejauh pengalamanku. Untuk membuat package FreeBSD, masukkan perintah berikut:
+      </p>
+      <pre><code>git clone https://git.freebsd.org/ports.git /usr/ports</code></pre>
+      <p>
+        Tunggu sampai selesai dan jika sudah selesai, masukkan perintah
+      </p>
+      <pre><code>cd /usr/ports</code></pre>
+      <p>
+        Mengingat ini berada di file sistem, aku sarankan untuk berada dalam mode root. Setelah masuk ke folder ports, coba lihat foto di bawah ini, akan ada banyak sekali ports atau bisa dibilang aplikasi. 
+      </p>
+      <img src="portsstructure.png" alt="Struktur folder ports di FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Setelahnya, cukup buat folder misalnya folder <i>misc/namaaplikasi</i>.
+        Lalu di dalam folder tersebut, cukup buat Makefile dan isi dengan konfigurasi aplikasimu.
+        Sebagai contoh di sini aku menggunakan project <a href="https://github.com/RangS-1/Ferminal">Ferminal</a> yang kubuat dengan python.
+        Kurang lebih isi dari Makefilenya seperti berikut:
+      </p>
+      <pre><code>PORTNAME=ferminal
+DISTVERSION=1.4.2
+CATEGORIES=misc
+
+DISTNAME=$(PORTNAME)-$(DISTVERSION)
+
+MAINTAINER-rangga19sj@gmail.com
+COMMENT=Custom Wrapper CLI to make your work faster
+WWW=https://github.com/RangS-1/Ferminal
+
+LICENSE=MIT
+USE_GITHUB=yes
+GH_ACCOUNT=RangS-1
+GH_PROJECT=Ferminal
+GH_TAGNAME=v$(DISTVERSION)
+
+USES=python
+USE_GITHUB=yes
+USE_PYTHON-autoplist pep517
+RUN_DEPENDS=
+            $(PYTHON_PKGNAMEPREFIX)colorama>0:devel/py-colorama@$(PY_FLAVOR)
+            $(PYTHON_PKGNAMEPREFIX)prompt-toolkit>0:devel/py-prompt-toolkit@$(PY_FLAVOR)
+
+include &lt;bsd.port.mk&gt;</code></pre>
+      <p>
+        Inti dari kode tersebut adalah Makefile mengambil file dari Github release berdasarkan versi, lalu build python dengan autoplist dan PEP517.
+        Setelah membuat Makefile, lanjut buat pkg-descr. pkg-descr berisi deskripsi dari aplikasi yang kau buat.
+        Isi apa sajalah bebas.
+      </p>
+      <p>
+        Jika sudah membuat kedua file tersebut, cukup lakukan:
+      </p>
+      <pre><code>make makesum</code></pre>
+      <p>
+        Nanti ia akan membuat file berada distinfo. Aku kurang tahu distinfo untuk apa. Setelah membuat distinfo, saatnya install dengan:
+      </p>
+      <pre><code>make install clean</code></pre>
+      <p>
+        Nanti akan otomatis menginstall aplikasinya sekaligus buildnya, build tergantung dari source code yang kau buat, jika menggunakan C++ biasanya menggunakan CMake.
+      </p>
+      <p>
+        Akan ada folder dengan nama work-py312, jika folder tersebut sudah tergenerate, cukup lakukan:
+      </p>
+      <pre><code>make package</code></pre>
+      <p>
+        File package FreeBSD akan tergenerate pada work-py312/pkg/<i>namaaplikasi-version</i>.pkg. Sekarang coba hapus dengan
+      </p>
+      <pre><code>pkg remove namaaplikasi
+pkg install namaaplikasi-version.pkg</code></pre>
+      <p>
+        Jika berhasil, artinya kamu sudah membuat package untuk FreeBSD dan bisa mengatakan "I Use FreeBSD BTW".
+        Kau bisa membagikan file .pkg tersebut pada orang lain dan mereka bisa menjalankan perintah yang sama, dengan catatan mereka menggunakan FreeBSD.
+      </p>
+
+      <h2>Lisensi FreeBSD</h2>
+      <p>
+        Jujur saja aku penasaran kenapa MacOS tidak menggunakan Linux sebagai Kernelnya. Ternyata alasannya adalah lisensi.
+        Linux menggunakan lisensi GPLv2 yang mengartikan bahwa perusahaan dapat menggunakan Linux, tetapi mereka harus membuatnya tetap Open Source alias kode sumbernya terbuka dan bisa dilihat oleh orang lain.
+        Apple kurang suka dengan hal ini, karena itu ia memilih FreeBSD karena lisensi FreeBSD bersifat permisif, artinya perusahaan boleh menggunakan dan membuatnya tertutup.
+      </p>
+      <p>
+        Karena itu Apple kini menggunakan Berkeley Software Distribution sebagai kerangka utama dalam terciptanya Darwin, MacOS maupun Iphone.
+        Jadi Iphone yang biasa digunakan merupakan turunan dari BSD.
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository Experience</a></p>
+
+      <h2>Kesimpulan</h2>
+      <p>
+        MacOS memiliki sejarah yang ketat dengan BSD. Sebuah sistem operasi terdahulu yang kini dipakai oleh perusahaan besar merupakan hal yang sangat luar biasa. 
+        Jika kamu pengguna MacOS, kau mungkin menyadari bahwa filesystemnya mirip dengan Unix karena BSD terinspirasi dari Unix. Jika ingin mempelajari lebih lanjut, bisa cek video berikut:
+        <a href="https://youtu.be/jmWq0gMx20o?si=p7THZRRSg6KyhbRm" target="_blank">
+          Link ke Video.
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Freecodecamp.org" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'freebsd-sang-nenek-moyang-macos')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
