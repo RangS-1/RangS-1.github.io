@@ -136,6 +136,17 @@ const ARTICLES = [
     date: "2026-08-15",
     readTime: "20 min",
     url: "/pages/freebsd-sang-nenek-moyang-macos/"
+  },
+  {
+  id: 13,
+    title: "Bash: Mencoba scripting terminal dengan Bash",
+    slug: "bash-scripting",
+    summary: "Apa itu Bash? Bagaimana ia menjadi andalan developer dalam pekerjaan yang diulang-ulang?",
+    category: "technology",
+    tags: ["bash", "terminal", "shell"],
+    date: "2026-08-15",
+    readTime: "20 min",
+    url: "/pages/bash-scripting/"
   }
 ];
 
