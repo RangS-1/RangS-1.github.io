@@ -113,60 +113,68 @@
 
     <div class="article-body">
       <h2>Apa itu Bash?</h2>
-      <p>FreeBSD adalah salah satu turunan dari Berkeley Software Distribution (BSD) dan merupakan sistem operasi penuh.</p>
+      <p>Bourne-Again Shell atau sering disebut Bash adalah Shell yang berfungsi sebagai penerjemah perintah terminal untuk sistem operasi .</p>
       <blockquote>
-        "The BSD license is the ultimate open source license: do whatever you want with it, just don't sue us."
+        "The single most important design decision: what you type at the prompt and what you write in a file share the same syntax."
         <br>
-        — Marshall Kirk McKusick, pemimpin riset BSD
+        — Brian Fox, pencipta Bash
       </blockquote>
       <p>
-        Pada artikel ini, kita akan bahas tentang BSD terutama FreeBSD, membuat package di FreeBSD dan pengaruhnya dalam terciptanya MacOS.
+        Pada artikel ini, kita akan bahas tentang Bash, terutama pada bagian Scripting dengan Bash.
       </p>
 
-      <h2>Berkeley Software Distribution</h2>
-      <img src="freebsdlogo.png" alt="Linux Logo" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <h2>Bourne-Again Shell</h2>
+      <img src="bash.png" alt="Logo Bash" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Jadi apa itu BSD? Berkeley Software Distribution adalah sistem operasi mirip Unix yang pertama kali dikembangkan oleh Computer Systems Research Group (CSRG) di Universitas California, Berkeley, mulai akhir tahun 1970-an
+        Jadi apa itu Bash? Bourne Again Shell atau biasa disebut dengan Bash adalah penerjemah perintah pengguna untuk dijalankan oleh kernel.
+        Kernel sendiri adalah inti dari sistem operasi yang mengatur memory, interrupt (input dan semacamnya) dan lain-lain.
       </p>
       <p>
-        BSD dibuat, dikembangkan, dan digunakan secara “Bebas” sebagai perlawanan terhadap lisensi UNIX yang dimiliki oleh AT&T dan oleh karena itu BSD mempunyai lisensi tersendiri yang memungkinkan setiap orang bebas melakukan pengembangan, dan menggunakan kode sumber BSD.
+        Bash biasanya sering dijadikan sebagai default shell dalam sistem operasi linux, tetapi banyak juga yang menggunakan shell lain seperti fish dan zsh.
+        Jika tidak menggunakan TTY, Bash sering digunakan dengan terminal seperti kitty, foot (aku tak tahu kenapa disebut foot) dan lain-lain.
+        Oh ya, jika kau menggunakan laptop linux, kau bisa masuk ke TTY mode dengan Ctrl+Alt+F3, dan jika ingin kembali seperti semula tinggal tekan Ctrl+Alt+F1. 
       </p>
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/linux-adalah-kernel/" target="_blank">Linux: Sistem operasi yang bukan sistem operasi</a></p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer/" target="_blank">Terminal: Kawan Sejati Programmer</a></p>
 
-      <h2>FreeBSD</h2>
+      <h2>Scripting Bash</h2>
       <p>
-        Lalu apa bedanya dengan FreeBSD? FreeBSD adalah turunan dari BSD yang sangat kuat dalam networking. 
+        Kita masuk ke dalam Scripting Bash. Apa itu Scripting dengan Bash? yang dimaksud dengan scripting adalah membuat skrip yang bisa digunakan berkali-kali untuk pekerjaan yang diulang-ulang.
+        Alasan utama membuat Script Bash tentunya agar lebih mudah dan tidak mengulangi pekerjaan yang sering diulang-ulang.
       </p>
       <p>
-        Jika dibedakan dengan Linux, perbedaannya adalah Linux memiliki networking ecosystem yang lebih luas dan lebih powerful untuk infrastructure modern, sedangkan BSD memiliki networking stack dan tooling yang sangat matang untuk firewall, router, dan network appliance.
+        File script bash biasanya berakhiran dengan ekstensi .sh atau bahkan tidak menggunakan akhiran ekstensi sama sekali.  
       </p>
-      <img src="strukturfolder.png" alt="Struktur File System FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
-      <p>
-        Jika dilihat sekilas, filesystem dari FreeBSD memang mirip dengan Linux. Tetapi jika diperhatikan, ada folder rescue dan file entropy.
-        Folder rescue berisi alat atau binary cadangan jika terjadi kerusakan pada sistem. Sementara file entropy aku kurang tahu isinya apa, tapi ucap orang-orang di internet, entropy digunakan untuk kriptografi acak atau bisa dibilang mengamankan data seperti SSH.
-      </p>
+      <img src="kernel.png" alt="Ring Kernel" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
 
-      <h2>Instalasi FreeBSD</h2>
-      <img src="installfreebsd.png" alt="Tampilan Install FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <h2>Membuat Backup Script</h2>
+      <img src="backup.png" alt="Backup.sh di website Bashing" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Jika kau membaca dari atas, aku sempat berkata bahwa FreeBSD merupakan sistem operasi penuh. Kenapa? berbeda halnya dengan Linux, FreeBSD memiliki Kernel, Userland Tools dan bahkan Driver yang built-in.
-        Karena itulah FreeBSD bisa disebut sebagai sistem operasi.
+        Di sini aku belajar dari AI, tapi disini aku tidak minta AI untuk membuat projectnya secara langsung melainkan dengan memberitahu dasarnya dan guide untuk script yang kubuat.
+        Script pertama adalah backup.sh.
       </p>
       <p>
-        Untuk instalasi FreeBSD sebenarnya cukup gampang, hanya perlu next-next saja. Tetapi yang terpenting saat instalasi adalah jaringan internet.
-        Jujur saja aku harus menginstall dua kali karena saat tidak ada jaringan internet, entah kenapa tidak bisa boot.
+        backup.sh ini adalah script untuk membuat backup folder tertentu. Di sini menggunakan perintah read untuk mengambil input dari user,
+        yang dimana input user tersebut adalah nama foldernya. Setelah selesai maka script otomatis mengkompresnya menjadi file tar.gz.
       </p>
       <p>
-        Setelah selesai menginstall FreeBSD, nanti akan diminta untuk login, tinggal login saja dengan root atau dengan user yang sudah kau buat.
-        Perlu dicatat juga bahwa setelah membuat user baru, ubah visudo agar user bisa menjalankan perintah sebagai root.
-        Setelah login, coba jalankan perintah:
+        Yang kupelajari adalah if condition. if condition di bash ini cukup unik, coba lihat kode berikut:
       </p>
-      <pre><code>which $SHELL</code></pre>
+      <pre><code>if [ ! -d "$DESTINATION" ]; then
+  mkdir -p "$DESTINATION"
+  echo "folder $DESTINATION has been created"
+else
+  echo "folder $DESTINATION already created!"
+fi</code></pre>
       <p>
-        Kau akan menyadari bahwa FreeBSD menggunakan "sh" dan bukan "bash".
+        Bash menggunakan akhiran dan semacam array?, aku tak tahu kenapa seperti itu untuk bash. Akhiran di sini adalah if diakhiri dengan fi.
+        Ini sangat mempermudah karena programmer tahu kapan sebuah if diakhiri, Meskipun akhirannya menggunakan if yang dibalik yang akan terasa agak aneh.
+        Sejauh yang kutahu if condition yang diakhiri juga ada di bahasa pemrograman Lua. Kalau pada Lua seperti berikut:
       </p>
+      <pre>if ... then
+  Do_Something
+end</pre>
 
-      <h2>Membuat Package di FreeBSD</h2>
+      <h2>Membuat Script untuk update sistem.</h2>
       <img src="ports.png" alt="FreeBSD github ports collection screenshot" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
         Jujur saja aku agak bingung dengan cara kerja dari FreeBSD beserta ports collectionnya (ports collection tuh semacam koleksi resmi dari FreeBSD yang menyimpan Makefile dan lain-lain).
