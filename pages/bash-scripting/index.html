@@ -153,6 +153,14 @@
         Script pertama adalah backup.sh.
       </p>
       <p>
+        Satu hal yang cukup penting dari membuat bash script adalah shebang. contoh shebang adalah seperti berikut:
+      </p>
+      <pre><code>#!/bin/bash</code></pre>
+      <p>
+        Kenapa shebang ini cukup penting? karena shebang digunakan untuk memberitahu sistem bagaimana file tersebut dieksekusi.
+        Jadi sistem tidak akan bingung dengan bagaimana sebuah file dieksekusi atau aplikasi apa yang digunakan untuk mengeksekusi file tersebut.
+      </p>
+      <p>
         backup.sh ini adalah script untuk membuat backup folder tertentu. Di sini menggunakan perintah read untuk mengambil input dari user,
         yang dimana input user tersebut adalah nama foldernya. Setelah selesai maka script otomatis mengkompresnya menjadi file tar.gz.
       </p>
@@ -175,97 +183,152 @@ fi</code></pre>
 end</pre>
 
       <h2>Membuat Script untuk update sistem.</h2>
-      <img src="ports.png" alt="FreeBSD github ports collection screenshot" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <img src="updater.png" alt="Script to update system" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Jujur saja aku agak bingung dengan cara kerja dari FreeBSD beserta ports collectionnya (ports collection tuh semacam koleksi resmi dari FreeBSD yang menyimpan Makefile dan lain-lain).
-        Di sini akan kujelaskan sejauh pengalamanku. Untuk membuat package FreeBSD, masukkan perintah berikut:
+        Ini adalah script yang paling mudah, karena hanya membuat script untuk update system.
+        Yang paling unik dari sini adalah aku diminta untuk membuat fungsi yang mendeteksi koneksi internet.
+        Coba lihat kode berikut:
       </p>
-      <pre><code>git clone https://git.freebsd.org/ports.git /usr/ports</code></pre>
+      <pre><code>check_internet(){
+    if ping -c 1 ping.archlinux.org >/dev/null 2>&1; then
+        echo "-------------"
+        echo "| Connected |"
+        echo "-------------"
+    else
+        echo "----------------"
+        echo "| Disconnected |"
+        echo "----------------"
+        exit 1
+    fi
+}</code></pre>
       <p>
-        Tunggu sampai selesai dan jika sudah selesai, masukkan perintah
-      </p>
-      <pre><code>cd /usr/ports</code></pre>
-      <p>
-        Mengingat ini berada di file sistem, aku sarankan untuk berada dalam mode root. Setelah masuk ke folder ports, coba lihat foto di bawah ini, akan ada banyak sekali ports atau bisa dibilang aplikasi. 
-      </p>
-      <img src="portsstructure.png" alt="Struktur folder ports di FreeBSD" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
-      <p>
-        Setelahnya, cukup buat folder misalnya folder <i>misc/namaaplikasi</i>.
-        Lalu di dalam folder tersebut, cukup buat Makefile dan isi dengan konfigurasi aplikasimu.
-        Sebagai contoh di sini aku menggunakan project <a href="https://github.com/RangS-1/Ferminal">Ferminal</a> yang kubuat dengan python.
-        Kurang lebih isi dari Makefilenya seperti berikut:
-      </p>
-      <pre><code>PORTNAME=ferminal
-DISTVERSION=1.4.2
-CATEGORIES=misc
-
-DISTNAME=$(PORTNAME)-$(DISTVERSION)
-
-MAINTAINER-rangga19sj@gmail.com
-COMMENT=Custom Wrapper CLI to make your work faster
-WWW=https://github.com/RangS-1/Ferminal
-
-LICENSE=MIT
-USE_GITHUB=yes
-GH_ACCOUNT=RangS-1
-GH_PROJECT=Ferminal
-GH_TAGNAME=v$(DISTVERSION)
-
-USES=python
-USE_GITHUB=yes
-USE_PYTHON-autoplist pep517
-RUN_DEPENDS=
-            $(PYTHON_PKGNAMEPREFIX)colorama>0:devel/py-colorama@$(PY_FLAVOR)
-            $(PYTHON_PKGNAMEPREFIX)prompt-toolkit>0:devel/py-prompt-toolkit@$(PY_FLAVOR)
-
-include &lt;bsd.port.mk&gt;</code></pre>
-      <p>
-        Inti dari kode tersebut adalah Makefile mengambil file dari Github release berdasarkan versi, lalu build python dengan autoplist dan PEP517.
-        Setelah membuat Makefile, lanjut buat pkg-descr. pkg-descr berisi deskripsi dari aplikasi yang kau buat.
-        Isi apa sajalah bebas.
-      </p>
-      <p>
-        Jika sudah membuat kedua file tersebut, cukup lakukan:
-      </p>
-      <pre><code>make makesum</code></pre>
-      <p>
-        Nanti ia akan membuat file berada distinfo. Aku kurang tahu distinfo untuk apa. Setelah membuat distinfo, saatnya install dengan:
-      </p>
-      <pre><code>make install clean</code></pre>
-      <p>
-        Nanti akan otomatis menginstall aplikasinya sekaligus buildnya, build tergantung dari source code yang kau buat, jika menggunakan C++ biasanya menggunakan CMake.
-      </p>
-      <p>
-        Akan ada folder dengan nama work-py312, jika folder tersebut sudah tergenerate, cukup lakukan:
-      </p>
-      <pre><code>make package</code></pre>
-      <p>
-        File package FreeBSD akan tergenerate pada work-py312/pkg/<i>namaaplikasi-version</i>.pkg. Sekarang coba hapus dengan
-      </p>
-      <pre><code>pkg remove namaaplikasi
-pkg install namaaplikasi-version.pkg</code></pre>
-      <p>
-        Jika berhasil, artinya kamu sudah membuat package untuk FreeBSD dan bisa mengatakan "I Use FreeBSD BTW".
-        Kau bisa membagikan file .pkg tersebut pada orang lain dan mereka bisa menjalankan perintah yang sama, dengan catatan mereka menggunakan FreeBSD.
+        Jujur saja aku awalnya bingung dengan >/dev/null 2>&1. Ternyata kode tersebut digunakan untuk membersihkan output agar tampilan terminal tetap bersih.
+        Kalau kau tidak tahu, fungsi ping akan menghasilkan output yang banyak sesuai dengan kecepatan internet yang dipakai.
       </p>
 
-      <h2>Lisensi FreeBSD</h2>
+      <h2>Membuat script untuk monitoring system</h2>
+      <img src="sysmon.png" alt="Script to update system" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Jujur saja aku penasaran kenapa MacOS tidak menggunakan Linux sebagai Kernelnya. Ternyata alasannya adalah lisensi.
-        Linux menggunakan lisensi GPLv2 yang mengartikan bahwa perusahaan dapat menggunakan Linux, tetapi mereka harus membuatnya tetap Open Source alias kode sumbernya terbuka dan bisa dilihat oleh orang lain.
-        Apple kurang suka dengan hal ini, karena itu ia memilih FreeBSD karena lisensi FreeBSD bersifat permisif, artinya perusahaan boleh menggunakan dan membuatnya tertutup.
+        Script ini mulai menggunakan loop, harus kuakui bahwa loop dalam pemrograman itu agak membingungkan, tapi untungnya di script ini cukup gampang.
+        Dari sini juga aku belajar tentang cara kerja dari pipe, pipe itu memiliki simbol seperti "|". 
+        Pipe sering digunakan untuk mengirim output dari satu perintah ke perintah berikutnya sebagai input. Contohnya seperti berikut:
       </p>
+      <pre><code>printf "RAM Used  : " && free -h | grep Mem | awk '{print $3}'</code></pre>
       <p>
-        Karena itu Apple kini menggunakan Berkeley Software Distribution sebagai kerangka utama dalam terciptanya Darwin, MacOS maupun Iphone.
-        Jadi Iphone yang biasa digunakan merupakan turunan dari BSD.
+        Bisa dilihat maksud dari perintah di atas adalah hasil dari free -h menghasilkan output:
       </p>
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository Experience</a></p>
+      <pre><code>               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       5.1Gi       513Mi       920Mi       2.8Gi       2.5Gi
+Swap:          8.0Gi          0B       8.0Gi</code></pre>
+      <p>
+        Lalu perintah dari grep Mem akan mengambil baris Mem.
+      </p>
+      <pre><code>Mem:           7.6Gi       5.1Gi       513Mi       920Mi       2.8Gi       2.5Gi</code></pre>
+      <p>
+        Setelah mengambil bagian Mem saja, selanjutnya perintah dari awk '{print $3}' mengambil kolom ketiga dari output.
+      </p>
+      <pre><code>Mem:           7.6Gi       5.1Gi       513Mi       920Mi       2.8Gi       2.5Gi
+  ^              ^           ^           ^           ^           ^           ^
+  1              2           3           4           5           6           7</code></pre>
+      <p>
+        Jadi, gabungan dari 3 perintah tersebut menghasil 5.1Gi karena berada di dalam kolom 3.
+        Kedengarannya kompleks, tetapi jika dicoba sendiri akan paham.
+      </p>
 
-      <h2>Kesimpulan</h2>
+      <h2>Membuat project generator dengan Bash</h2>
+      <img src="project.png" alt="Script to make project automaticly" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        MacOS memiliki sejarah yang ketat dengan BSD. Sebuah sistem operasi terdahulu yang kini dipakai oleh perusahaan besar merupakan hal yang sangat luar biasa. 
-        Jika kamu pengguna MacOS, kau mungkin menyadari bahwa filesystemnya mirip dengan Unix karena BSD terinspirasi dari Unix. Jika ingin mempelajari lebih lanjut, bisa cek video berikut:
-        <a href="https://youtu.be/jmWq0gMx20o?si=p7THZRRSg6KyhbRm" target="_blank">
+        Topik utama pada bagian ini adalah fungsi EOF. Coba lihat kode berikut:
+      </p>
+      <pre><code>cat &lt;&lt; EOF &gt; index.html
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+    &lt;title&gt;Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Title&lt;/h1&gt;
+
+    &lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;body&gt;
+&lt;html&gt;
+EOF
+</code></pre>
+    <p>
+      EOF merupakan singkatan dari End of File. fungsi dari EOF adalah ia dapat menulis kode yang panjang ke dalam satu file.
+      satu hal yang agak sulit dari project ini adalah kita harus berfikir sebagai user. Begini, kita harus menggunakan perintah cd untuk pindah dari satu directory ke directory lain,
+      setelah itu baru kita membuat filenya, jika kita tidak menggunakan perintah cd, maka file tidak akan dibuat sesuai dengan keinginan kita.
+      Sebagai programmer, kita pasti tahu bahwa file management itu sangat penting.
+    </p>
+    <p>Baca Juga: <a href="https://rangs-1.github.io/pages/mode-root-linux/" target="_blank">Root: Mode paling berbahaya di Linux</a></p>
+
+    <h2>Membuat script untuk maintain sistem melalui menu</h2>
+    <img src="maintenance.png" alt="Script to maintain system via menu" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+    <p>
+      Ini adalah project terakhir yang AI tugaskan padaku sekaligus yang paling kompleks. Berbeda dengan project pertama yang menggunakan if condition, di project ini kita menggunakan case.
+      Sebenarnya penggunaan if dan case agak mirip, hanya berbeda syntaxnya saja.
+    </p>
+    <pre><code>case "$SELECT" in
+    "1")
+        full_maintain
+        show_menu
+        ;;
+    "2")
+        update_packages
+        show_menu
+        ;;
+    "3")
+        clean_cache
+        show_menu
+        ;;
+    "4")
+        clean_journal
+        show_menu
+        ;;
+    "5")
+        remove_downloads
+        show_menu
+        ;;
+    "6")
+        check_disk
+        show_menu
+        ;;
+    "7")
+        clear
+        show_menu
+        ;;
+    "8")
+        echo
+        echo "[✓] OK! See Ya!"
+        exit 1
+        ;;
+    *)
+        show_menu
+        ;;
+esac</code></pre>
+    <p>
+      Yang membuat project ini sulit hanyalah penggunaan banyak perintah dalam satu file, aku harus mengetes semua perintah di terminal sebelum dimasukkan ke dalam script.
+    </p>
+
+    <h2>Bashing</h2>
+    <p>
+      Kelima script bash di atas adalah tugas yang diberikan oleh AI untuk kukerjakan. Karena scriptnya agak sedikit, jadi aku membuat repository github untuk menyimpan semua script bash.
+      scriptnya tersimpan di <a href="https://github.com/RangS-1/Bashing">https://github.com/RangS-1/Bashing</a>. Tidak hanya itu, aku juga mengupload script bash yang kubuat ini ke <a href="https://aur.archlinux.org/packages/bashing">arch user repository</a>.
+      Bisa kau install dengan perintah:
+    </p>
+    <pre><code>yay -S bashing</code></pre>
+    <p>
+      Sebagai catatan, kebanyakan script yang kubuat berfungsi untuk linux distro berbasis Arch. Contohnya seperti maintenance.sh dan updater.sh karena menggunakan perintah seperti pacman untuk update sistem.
+      Dan juga project ini aku buat tanpa AI sepenuhnya, di sini aku belajar dengan logika sendiri dan hanya menggunakan AI untuk menjelaskan command dan saran dari tiap kode yang kubuat.
+    </p>
+    <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository: Pengalaman ekosistem AUR di Arch Linux</a></p>
+
+    <h2>Kesimpulan</h2>
+      <p>
+        Belajar Scripting dengan Bash bisa dibilang menyenangkan karena kita harus berfikir secara logika dalam membuatnya. Lagipula skill ini akan sering digunakan untuk otomatisasi pekerjaan terutama bagi yang tertarik sebagai (Linux) System Administrator.
+        Aku juga membuat website untuk redirect ke repository github, berikut linknya <a href="https://rangs-1.github.io/Bashing" loading="lazy">https://rangs-1.github.io/Bashing</a>. Bagi kamu yang tertarik dalam scripting bash, bisa cek video berikut:
+        <a href="https://youtu.be/tK9Oc6AEnR4?si=Rb9DdmPbHeOvRUgk" target="_blank">
           Link ke Video.
           <img src="thumbnail.png" alt="Thumbnail Youtube from Freecodecamp.org" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
         </a>
