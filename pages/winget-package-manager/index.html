@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winget: Mencoba ekosistem package manager di Windows — ./RangS Blog</title>
+  <meta name="description" content="Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/winget-package-manager/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Winget: Mencoba ekosistem package manager di Windows">
+  <meta property="og:description" content="Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs-1.github.io/pages/winget-package-manager/winget.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Winget: Mencoba ekosistem package manager di Windows">
+  <meta name="twitter:description" content="Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.">
+  <meta name="twitter:image" content="https://rangs-1.github.io/pages/winget-package-manager/winget.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Winget: Mencoba ekosistem package manager di Windows",
+    "description":"Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-08-28",
+    "dateModified":"2026-08-28",
+    "keywords":[
+      "Winget",
+      "Windows",
+      "Package Manager"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../">home</a>
+    <a href="../../dashboard/" class="active">dashboard</a>
+    <a href="../../about/">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-09-07</span>
+        <span>·</span>
+        <span>15 min read</span>
+      </div>
+      <h1 class="article-headline">Winget: Mencoba ekosistem package manager di Windows</h1>
+      <p class="article-summary">
+        Apa itu Winget? Bagaimana cara mengirim package ke Winget? kita bahas lengkap di artikel ini.
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#winget</span>
+        <span class="tag">#windows</span>
+        <span class="tag">#package-manager</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2>Apa itu Winget?</h2>
+      <p>Winget adalah package manager resmi untuk Windows 10 dan Windows 11.</p>
+      <blockquote>
+        "Think of import/export as a grocery list and configure as a complete recipe. The grocery list tells you what to buy, but the recipe tells you what to buy and how to put it all together."
+        <br>
+        — Microsoft Docs
+      </blockquote>
+      <p>
+        Pada artikel ini, kita akan bahas tentang Winget, terutama pada bagaimana Winget digunakan untuk mengelola package di Windows melalui terminal dan cara membuat package sendiri.
+      </p>
+
+      <h2>Winget</h2>
+      <img src="winget.png" alt="Logo Winget" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jadi apa itu Winget? Winget adalah package manager resmi untuk Windows 10 dan Windows 11.
+        Winget memungkinkan pengguna untuk menginstal, memperbarui, dan menghapus package secara mudah melalui terminal.
+      </p>
+      <p>
+        Jujur saja aku tidak pernah tahu tentang Winget, aku baru tahu ketika bertanya pada AI tentang apakah ada package manager untuk Windows, ternyata ada dan itu adalah Winget.
+        Pada Windows 10 dan 11 ke atas, biasanya Winget sudah include dengan windows, jadi kau tidak perlu menginstallnya secara manual.
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository: Pengalaman ekosistem AUR di Arch Linux</a></p>
+
+      <h2>Penggunaan Winget</h2>
+      <p>
+        Kita sudah masuk pada bagian penggunaan Winget, berikut adalah cheatsheet dalam penggunaan Winget:
+      </p>
+      <pre><code>winget install &lt;package_name&gt;         menginstall package
+winget update &lt;package_name&gt;          Memperbarui package
+winget uninstall &lt;package_name&gt;       Menghapus package
+winget --info	                              Menampilkan informasi sistem
+winget --version                            Menampilkan versi Winget</code></pre>
+      <p>
+        Cukup mudah bukan? Winget ini sangat mirip dengan package manager di Linux seperti apt, pacman dan dnf. Meski mirip, tetap tidak bisa dibandingkan karena Winget ini masih baru dan masih banyak kekurangan, terutama pada performa dan jumlah package yang tersedia.
+        Karena repository Winget ini masih sedikit, itulah yang menyebabkan kurangnya pemakaian Winget sehari-hari. 
+      </p>
+
+      <h2>Membuat Package di Winget</h2>
+      <p>
+        Sekarang kita masuk pada bagian yang cukup menarik, yaitu membuat package di Winget. Aku akan menjelaskan bagaimana cara membuat package di Winget sesuai pengalamanku.
+        Pertama-tama adalah menginstall wingetcreate, wingetcreate ini semacam tool untuk membuat package di Winget. Untuk menginstallnya, kau bisa menggunakan perintah berikut:
+      </p>
+      <pre><code>winget install wingetcreate</code></pre>
+      <p>
+        Setelah itu, kita bisa membuat package dengan perintah berikut:
+      </p>
+      <pre><code>wingetcreate new &lt;url-installer-packagemu&gt;</code></pre>
+      <img src="screenshotwingetcreate.png" alt="Screenshot proses membuat package dengan wingetcreate" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Nanti tinggal ikuti saja perintah yang diberikan oleh wingetcreate. Akan ada beberapa pertanyaan yang perlu dijawab,
+        seperti nama package, versi, deskripsi, dan lain-lain. Setelah selesai, wingetcreate akan membuat file manifest yang berisi informasi package yang kita buat.
+      </p>
+      <p>
+        Setelah selesai membuat package, kita bisa mengirimkan package tersebut ke Winget dengan perintah berikut:
+      </p>
+      <pre><code>wingetcreate submit &lt;path-to-manifest-file&gt;</code></pre>
+      <p>
+        Tetapi, jika validasi manifest berhasil, biasanya akan ada pertanyaan untuk mengirimkan package ke Winget.
+      </p>
+      <img src="wingetvalidation.png" alt="Screenshot Validasi Winget yang gagal" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jika muncul pertanyaan untuk membuat pull request, kau bisa mengetik "y" dan enter, maka ia akan membuat pull request ke Winget dengan cara
+        fork repository winget-pkgs ke akun githubmu. Nanti kau akan diminta untuk login ke github dan diberi link pull request jika validasi berhasil.
+        Oh ya, jika kau sudah pernah mengirimkan package ke Winget, kau harus sync fork repository winget-pkgs terlebih dahulu, karena jika tidak maka kau tidak akan bisa membuat pull request dengan wingetcreate.
+      </p>
+
+      <h2>Review dari Microsoft Team.</h2>
+      <img src="githubreview.png" alt="Tampilan halaman pull request untuk menunggu review dari maintainer winget" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Bisa kau lihat dari gambar di atas, gambar di atas adalah tampilan halaman pull request yang kita buat dengan wingetcreate.
+        Pada pull request tersebut juga terdapat beberapa checklist yang harus dilalui sebelum package kita diterima oleh Winget. seperti:
+      </p>
+      <pre><code>winget validate --manifest &lt;path-to-manifest-file&gt;
+winget install --manifest &lt;path-to-manifest-file&gt;</code></pre>
+      <p>
+        Setelah melakukan validasi dan installasi melalui manifest, kita perlu menceklis pada pull request bahwa validasi dan installasi berhasil.
+        Jika semua itu selesai, kita hanya perlu menunggu review dari wingetvalidator-prod dan maintainer asli winget.
+      </p>
+      <p>
+        Dari pengalamanku, biasanya review dari wingetvalidator-prod akan cepat, tetapi review dari maintainer asli winget bisa memakan waktu hingga beberapa minggu, kalau tidak salah sekitar 2 minggu.
+        Setelah 2 minggu menunggu review dari maintainer asli winget, aku mendapatkan response melalui komentar pull request bahwa ada perbaikan yang perlu dilakukan.
+      </p>
+      <img src="reviewdemitrius.png" alt="Screenshot moderator approved dari Demitrius Nelon" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Maintainer asli winget bernama <a href="https://github.com/stephengillie">Stephen Gillie</a>, dia yang memberikan komentar perbaikan yang harus kulakukan pada package yang kubuat.
+        Sementara itu, <a href="https://github.com/denelon">Demitrius Nelon</a> mengecek kembali package yang kubuat, setelah sesuai dan tidak ada error, ia memberikan moderator-approved dan wingetbot otomatis merge pull requestku ke repository winget-pkgs.
+      </p>
+      <p>
+        Oh ya, aku hampir lupa untuk menceritakan bagaimana cara memperbarui pull request yang sudah dibuat.
+        Sebenarnya caranya cukup simple, pada halaman pull request, kau bisa klik bagian "Files changed" dan klik titik tiga di pojok kanan atas, nanti akan ada pilihan untuk "Edit File".
+        Setelah selesai mengedit file, cukup commit dan tunggu proses review sekitar 2 minggu lagi.
+      </p>
+
+      <h2>Testing dengan PowerShell/Command Prompt</h2>
+      <p>
+        Setelah package kita diterima oleh Winget, kita bisa menginstall package tersebut melalui terminal. Bisa menggunakan PowerShell atau Command Prompt.
+        Berikut adalah perintah untuk menginstall package yang sudah diterima oleh Winget:
+      </p>
+      <pre><code>winget install &lt;package-kamu&gt;</code></pre>
+      <p>
+        Jika proses install berhasil, artinya selamat! package yang kau buat sudah bisa digunakan oleh semua pengguna Windows 10 dan 11+ dengan perintah winget tersebut.
+        Kamu bisa mengecek package yang kubuat di <a href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/r/RangS/" target="_blank">winget-pkgs repository</a>.
+      </p>
+
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/bash-scripting/" target="_blank">Bash: Mencoba scripting terminal dengan Bash</a></p>
+
+      <h2>Kesimpulan</h2>
+      <p>
+        Membuat package di Winget merupakan pengalaman yang menarik, karena kita belajar bagaimana ekosistem package manager bekerja di Windows.
+        Meskipun Winget masih dibilang baru, tetapi sudah cukup baik untuk digunakan sehari-hari. Aku berharap Winget bisa menjadi package manager yang lebih baik lagi di masa depan.
+        Jika kau tertarik lebih lanjut dengan ekosistem open source di Windows, aku sarankan untuk menonton video berikut:
+        <a href="https://youtu.be/RchzolDcKA4?si=9twjEpbGi2LfnVTJ" target="_blank">
+          Link ke Video.
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Freecodecamp.org" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'freebsd-sang-nenek-moyang-macos')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
