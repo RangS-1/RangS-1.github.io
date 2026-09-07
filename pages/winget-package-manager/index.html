@@ -113,36 +113,38 @@
 
     <div class="article-body">
       <h2>Apa itu Winget?</h2>
-      <p>Bourne-Again Shell atau sering disebut Bash adalah Shell yang berfungsi sebagai penerjemah perintah terminal untuk sistem operasi .</p>
+      <p>Winget adalah package manager resmi untuk Windows 10 dan Windows 11.</p>
       <blockquote>
-        "The single most important design decision: what you type at the prompt and what you write in a file share the same syntax."
+        "Think of import/export as a grocery list and configure as a complete recipe. The grocery list tells you what to buy, but the recipe tells you what to buy and how to put it all together."
         <br>
-        — Brian Fox, pencipta Bash
+        — Microsoft Docs
       </blockquote>
       <p>
-        Pada artikel ini, kita akan bahas tentang Bash, terutama pada bagian Scripting dengan Bash.
+        Pada artikel ini, kita akan bahas tentang Winget, terutama pada bagaimana Winget digunakan untuk mengelola package di Windows melalui terminal dan cara membuat package sendiri.
       </p>
 
-      <h2>Bourne-Again Shell</h2>
-      <img src="bash.png" alt="Logo Bash" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <h2>Winget</h2>
+      <img src="winget.png" alt="Logo Winget" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Jadi apa itu Bash? Bourne Again Shell atau biasa disebut dengan Bash adalah penerjemah perintah pengguna untuk dijalankan oleh kernel.
-        Kernel sendiri adalah inti dari sistem operasi yang mengatur memory, interrupt (input dan semacamnya) dan lain-lain.
+        Jadi apa itu Winget? Winget adalah package manager resmi untuk Windows 10 dan Windows 11.
+        Winget memungkinkan pengguna untuk menginstal, memperbarui, dan menghapus package secara mudah melalui terminal.
       </p>
       <p>
-        Bash biasanya sering dijadikan sebagai default shell dalam sistem operasi linux, tetapi banyak juga yang menggunakan shell lain seperti fish dan zsh.
-        Jika tidak menggunakan TTY, Bash sering digunakan dengan terminal seperti kitty, foot (aku tak tahu kenapa disebut foot) dan lain-lain.
-        Oh ya, jika kau menggunakan laptop linux, kau bisa masuk ke TTY mode dengan Ctrl+Alt+F3, dan jika ingin kembali seperti semula tinggal tekan Ctrl+Alt+F1. 
+        Jujur saja aku tidak pernah tahu tentang Winget, aku baru tahu ketika bertanya pada AI tentang apakah ada package manager untuk Windows, ternyata ada dan itu adalah Winget.
+        Pada Windows 10 dan 11 ke atas, biasanya Winget sudah include dengan windows, jadi kau tidak perlu menginstallnya secara manual.
       </p>
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer/" target="_blank">Terminal: Kawan Sejati Programmer</a></p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository: Pengalaman ekosistem AUR di Arch Linux</a></p>
 
-      <h2>Scripting Bash</h2>
+      <h2>Penggunaan Winget</h2>
       <p>
-        Kita masuk ke dalam Scripting Bash. Apa itu Scripting dengan Bash? yang dimaksud dengan scripting adalah membuat skrip yang bisa digunakan berkali-kali untuk pekerjaan yang diulang-ulang.
-        Alasan utama membuat Script Bash tentunya agar lebih mudah dan tidak mengulangi pekerjaan yang sering diulang-ulang.
+        Kita sudah masuk pada bagian penggunaan Winget, berikut adalah cheatsheet dalam penggunaan Winget:
       </p>
+      <pre><code>winget install &lt;package_name&gt;         menginstall package
+winget update &lt;package_name&gt;          Memperbarui package
+winget uninstall &lt;package_name&gt;       Menghapus package
+winget --info	                              Menampilkan informasi sistem
+winget --version                            Menampilkan versi Winget</code></pre>
       <p>
-        File script bash biasanya berakhiran dengan ekstensi .sh atau bahkan tidak menggunakan akhiran ekstensi sama sekali.  
       </p>
       <img src="kernel.png" alt="Ring Kernel" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
 
