@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winget: Mencoba ekosistem package manager di Windows — ./RangS Blog</title>
+  <meta name="description" content="Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/winget-package-manager/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Winget: Mencoba ekosistem package manager di Windows">
+  <meta property="og:description" content="Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs-1.github.io/pages/winget-package-manager/winget.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Winget: Mencoba ekosistem package manager di Windows">
+  <meta name="twitter:description" content="Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.">
+  <meta name="twitter:image" content="https://rangs-1.github.io/pages/winget-package-manager/winget.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Winget: Mencoba ekosistem package manager di Windows",
+    "description":"Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-08-28",
+    "dateModified":"2026-08-28",
+    "keywords":[
+      "Winget",
+      "Windows",
+      "Package Manager"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../">home</a>
+    <a href="../../dashboard/" class="active">dashboard</a>
+    <a href="../../about/">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-09-07</span>
+        <span>·</span>
+        <span>15 min read</span>
+      </div>
+      <h1 class="article-headline">Winget: Mencoba ekosistem package manager di Windows</h1>
+      <p class="article-summary">
+        Apa itu Winget? Bagaimana cara mengirim package ke Winget? kita bahas lengkap di artikel ini.
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#winget</span>
+        <span class="tag">#windows</span>
+        <span class="tag">#package-manager</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2>Apa itu Winget?</h2>
+      <p>Bourne-Again Shell atau sering disebut Bash adalah Shell yang berfungsi sebagai penerjemah perintah terminal untuk sistem operasi .</p>
+      <blockquote>
+        "The single most important design decision: what you type at the prompt and what you write in a file share the same syntax."
+        <br>
+        — Brian Fox, pencipta Bash
+      </blockquote>
+      <p>
+        Pada artikel ini, kita akan bahas tentang Bash, terutama pada bagian Scripting dengan Bash.
+      </p>
+
+      <h2>Bourne-Again Shell</h2>
+      <img src="bash.png" alt="Logo Bash" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jadi apa itu Bash? Bourne Again Shell atau biasa disebut dengan Bash adalah penerjemah perintah pengguna untuk dijalankan oleh kernel.
+        Kernel sendiri adalah inti dari sistem operasi yang mengatur memory, interrupt (input dan semacamnya) dan lain-lain.
+      </p>
+      <p>
+        Bash biasanya sering dijadikan sebagai default shell dalam sistem operasi linux, tetapi banyak juga yang menggunakan shell lain seperti fish dan zsh.
+        Jika tidak menggunakan TTY, Bash sering digunakan dengan terminal seperti kitty, foot (aku tak tahu kenapa disebut foot) dan lain-lain.
+        Oh ya, jika kau menggunakan laptop linux, kau bisa masuk ke TTY mode dengan Ctrl+Alt+F3, dan jika ingin kembali seperti semula tinggal tekan Ctrl+Alt+F1. 
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/terminal-sang-kawan-programmer/" target="_blank">Terminal: Kawan Sejati Programmer</a></p>
+
+      <h2>Scripting Bash</h2>
+      <p>
+        Kita masuk ke dalam Scripting Bash. Apa itu Scripting dengan Bash? yang dimaksud dengan scripting adalah membuat skrip yang bisa digunakan berkali-kali untuk pekerjaan yang diulang-ulang.
+        Alasan utama membuat Script Bash tentunya agar lebih mudah dan tidak mengulangi pekerjaan yang sering diulang-ulang.
+      </p>
+      <p>
+        File script bash biasanya berakhiran dengan ekstensi .sh atau bahkan tidak menggunakan akhiran ekstensi sama sekali.  
+      </p>
+      <img src="kernel.png" alt="Ring Kernel" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+
+      <h2>Membuat Backup Script</h2>
+      <img src="backup.png" alt="Backup.sh di website Bashing" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Di sini aku belajar dari AI, tapi disini aku tidak minta AI untuk membuat projectnya secara langsung melainkan dengan memberitahu dasarnya dan guide untuk script yang kubuat.
+        Script pertama adalah backup.sh.
+      </p>
+      <p>
+        Satu hal yang cukup penting dari membuat bash script adalah shebang. contoh shebang adalah seperti berikut:
+      </p>
+      <pre><code>#!/bin/bash</code></pre>
+      <p>
+        Kenapa shebang ini cukup penting? karena shebang digunakan untuk memberitahu sistem bagaimana file tersebut dieksekusi.
+        Jadi sistem tidak akan bingung dengan bagaimana sebuah file dieksekusi atau aplikasi apa yang digunakan untuk mengeksekusi file tersebut.
+      </p>
+      <p>
+        backup.sh ini adalah script untuk membuat backup folder tertentu. Di sini menggunakan perintah read untuk mengambil input dari user,
+        yang dimana input user tersebut adalah nama foldernya. Setelah selesai maka script otomatis mengkompresnya menjadi file tar.gz.
+      </p>
+      <p>
+        Yang kupelajari adalah if condition. if condition di bash ini cukup unik, coba lihat kode berikut:
+      </p>
+      <pre><code>if [ ! -d "$DESTINATION" ]; then
+  mkdir -p "$DESTINATION"
+  echo "folder $DESTINATION has been created"
+else
+  echo "folder $DESTINATION already created!"
+fi</code></pre>
+      <p>
+        Bash menggunakan akhiran dan semacam array?, aku tak tahu kenapa seperti itu untuk bash. Akhiran di sini adalah if diakhiri dengan fi.
+        Ini sangat mempermudah karena programmer tahu kapan sebuah if diakhiri, Meskipun akhirannya menggunakan if yang dibalik yang akan terasa agak aneh.
+        Sejauh yang kutahu if condition yang diakhiri juga ada di bahasa pemrograman Lua. Kalau pada Lua seperti berikut:
+      </p>
+      <pre>if ... then
+  Do_Something
+end</pre>
+
+      <h2>Membuat Script untuk update sistem.</h2>
+      <img src="updater.png" alt="Script to update system" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Ini adalah script yang paling mudah, karena hanya membuat script untuk update system.
+        Yang paling unik dari sini adalah aku diminta untuk membuat fungsi yang mendeteksi koneksi internet.
+        Coba lihat kode berikut:
+      </p>
+      <pre><code>check_internet(){
+    if ping -c 1 ping.archlinux.org >/dev/null 2>&1; then
+        echo "-------------"
+        echo "| Connected |"
+        echo "-------------"
+    else
+        echo "----------------"
+        echo "| Disconnected |"
+        echo "----------------"
+        exit 1
+    fi
+}</code></pre>
+      <p>
+        Jujur saja aku awalnya bingung dengan >/dev/null 2>&1. Ternyata kode tersebut digunakan untuk membersihkan output agar tampilan terminal tetap bersih.
+        Kalau kau tidak tahu, fungsi ping akan menghasilkan output yang banyak sesuai dengan kecepatan internet yang dipakai.
+      </p>
+
+      <h2>Membuat script untuk monitoring system</h2>
+      <img src="sysmon.png" alt="Script to update system" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Script ini mulai menggunakan loop, harus kuakui bahwa loop dalam pemrograman itu agak membingungkan, tapi untungnya di script ini cukup gampang.
+        Dari sini juga aku belajar tentang cara kerja dari pipe, pipe itu memiliki simbol seperti "|". 
+        Pipe sering digunakan untuk mengirim output dari satu perintah ke perintah berikutnya sebagai input. Contohnya seperti berikut:
+      </p>
+      <pre><code>printf "RAM Used  : " && free -h | grep Mem | awk '{print $3}'</code></pre>
+      <p>
+        Bisa dilihat maksud dari perintah di atas adalah hasil dari free -h menghasilkan output:
+      </p>
+      <pre><code>               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       5.1Gi       513Mi       920Mi       2.8Gi       2.5Gi
+Swap:          8.0Gi          0B       8.0Gi</code></pre>
+      <p>
+        Lalu perintah dari grep Mem akan mengambil baris Mem.
+      </p>
+      <pre><code>Mem:           7.6Gi       5.1Gi       513Mi       920Mi       2.8Gi       2.5Gi</code></pre>
+      <p>
+        Setelah mengambil bagian Mem saja, selanjutnya perintah dari awk '{print $3}' mengambil kolom ketiga dari output.
+      </p>
+      <pre><code>Mem:           7.6Gi       5.1Gi       513Mi       920Mi       2.8Gi       2.5Gi
+  ^              ^           ^           ^           ^           ^           ^
+  1              2           3           4           5           6           7</code></pre>
+      <p>
+        Jadi, gabungan dari 3 perintah tersebut menghasil 5.1Gi karena berada di dalam kolom 3.
+        Kedengarannya kompleks, tetapi jika dicoba sendiri akan paham.
+      </p>
+
+      <h2>Membuat project generator dengan Bash</h2>
+      <img src="project.png" alt="Script to make project automaticly" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Topik utama pada bagian ini adalah fungsi EOF. Coba lihat kode berikut:
+      </p>
+      <pre><code>cat &lt;&lt; EOF &gt; index.html
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+    &lt;title&gt;Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Title&lt;/h1&gt;
+
+    &lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;body&gt;
+&lt;html&gt;
+EOF
+</code></pre>
+    <p>
+      EOF merupakan singkatan dari End of File. fungsi dari EOF adalah ia dapat menulis kode yang panjang ke dalam satu file.
+      satu hal yang agak sulit dari project ini adalah kita harus berfikir sebagai user. Begini, kita harus menggunakan perintah cd untuk pindah dari satu directory ke directory lain,
+      setelah itu baru kita membuat filenya, jika kita tidak menggunakan perintah cd, maka file tidak akan dibuat sesuai dengan keinginan kita.
+      Sebagai programmer, kita pasti tahu bahwa file management itu sangat penting.
+    </p>
+    <p>Baca Juga: <a href="https://rangs-1.github.io/pages/mode-root-linux/" target="_blank">Root: Mode paling berbahaya di Linux</a></p>
+
+    <h2>Membuat script untuk maintain sistem melalui menu</h2>
+    <img src="maintenance.png" alt="Script to maintain system via menu" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+    <p>
+      Ini adalah project terakhir yang AI tugaskan padaku sekaligus yang paling kompleks. Berbeda dengan project pertama yang menggunakan if condition, di project ini kita menggunakan case.
+      Sebenarnya penggunaan if dan case agak mirip, hanya berbeda syntaxnya saja.
+    </p>
+    <pre><code>case "$SELECT" in
+    "1")
+        full_maintain
+        show_menu
+        ;;
+    "2")
+        update_packages
+        show_menu
+        ;;
+    "3")
+        clean_cache
+        show_menu
+        ;;
+    "4")
+        clean_journal
+        show_menu
+        ;;
+    "5")
+        remove_downloads
+        show_menu
+        ;;
+    "6")
+        check_disk
+        show_menu
+        ;;
+    "7")
+        clear
+        show_menu
+        ;;
+    "8")
+        echo
+        echo "[✓] OK! See Ya!"
+        exit 1
+        ;;
+    *)
+        show_menu
+        ;;
+esac</code></pre>
+    <p>
+      Yang membuat project ini sulit hanyalah penggunaan banyak perintah dalam satu file, aku harus mengetes semua perintah di terminal sebelum dimasukkan ke dalam script.
+    </p>
+
+    <h2>Bashing</h2>
+    <p>
+      Kelima script bash di atas adalah tugas yang diberikan oleh AI untuk kukerjakan. Karena scriptnya agak sedikit, jadi aku membuat repository github untuk menyimpan semua script bash.
+      scriptnya tersimpan di <a href="https://github.com/RangS-1/Bashing">https://github.com/RangS-1/Bashing</a>. Tidak hanya itu, aku juga mengupload script bash yang kubuat ini ke <a href="https://aur.archlinux.org/packages/bashing">arch user repository</a>.
+      Bisa kau install dengan perintah:
+    </p>
+    <pre><code>yay -S bashing</code></pre>
+    <p>
+      Sebagai catatan, kebanyakan script yang kubuat berfungsi untuk linux distro berbasis Arch. Contohnya seperti maintenance.sh dan updater.sh karena menggunakan perintah seperti pacman untuk update sistem.
+      Dan juga project ini aku buat tanpa AI sepenuhnya, di sini aku belajar dengan logika sendiri dan hanya menggunakan AI untuk menjelaskan command dan saran dari tiap kode yang kubuat.
+    </p>
+    <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository: Pengalaman ekosistem AUR di Arch Linux</a></p>
+
+    <h2>Kesimpulan</h2>
+      <p>
+        Belajar Scripting dengan Bash bisa dibilang menyenangkan karena kita harus berfikir secara logika dalam membuatnya. Lagipula skill ini akan sering digunakan untuk otomatisasi pekerjaan terutama bagi yang tertarik sebagai (Linux) System Administrator.
+        Aku juga membuat website untuk redirect ke repository github, berikut linknya <a href="https://rangs-1.github.io/Bashing" loading="lazy">https://rangs-1.github.io/Bashing</a>. Bagi kamu yang tertarik dalam scripting bash, bisa cek video berikut:
+        <a href="https://youtu.be/tK9Oc6AEnR4?si=Rb9DdmPbHeOvRUgk" target="_blank">
+          Link ke Video.
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Freecodecamp.org" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'freebsd-sang-nenek-moyang-macos')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
