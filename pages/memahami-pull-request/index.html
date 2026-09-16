@@ -159,15 +159,14 @@ git push origin main</code></pre>
         Setelah berhasil push ke fork repositorymu, coba buka halaman repository di github, harusnya kau bisa melihat tombol Contribute yang ketika diklik akan ada tombol open pull request.
       </p>
       <img src="fork.png" alt="Screenshot halaman fork repository" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
-      <pre><code>wingetcreate submit &lt;path-to-manifest-file&gt;</code></pre>
       <p>
-        Tetapi, jika validasi manifest berhasil, biasanya akan ada pertanyaan untuk mengirimkan package ke Winget.
+        Jika kau menekan tombol open pull request, nanti akan ada semacam comment yang di mana kau bisa menjelaskan cara kerja dari fiturmu atau bug yanng kau perbaiki.
+        Tinggal klik tombol create pull request dan kau telah membuat pull request untuk project tersebut.
       </p>
-      <img src="wingetvalidation.png" alt="Screenshot Validasi Winget yang gagal" style="width:100%;border-radius:8px;margin:24px 0;">
       <p>
-        Jika muncul pertanyaan untuk membuat pull request, kau bisa mengetik "y" dan enter, maka ia akan membuat pull request ke Winget dengan cara
-        fork repository winget-pkgs ke akun githubmu. Nanti kau akan diminta untuk login ke github dan diberi link pull request jika validasi berhasil.
-        Oh ya, jika kau sudah pernah mengirimkan package ke Winget, kau harus sync fork repository winget-pkgs terlebih dahulu, karena jika tidak maka kau tidak akan bisa membuat pull request dengan wingetcreate.
+        Kalau sudah selesai membuat pull request, waktunya menunggu. Menunggu pull request sampai di terima oleh pemilik repository terkadang tidak memiliki kepastian,
+        aku pernah membuat pull request di repository winget-pkgs milik microsoft, tahu berapa lama sampai diterima? 2 minggu, itu jika sudah diterima, belum lagi jika ditolak dan perlu perbaikan, bisa berapa lama tuh.
+        Setelah pull request di terima oleh pemilik repository, pull request akan di merge atau digabungkan oleh pemilik dan kau tercatat sebagai contributor.
       </p>
 
       <h2>Review dari Microsoft Team.</h2>
