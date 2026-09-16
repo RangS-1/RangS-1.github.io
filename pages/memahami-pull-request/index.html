@@ -112,61 +112,53 @@
     </div>
 
     <div class="article-body">
-      <h2>Apa itu Winget?</h2>
-      <p>Winget adalah package manager resmi untuk Windows 10 dan Windows 11.</p>
+      <h2>Apa itu Pull Request?</h2>
+      <p>Pull Request adalah salah satu cara kontribusi untuk repository open source di github.</p>
       <blockquote>
-        "Think of import/export as a grocery list and configure as a complete recipe. The grocery list tells you what to buy, but the recipe tells you what to buy and how to put it all together."
+        “Open source is a development methodology; free software is a social movement.”
         <br>
-        — Microsoft Docs
+        — Richard Stallman, Open Source Initiative Founder
       </blockquote>
       <p>
-        Pada artikel ini, kita akan bahas tentang Winget, terutama pada bagaimana Winget digunakan untuk mengelola package di Windows melalui terminal dan cara membuat package sendiri.
+        Pada artikel ini, kita akan bahas tentang Pull Request, terutama pada etika kontribusi terhadap open source.
       </p>
 
-      <h2>Winget</h2>
-      <img src="winget.png" alt="Logo Winget" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <h2>Pull Request</h2>
+      <img src="pull.png" alt="Screenshot halaman pull request" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <p>
-        Jadi apa itu Winget? Winget adalah package manager resmi untuk Windows 10 dan Windows 11.
-        Winget memungkinkan pengguna untuk menginstal, memperbarui, dan menghapus package secara mudah melalui terminal.
+        Jadi apa itu Pull Request? pull request adalah sistem untuk mengajukan usulan atau permintaan resmi untuk menggabungkan kode atau memperbaiki kode pada sebuah project open source.
       </p>
       <p>
-        Jujur saja aku tidak pernah tahu tentang Winget, aku baru tahu ketika bertanya pada AI tentang apakah ada package manager untuk Windows, ternyata ada dan itu adalah Winget.
-        Pada Windows 10 dan 11 ke atas, biasanya Winget sudah include dengan windows, jadi kau tidak perlu menginstallnya secara manual.
+        Bayangkan seperti ini, kita adalah pengguna biasa dan menggunakan aplikasi-aplikasi yang berhubungan dengan open source,
+        contoh paling nyata adalah Visual Studio Code. Kita sedang menggunakan aplikasi tersebut, tetapi kita menemukan bug dari aplikasi tersebut.
+        Karena itu kita membuat versi kita sendiri dan membuat pull request agar orang lain yang menggunakannya tidak lagi mendapatkan bug tersebut pada versi mereka. 
       </p>
       <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository: Pengalaman ekosistem AUR di Arch Linux</a></p>
 
-      <h2>Penggunaan Winget</h2>
+      <h2>Etika Open Source</h2>
       <p>
-        Kita sudah masuk pada bagian penggunaan Winget, berikut adalah cheatsheet dalam penggunaan Winget:
-      </p>
-      <pre><code>winget install &lt;package_name&gt;         menginstall package
-winget update &lt;package_name&gt;          Memperbarui package
-winget uninstall &lt;package_name&gt;       Menghapus package
-winget --info	                              Menampilkan informasi sistem
-winget --version                            Menampilkan versi Winget</code></pre>
-      <p>
-        Cukup mudah bukan? Winget ini sangat mirip dengan package manager di Linux seperti apt, pacman dan dnf. Meski mirip, tetap tidak bisa dibandingkan karena Winget ini masih baru dan masih banyak kekurangan, terutama pada performa dan jumlah package yang tersedia.
-        Karena repository Winget ini masih sedikit, itulah yang menyebabkan kurangnya pemakaian Winget sehari-hari. 
-      </p>
+        Dalam project besar yang bersifat open source, terdapat beberapa etika yang perlu diperhatikan.
+        Sejauh yang kutahu, etika project open source biasanya tersimpan dalam file CONTRIBUTING.md dan CODE_OF_CONDUCT.md.
+        Project open source besar biasanya memiliki CONTRIBUTING.md yang berisi cara kerja untuk kontribusi pada mereka. Namun, di sini aku akan menjelaskan cara normal yang biasa digunakan oleh project-project kecil.
+      </p>      
 
-      <h2>Membuat Package di Winget</h2>
+      <h2>Membuat Pull Request</h2>
       <p>
-        Sekarang kita masuk pada bagian yang cukup menarik, yaitu membuat package di Winget. Aku akan menjelaskan bagaimana cara membuat package di Winget sesuai pengalamanku.
-        Pertama-tama adalah menginstall wingetcreate, wingetcreate ini semacam tool untuk membuat package di Winget. Untuk menginstallnya, kau bisa menggunakan perintah berikut:
+        Langkah pertama dalam membuat pull request adalah dengan membuat fork atau aplikasi versi dirimu sendiri.
+        Setelah membuat fork di akun githubmu sendiri, kau bisa cloning dengan perintah git:
       </p>
-      <pre><code>winget install wingetcreate</code></pre>
+      <pre><code>git clone https://github.com/&lt;nama-akunmu&gt;/&lt;nama-project&gt;</code></pre>
       <p>
-        Setelah itu, kita bisa membuat package dengan perintah berikut:
+        Jika sudah selesai cloning, ya waktunya bekerja. Misalnya kau cloning sebuah project web, kau bisa memberi tambahan berupa fitur baru atau perbaikan bug pada project tersebut.
+        Kalau sudah selesai membuat fiturmu sendiri, kau bisa commit dan push ke repositorymu dengan perintah:
       </p>
-      <pre><code>wingetcreate new &lt;url-installer-packagemu&gt;</code></pre>
-      <img src="screenshotwingetcreate.png" alt="Screenshot proses membuat package dengan wingetcreate" style="width:100%;border-radius:8px;margin:24px 0;">
+      <pre><code>git add .
+git commit -m "Fitur Barumu"
+git push origin main</code></pre>
       <p>
-        Nanti tinggal ikuti saja perintah yang diberikan oleh wingetcreate. Akan ada beberapa pertanyaan yang perlu dijawab,
-        seperti nama package, versi, deskripsi, dan lain-lain. Setelah selesai, wingetcreate akan membuat file manifest yang berisi informasi package yang kita buat.
+        Setelah berhasil push ke fork repositorymu, coba buka halaman repository di github, harusnya kau bisa melihat tombol Contribute yang ketika diklik akan ada tombol open pull request.
       </p>
-      <p>
-        Setelah selesai membuat package, kita bisa mengirimkan package tersebut ke Winget dengan perintah berikut:
-      </p>
+      <img src="fork.png" alt="Screenshot halaman fork repository" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
       <pre><code>wingetcreate submit &lt;path-to-manifest-file&gt;</code></pre>
       <p>
         Tetapi, jika validasi manifest berhasil, biasanya akan ada pertanyaan untuk mengirimkan package ke Winget.
