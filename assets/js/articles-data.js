@@ -150,6 +150,17 @@ const ARTICLES = [
   },
   {
   id: 14,
+    title: "Winget: Mencoba ekosistem package manager di Windows",
+    slug: "winget-package-manager",
+    summary: "Apa itu Winget? Bagaimana cara mengirim package ke Winget? kita bahas lengkap di artikel ini.",
+    category: "technology",
+    tags: ["winget", "windows", "package manager"],
+    date: "2026-08-15",
+    readTime: "20 min",
+    url: "/pages/winget-package-manager/"
+  },
+  {
+  id: 15,
     title: "Pull Request: memahami ekosistem open source di github",
     slug: "memahami-pull-request",
     summary: "Apa itu Pull Request? Mengapa penting bagi software open source? kita bahas lengkap di artikel ini.",
