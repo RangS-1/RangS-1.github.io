@@ -158,6 +158,17 @@ const ARTICLES = [
     date: "2026-08-15",
     readTime: "20 min",
     url: "/pages/winget-package-manager/"
+  },
+  {
+  id: 15,
+    title: "Pull Request: memahami ekosistem open source di github",
+    slug: "memahami-pull-request",
+    summary: "Apa itu Pull Request? Mengapa penting bagi software open source? kita bahas lengkap di artikel ini.",
+    category: "technology",
+    tags: ["pull request", "github", "open source"],
+    date: "2026-09-16",
+    readTime: "10 min",
+    url: "/pages/memahami-pull-request/"
   }
 ];
 

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pull Request: memahami ekosistem open source di github — ./RangS Blog</title>
+  <meta name="description" content="Apa itu Pull Request? Mengapa penting bagi software open source? kita bahas lengkap di artikel ini.">
+  <link rel="canonical" href="https://rangs-1.github.io/pages/memahami-pull-request/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pull Request: memahami ekosistem open source di github">
+  <meta property="og:description" content="Apa itu Pull Request? Mengapa penting bagi software open source? kita bahas lengkap di artikel ini.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs-1.github.io/pages/memahami-pull-request/pull.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pull Request: memahami ekosistem open source di github">
+  <meta name="twitter:description" content="Apa itu Pull Request? Mengapa penting bagi software open source? kita bahas lengkap di artikel ini.">
+  <meta name="twitter:image" content="https://rangs-1.github.io/pages/memahami-pull-request/pull.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Pull Request: memahami ekosistem open source di github",
+    "description":"Penjelasan lengkap tentang Winget, ekosistem package manager di Windows.",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-09-16",
+    "dateModified":"2026-09-16",
+    "keywords":[
+      "Pull Request",
+      "Github",
+      "Open Source"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../">home</a>
+    <a href="../../dashboard/" class="active">dashboard</a>
+    <a href="../../about/">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-09-07</span>
+        <span>·</span>
+        <span>15 min read</span>
+      </div>
+      <h1 class="article-headline">Pull Request: memahami ekosistem open source di github</h1>
+      <p class="article-summary">
+        Apa itu Pull Request? Mengapa penting bagi software open source? kita bahas lengkap di artikel ini.
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#pull request</span>
+        <span class="tag">#github</span>
+        <span class="tag">#open source</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2>Apa itu Pull Request?</h2>
+      <p>Pull Request adalah salah satu cara kontribusi untuk repository open source di github.</p>
+      <blockquote>
+        “Open source is a development methodology; free software is a social movement.”
+        <br>
+        — Richard Stallman, Open Source Initiative Founder
+      </blockquote>
+      <p>
+        Pada artikel ini, kita akan bahas tentang Pull Request, terutama pada etika kontribusi terhadap open source.
+      </p>
+
+      <h2>Pull Request</h2>
+      <img src="pull.png" alt="Screenshot halaman pull request" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jadi apa itu Pull Request? pull request adalah sistem untuk mengajukan usulan atau permintaan resmi untuk menggabungkan kode atau memperbaiki kode pada sebuah project open source.
+      </p>
+      <p>
+        Bayangkan seperti ini, kita adalah pengguna biasa dan menggunakan aplikasi-aplikasi yang berhubungan dengan open source,
+        contoh paling nyata adalah Visual Studio Code. Kita sedang menggunakan aplikasi tersebut, tetapi kita menemukan bug dari aplikasi tersebut.
+        Karena itu kita membuat versi kita sendiri dan membuat pull request agar orang lain yang menggunakannya tidak lagi mendapatkan bug tersebut pada versi mereka. 
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
+
+      <h2>Etika Open Source</h2>
+      <p>
+        Dalam project besar yang bersifat open source, terdapat beberapa etika yang perlu diperhatikan.
+        Sejauh yang kutahu, etika project open source biasanya tersimpan dalam file CONTRIBUTING.md dan CODE_OF_CONDUCT.md.
+        Project open source besar biasanya memiliki CONTRIBUTING.md yang berisi cara kerja untuk kontribusi pada mereka. Namun, di sini aku akan menjelaskan cara normal yang biasa digunakan oleh project-project kecil.
+      </p>      
+
+      <h2>Membuat Pull Request</h2>
+      <p>
+        Langkah pertama dalam membuat pull request adalah dengan membuat fork atau aplikasi versi dirimu sendiri.
+        Setelah membuat fork di akun githubmu sendiri, kau bisa cloning dengan perintah git:
+      </p>
+      <pre><code>git clone https://github.com/&lt;nama-akunmu&gt;/&lt;nama-project&gt;</code></pre>
+      <p>
+        Jika sudah selesai cloning, ya waktunya bekerja. Misalnya kau cloning sebuah project web, kau bisa memberi tambahan berupa fitur baru atau perbaikan bug pada project tersebut.
+        Kalau sudah selesai membuat fiturmu sendiri, kau bisa commit dan push ke repositorymu dengan perintah:
+      </p>
+      <pre><code>git add .
+git commit -m "Fitur Barumu"
+git push origin main</code></pre>
+      <p>
+        Setelah berhasil push ke fork repositorymu, coba buka halaman repository di github, harusnya kau bisa melihat tombol Contribute yang ketika diklik akan ada tombol open pull request.
+      </p>
+      <img src="fork.png" alt="Screenshot halaman fork repository" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jika kau menekan tombol open pull request, nanti akan ada semacam comment yang di mana kau bisa menjelaskan cara kerja dari fiturmu atau bug yanng kau perbaiki.
+        Tinggal klik tombol create pull request dan kau telah membuat pull request untuk project tersebut.
+      </p>
+      <p>
+        Kalau sudah selesai membuat pull request, waktunya menunggu. Menunggu pull request sampai di terima oleh pemilik repository terkadang tidak memiliki kepastian,
+        aku pernah membuat pull request di repository winget-pkgs milik microsoft, tahu berapa lama sampai diterima? 2 minggu, itu jika sudah diterima, belum lagi jika ditolak dan perlu perbaikan, bisa berapa lama tuh.
+        Setelah pull request di terima oleh pemilik repository, pull request akan di merge atau digabungkan oleh pemilik dan kau tercatat sebagai contributor.
+      </p>
+
+      <h2>Manfaat Kontribusi.</h2>
+      <p>
+        Kamu mungkin berpikir "Untuk apa kontribusi pada project orang lain? bukankah itu menguntungkan mereka?". Nah, ada beberapa manfaat dari kontribusi pada project open source seperti:
+      </p>
+      <ol>
+        <li>Mudah diketahui rekruter (HRD jika bekerja)</li>
+        <li>Menambah koneksi dengan para profesional lainnya</li>
+        <li>Sebagai bahan portfolio global</li>
+        <li>Meningkatkan skill</li>
+      </ol>
+      <p>
+        Dari semua manfaat tersebut, yang paling terasa adalah meningkatnya skill. Kenapa? karena dengan kontribusi pada project open source, kita tahu bagaimana ekosistem tingkat perusahaan dilakukan dan dikelola.
+        Jadi jika kau bekerja dalam perusahaan besar, kau akan lebih mudah beradaptasi. Meski begitu, ada beberapa hal yang perlu diperhatikan seperti apakah projectnya masih relevan dan dikelola oleh pemilik dan lain-lain.
+      </p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/winget-package-manager/" target="_blank">Winget: Mencoba ekosistem package manager di Windows</a></p>
+
+      <h2>Kesimpulan</h2>
+      <p>
+        Dari artikel ini kita bisa menyimpulkan bahwa kontribusi open source memiliki manfaat yang sangat berharga, terutama project open source ini akan membantumu untuk beradaptasi jika bekerja di perusahaan besar.
+        Lalu pull request adalah cara paling standar dalam memberi kontribusi. Jika kau tertarik dalam kontribusi open source, bisa tonton pengalaman dari video berikut:
+        <a href="https://youtu.be/7UOdYxKW8pE?si=sNePZLlL8FH3UbqP" target="_blank">
+          Link ke Video.
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Lewboski" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'memahami-pull-request')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
