@@ -133,7 +133,7 @@
         contoh paling nyata adalah Visual Studio Code. Kita sedang menggunakan aplikasi tersebut, tetapi kita menemukan bug dari aplikasi tersebut.
         Karena itu kita membuat versi kita sendiri dan membuat pull request agar orang lain yang menggunakannya tidak lagi mendapatkan bug tersebut pada versi mereka. 
       </p>
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/arch-user-repository/" target="_blank">Arch User Repository: Pengalaman ekosistem AUR di Arch Linux</a></p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
 
       <h2>Etika Open Source</h2>
       <p>
@@ -169,54 +169,29 @@ git push origin main</code></pre>
         Setelah pull request di terima oleh pemilik repository, pull request akan di merge atau digabungkan oleh pemilik dan kau tercatat sebagai contributor.
       </p>
 
-      <h2>Review dari Microsoft Team.</h2>
-      <img src="githubreview.png" alt="Tampilan halaman pull request untuk menunggu review dari maintainer winget" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <h2>Manfaat Kontribusi.</h2>
       <p>
-        Bisa kau lihat dari gambar di atas, gambar di atas adalah tampilan halaman pull request yang kita buat dengan wingetcreate.
-        Pada pull request tersebut juga terdapat beberapa checklist yang harus dilalui sebelum package kita diterima oleh Winget. seperti:
+        Kamu mungkin berpikir "Untuk apa kontribusi pada project orang lain? bukankah itu menguntungkan mereka?". Nah, ada beberapa manfaat dari kontribusi pada project open source seperti:
       </p>
-      <pre><code>winget validate --manifest &lt;path-to-manifest-file&gt;
-winget install --manifest &lt;path-to-manifest-file&gt;</code></pre>
+      <ol>
+        <li>Mudah diketahui rekruter (HRD jika bekerja)</li>
+        <li>Menambah koneksi dengan para profesional lainnya</li>
+        <li>Sebagai bahan portfolio global</li>
+        <li>Meningkatkan skill</li>
+      </ol>
       <p>
-        Setelah melakukan validasi dan installasi melalui manifest, kita perlu menceklis pada pull request bahwa validasi dan installasi berhasil.
-        Jika semua itu selesai, kita hanya perlu menunggu review dari wingetvalidator-prod dan maintainer asli winget.
+        Dari semua manfaat tersebut, yang paling terasa adalah meningkatnya skill. Kenapa? karena dengan kontribusi pada project open source, kita tahu bagaimana ekosistem tingkat perusahaan dilakukan dan dikelola.
+        Jadi jika kau bekerja dalam perusahaan besar, kau akan lebih mudah beradaptasi. Meski begitu, ada beberapa hal yang perlu diperhatikan seperti apakah projectnya masih relevan dan dikelola oleh pemilik dan lain-lain.
       </p>
-      <p>
-        Dari pengalamanku, biasanya review dari wingetvalidator-prod akan cepat, tetapi review dari maintainer asli winget bisa memakan waktu hingga beberapa minggu, kalau tidak salah sekitar 2 minggu.
-        Setelah 2 minggu menunggu review dari maintainer asli winget, aku mendapatkan response melalui komentar pull request bahwa ada perbaikan yang perlu dilakukan.
-      </p>
-      <img src="reviewdemitrius.png" alt="Screenshot moderator approved dari Demitrius Nelon" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
-      <p>
-        Maintainer asli winget bernama <a href="https://github.com/stephengillie">Stephen Gillie</a>, dia yang memberikan komentar perbaikan yang harus kulakukan pada package yang kubuat.
-        Sementara itu, <a href="https://github.com/denelon">Demitrius Nelon</a> mengecek kembali package yang kubuat, setelah sesuai dan tidak ada error, ia memberikan moderator-approved dan wingetbot otomatis merge pull requestku ke repository winget-pkgs.
-      </p>
-      <p>
-        Oh ya, aku hampir lupa untuk menceritakan bagaimana cara memperbarui pull request yang sudah dibuat.
-        Sebenarnya caranya cukup simple, pada halaman pull request, kau bisa klik bagian "Files changed" dan klik titik tiga di pojok kanan atas, nanti akan ada pilihan untuk "Edit File".
-        Setelah selesai mengedit file, cukup commit dan tunggu proses review sekitar 2 minggu lagi.
-      </p>
-
-      <h2>Testing dengan PowerShell/Command Prompt</h2>
-      <p>
-        Setelah package kita diterima oleh Winget, kita bisa menginstall package tersebut melalui terminal. Bisa menggunakan PowerShell atau Command Prompt.
-        Berikut adalah perintah untuk menginstall package yang sudah diterima oleh Winget:
-      </p>
-      <pre><code>winget install &lt;package-kamu&gt;</code></pre>
-      <p>
-        Jika proses install berhasil, artinya selamat! package yang kau buat sudah bisa digunakan oleh semua pengguna Windows 10 dan 11+ dengan perintah winget tersebut.
-        Kamu bisa mengecek package yang kubuat di <a href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/r/RangS/" target="_blank">winget-pkgs repository</a>.
-      </p>
-
-      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/bash-scripting/" target="_blank">Bash: Mencoba scripting terminal dengan Bash</a></p>
+      <p>Baca Juga: <a href="https://rangs-1.github.io/pages/winget-package-manager/" target="_blank">Winget: Mencoba ekosistem package manager di Windows</a></p>
 
       <h2>Kesimpulan</h2>
       <p>
-        Membuat package di Winget merupakan pengalaman yang menarik, karena kita belajar bagaimana ekosistem package manager bekerja di Windows.
-        Meskipun Winget masih dibilang baru, tetapi sudah cukup baik untuk digunakan sehari-hari. Aku berharap Winget bisa menjadi package manager yang lebih baik lagi di masa depan.
-        Jika kau tertarik lebih lanjut dengan ekosistem open source di Windows, aku sarankan untuk menonton video berikut:
-        <a href="https://youtu.be/RchzolDcKA4?si=9twjEpbGi2LfnVTJ" target="_blank">
+        Dari artikel ini kita bisa menyimpulkan bahwa kontribusi open source memiliki manfaat yang sangat berharga, terutama project open source ini akan membantumu untuk beradaptasi jika bekerja di perusahaan besar.
+        Lalu pull request adalah cara paling standar dalam memberi kontribusi. Jika kau tertarik dalam kontribusi open source, bisa tonton pengalaman dari video berikut:
+        <a href="https://youtu.be/7UOdYxKW8pE?si=sNePZLlL8FH3UbqP" target="_blank">
           Link ke Video.
-          <img src="thumbnail.png" alt="Thumbnail Youtube from Freecodecamp.org" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Lewboski" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
         </a>
       </p>
     </div>
@@ -242,7 +217,7 @@ winget install --manifest &lt;path-to-manifest-file&gt;</code></pre>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof ARTICLES === 'undefined') return;
-      const related = ARTICLES.filter(a => a.slug !== 'freebsd-sang-nenek-moyang-macos')
+      const related = ARTICLES.filter(a => a.slug !== 'memahami-pull-request')
         .sort(() => Math.random() - 0.5).slice(0, 3);
       const container = document.getElementById('relatedList');
       related.forEach(article => {
