@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://rangs-blog.vercel.app/</loc>
+    </url>
+
+    <!-- About -->
+    <url>
+        <loc>https://rangs-blog.vercel.app/about/</loc>
+    </url>
+
+    <!-- Arts -->
+    <url>
+        <loc>https://rangs-blog.vercel.app/arts/</loc>
+    </url>
+
+    <!-- Cert -->
+    <url>
+        <loc>https://rangs-blog.vercel.app/cert/</loc>
+    </url>
+
+    <!-- Dashboard -->
+    <url>
+        <loc>https://rangs-blog.vercel.app/dashboard/</loc>
+    </url>
+
+    <!-- Pages -->
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/absolute-arch-linux-experience/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/android-studio-experience/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/arch-user-repository/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/bash-scripting/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/celeste-game-review/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/freebsd-sang-nenek-moyang-macos/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/git-sang-pengontrol/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/kde-plasma-experience/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/linux-adalah-kernel/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/memahami-pull-request/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/mode-root-linux/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/programming-yang-sebenarnya/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/terminal-sang-kawan-programmer/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/the-bird-song/</loc>
+    </url>
+
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/winget-package-manager/</loc>
+    </url>
+
+    <!-- Projects -->
+    <url>
+        <loc>https://rangs-blog.vercel.app/projects/</loc>
+    </url>
+
+</urlset>
