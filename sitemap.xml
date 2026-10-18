@@ -87,6 +87,10 @@
         <loc>https://rangs-blog.vercel.app/pages/winget-package-manager/</loc>
     </url>
 
+    <url>
+        <loc>https://rangs-blog.vercel.app/pages/debugging-dalam-programming/</loc>
+    </url>
+
     <!-- Projects -->
     <url>
         <loc>https://rangs-blog.vercel.app/projects/</loc>
