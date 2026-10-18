@@ -177,7 +177,7 @@ const ARTICLES = [
     summary: "Apa itu Debugging? Mengapa sangat sulit untuk developer pemula? kita bahas di artikel ini.",
     category: "technology",
     tags: ["debugging", "coding", "problem solving"],
-    date: "2026-09-16",
+    date: "2026-10-18",
     readTime: "10 min",
     url: "/pages/debugging-dalam-programming/"
   }
