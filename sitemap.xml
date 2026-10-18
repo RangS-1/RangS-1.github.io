@@ -4,96 +4,118 @@
     <!-- Homepage -->
     <url>
         <loc>https://rangs-blog.vercel.app/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <!-- About -->
     <url>
         <loc>https://rangs-blog.vercel.app/about/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <!-- Arts -->
     <url>
         <loc>https://rangs-blog.vercel.app/arts/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <!-- Cert -->
     <url>
         <loc>https://rangs-blog.vercel.app/cert/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <!-- Dashboard -->
     <url>
         <loc>https://rangs-blog.vercel.app/dashboard/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <!-- Pages -->
     <url>
         <loc>https://rangs-blog.vercel.app/pages/absolute-arch-linux-experience/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/android-studio-experience/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/arch-user-repository/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/bash-scripting/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/celeste-game-review/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/freebsd-sang-nenek-moyang-macos/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/git-sang-pengontrol/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/kde-plasma-experience/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/linux-adalah-kernel/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/memahami-pull-request/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/mode-root-linux/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/programming-yang-sebenarnya/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/terminal-sang-kawan-programmer/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/the-bird-song/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/winget-package-manager/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <url>
         <loc>https://rangs-blog.vercel.app/pages/debugging-dalam-programming/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
     <!-- Projects -->
     <url>
         <loc>https://rangs-blog.vercel.app/projects/</loc>
+        <lastmod>2026-10-18</lastmod>
     </url>
 
 </urlset>
