@@ -169,6 +169,17 @@ const ARTICLES = [
     date: "2026-09-16",
     readTime: "10 min",
     url: "/pages/memahami-pull-request/"
+  },
+  {
+  id: 16,
+    title: "Debugging: kemampuan memahami masalah dengan logika",
+    slug: "debugging-dalam-programming",
+    summary: "Apa itu Debugging? Mengapa sangat sulit untuk developer pemula? kita bahas di artikel ini.",
+    category: "technology",
+    tags: ["debugging", "coding", "problem solving"],
+    date: "2026-09-16",
+    readTime: "10 min",
+    url: "/pages/debugging-dalam-programming/"
   }
 ];
 
