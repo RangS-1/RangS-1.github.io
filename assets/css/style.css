@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
-/* ===========================
-   CSS VARIABLES
-   =========================== */
+
 :root {
   --bg: #f0ece3;
   --bg-alt: #ebe7de;
@@ -28,9 +26,7 @@
   --font-body: 'Inter', sans-serif;
 }
 
-/* ===========================
-   RESET & BASE
-   =========================== */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -69,9 +65,7 @@ ul, ol {
   list-style: none;
 }
 
-/* ===========================
-   MAIN NAVBAR
-   =========================== */
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -126,7 +120,7 @@ ul, ol {
   color: var(--btn-text);
 }
 
-/* Hamburger */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -181,9 +175,7 @@ ul, ol {
   font-weight: 700;
 }
 
-/* ===========================
-   SUB NAVBAR (Dashboard nav)
-   =========================== */
+
 .sub-nav {
   border-bottom: 1px solid var(--border);
   background: var(--bg);
@@ -220,9 +212,7 @@ ul, ol {
   font-weight: 700;
 }
 
-/* ===========================
-   PAGE LAYOUT
-   =========================== */
+
 .page-wrapper {
   max-width: var(--max-width-wide);
   margin: 0 auto;
@@ -233,9 +223,7 @@ ul, ol {
   max-width: var(--max-width);
 }
 
-/* ===========================
-   BREADCRUMB + PAGE HEADER
-   =========================== */
+
 .breadcrumb {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -273,9 +261,7 @@ ul, ol {
   color: var(--accent-link);
 }
 
-/* ===========================
-   HOMEPAGE HERO
-   =========================== */
+
 .hero {
   padding: 64px 0 48px;
   max-width: var(--max-width);
@@ -322,9 +308,7 @@ ul, ol {
   flex-wrap: wrap;
 }
 
-/* ===========================
-   BUTTONS
-   =========================== */
+
 .btn {
   font-family: var(--font-mono);
   font-size: 13px;
@@ -358,9 +342,7 @@ ul, ol {
   opacity: 1;
 }
 
-/* ===========================
-   HOMEPAGE SECTIONS
-   =========================== */
+
 .home-divider {
   border: none;
   border-top: 1px solid var(--border);
@@ -414,9 +396,7 @@ ul, ol {
   line-height: 1.6;
 }
 
-/* ===========================
-   ABOUT PAGE
-   =========================== */
+
 .about-grid {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -509,9 +489,7 @@ ul, ol {
   border-radius: 4px;
 }
 
-/* ===========================
-   DASHBOARD / ARTICLES
-   =========================== */
+
 .search-bar-row {
   display: flex;
   gap: 12px;
@@ -573,7 +551,7 @@ ul, ol {
   content: '→ ';
 }
 
-/* Article List */
+
 .article-list {
   display: flex;
   flex-direction: column;
@@ -660,9 +638,7 @@ ul, ol {
   text-align: center;
 }
 
-/* ===========================
-   PROJECTS PAGE
-   =========================== */
+
 .section-heading {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -761,9 +737,7 @@ ul, ol {
   opacity: 1;
 }
 
-/* ===========================
-   ARTS PAGE (PINTEREST)
-   =========================== */
+
 .masonry-grid {
   columns: 3;
   column-gap: 12px;
@@ -814,7 +788,7 @@ ul, ol {
   font-weight: 500;
 }
 
-/* Overlay on hover */
+
 .masonry-overlay {
   position: absolute;
   inset: 0;
@@ -837,9 +811,7 @@ ul, ol {
   font-size: 12px;
 }
 
-/* ===========================
-   CERTIFICATES PAGE
-   =========================== */
+
 .cert-grid {
   columns: 2;
   column-gap: 12px;
@@ -907,9 +879,7 @@ ul, ol {
   gap: 5px;
 }
 
-/* ===========================
-   LIGHTBOX / MODAL
-   =========================== */
+
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -990,9 +960,7 @@ ul, ol {
   border-color: var(--btn-bg);
 }
 
-/* ===========================
-   ARTICLE PAGE
-   =========================== */
+
 .article-header {
   padding: 40px 0 32px;
   border-bottom: 1px solid var(--border);
@@ -1143,9 +1111,7 @@ ul, ol {
   gap: 12px;
 }
 
-/* ===========================
-   PAGINATION
-   =========================== */
+
 .pagination {
   display: flex;
   align-items: center;
@@ -1201,9 +1167,7 @@ ul, ol {
   min-width: 24px;
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
+
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 24px;
@@ -1226,9 +1190,7 @@ ul, ol {
   color: var(--text-light);
 }
 
-/* ===========================
-   RESPONSIVE
-   =========================== */
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;

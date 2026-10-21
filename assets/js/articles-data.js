@@ -1,8 +1,3 @@
-// ===========================
-// ARTICLES DATA
-// Semua artikel blog disimpan di sini.
-// Tambahkan artikel baru dengan menambahkan objek ke array ini.
-// ===========================
 
 const ARTICLES = [
   {
@@ -183,9 +178,6 @@ const ARTICLES = [
   }
 ];
 
-// ===========================
-// CATEGORIES
-// ===========================
 const CATEGORIES = [
   { value: "all", label: "semua kategori" },
   { value: "technology", label: "technology" },
