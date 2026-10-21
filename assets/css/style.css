@@ -321,6 +321,19 @@ ul, ol {
   letter-spacing: -0.01em;
 }
 
+.btn-dashboard {
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 23px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  display: flex;
+  letter-spacing: -0.01em;
+}
+
 .btn-dark {
   background: var(--btn-bg);
   color: var(--btn-text);
