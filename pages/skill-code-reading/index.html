@@ -101,99 +101,137 @@
         <span>·</span>
         <span>15 min read</span>
       </div>
-      <h1 class="article-headline">Debugging: kemampuan memahami masalah dengan logika</h1>
+      <h1 class="article-headline">Code Reading: kemampuan memahami kode hanya dengan melihat kode</h1>
       <p class="article-summary">
-        Apa itu Debugging? Mengapa sangat sulit untuk developer pemula? kita bahas di artikel ini.
+        Apa itu Code Reading? Mengapa sangat penting bagi developer? kita bahas di artikel ini.
       </p>
       <div class="article-tags-row">
-        <span class="tag">#debugging</span>
+        <span class="tag">#code reading</span>
         <span class="tag">#coding</span>
         <span class="tag">#problem solving</span>
       </div>
     </div>
 
     <div class="article-body">
-      <h2>Apa itu Debugging?</h2>
-      <p>Debugging adalah proses mencari dan memperbaiki kesalahan (bug) dalam program komputer.</p>
+      <h2>Apa itu Code Reading?</h2>
+      <p>Code Reading adalah kemampuan untuk memahami dan menganalisis kode sumber tanpa menjalankannya.</p>
       <blockquote>
-        "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."
+        "Code is read much more often than it is written."
         <br>
-        — Brian W. Kernighan, The Elements of Programming Style
+        — Guido Van Rossum, pencipta bahasa pemrograman Python
       </blockquote>
       <p>
-        Pada artikel ini, kita akan bahas tentang Debugging, terutama pada cara melakukan debugging itu sendiri.
+        Pada artikel ini, kita akan bahas tentang Code Reading, terutama pada cara melakukan code reading meski tanpa dokumentasi.
       </p>
-
-      <h2>Debugging</h2>
-      <img src="image.png" alt="Syntax Error Example" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
-      <p>
-        Jadi apa itu Debugging? Debugging adalah proses untuk memahami sebuah kode sekaligus memperbaikinya dengan logika yang benar.
-      </p>
-      <p>
-        Debugging seringkali ditemui ketika kau membuat aplikasi dengan jumlah baris kode yang tidak sedikit. Tak hanya itu, Debugging sangat penting sebelum aplikasi di launching ke public.
-      </p>
-      <p>Baca Juga: <a href="../git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
 
       <h2>Code Reading</h2>
-      <p>Untuk melakukan Debugging, seseorang harus memiliki kemampuan untuk memahami sebuah kode baik dari arsitekturnya hingga relasinya dengan baris kode lain. Coba perhatikan penggalan kode berikut:</p>
-      <pre><code>&lt;link rel="stylesheet" href="../../assets/css/style.css"&gt;</code></pre>
-      <p>Apakah kau bisa memahami kode berikut? jika tidak, biar kujelaskan. Kode tersebut mengartikan kode html untuk mengambil file css di dalam folder yang berada di 2 tingkatan folder lalu masuk ke dalam folder assets/css/ dan mengambil file style.css. Kurang lebih strukturnya seperti ini</p>
-      <pre><code>MyProject/
-├── index.html
-├── assets/            &lt;- menggunakan ../.. untuk masuk ke folder ini
-│   ├── css/
-│   │   └── style.css  &lt;- masuk ke folder css dengan kode assets/css/ dan ambil style.css
-├── folder1/
-│   └── folder2/
-│       └── index.html &lt;- Ini kode htmlmu</code></pre>
-      <p>Ini adalah contoh sederhana dari relasi antar file dan code reading. Namun, contoh seperti ini tidak sering digunakan karena setelah kau berada dalam dunia programming cukup jauh, kau akan menggunakan framework dan tiap framework memiliki caranya masing-masing. Sebagai contoh cobalah lihat kode yang menggunakan framework laravel berikut:</p>
-      <pre><code>return view('students.create', compact('student'));</code></pre>
-      <p>Arti dari kode tersebut adalah mengambil kode yang berada di folder resources/views/students/create.blade.php. Kurang lebih seperti berikut:</p>
-      <pre><code>app/Http/Controllers/StudentsController.php &lt;- file ini mengambil
+      <img src="image.png" alt="Syntax Error Example" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jadi apa itu Code Reading? Code Reading adalah proses untuk memahami sebuah kode sekaligus menganalisisnya dengan logika yang benar.
+      </p>
+      <p>Code Reading menjadi sangat-sangat penting jika kau bekerja dalam tim atau menghadapi proyek yang kompleks. Code Reading sendiri menjadi salah satu kemampuan yang paling dominan ketika melakukan Debugging.</p>
+      <p>Baca Juga: <a href="../debugging-dalam-programming/" target="_blank">Debugging: kemampuan memahami masalah dengan logika</a></p>
 
-resources/views/students/create.blade.php &lt;- file ini</code></pre>
-      <p>Intinya setiap framework memiliki cara terhubungnya masing-masing.</p>
-
-      <h2>Error</h2>
-      <p>Setelah kita mampu melakukan code reading terhadap sebuah arsitektur aplikasi, kini kita bisa lanjut ke hal selanjutnya yaitu error. Sebenarnya untuk memperbaiki error, sama seperti code reading yaitu kita harus bisa membaca error itu sendiri.</p>
-      <p>Contoh sederhana dari error adalah Syntax Error, coba lihat kode berikut:</p>
-      <pre><code>if a &lt;= 1
+      <h2>Cara melakukan Code Reading</h2>
+      <p>Sesuai dengan namanya, Code Reading adalah membaca kode. Jadi, untuk bisa melakukan code reading, kau harus bisa membaca dengan cermat terhadap kode yang diberikan. Mengapa? Karena jika kau malas membaca kode, ya bagaimana kau bisa memahami kode tersebut.</p>
+      <p>Kita mulai dari contoh paling sederhana. Coba lihat kode berikut:</p>
+      <pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Judul Web&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Selamat datang di Webku!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <p>Setiap bahasa pemrograman memiliki struktur dan syntax yang berbeda. Untuk bisa melakukan code reading, kau harus memahami struktur dan syntax dari bahasa pemrograman tersebut. Contoh diatas aku ambil dari HTML. HTML sendiri memiliki penulisan yang khas yaitu &lt;tag&gt; ditutup dengan &lt;/tag&gt;.</p>
+      <p>Maksudku adalah, karena bahasa pemrograman memiliki syntax yang berbeda, kau perlu memahami syntax dan ekosistem dari bahasa pemrograman yang kau gunakan. Contoh lainnya adalah seperti berikut:</p>
+      <pre><code>a = 1
+if a &lt;= 1:
     print("Lebih dari satu")
-else
+else:
     print("Kurang dari satu")</code></pre>
-      <p>Bisa tebak dari mana errornya? Jika tidak tahu, biarku jelaskan. Kode tersebut adalah if conditional dari bahasa pemrograman Python. Di dalam python, kode harus ditulis dengan cara berikut:</p>
-      <pre><code>if &lt;variabel&gt; &lt;kondisi&gt; &lt;nilai&gt;:
-    &lt;sesuatu&gt;</code></pre>
-      <p>Dari sini harusnya kau sudah tahu masalahnya, kode sebelumnya tidak memiliki tanda : yang membuat python tidak mengerti dengan kodingan yang kita minta. Jadi, cobalah pahami secara seksama kode yang error. Biasanya, bahasa pemrograman akan memberitahu kita bagian mana yang error dan kurang apa. Tetapi jika tidak, cobalah pikirkan bahwa setiap bahasa pemrograman memiliki syntax yang berbeda.</p>
-      <p>Baca Juga: <a href="../programming-yang-sebenarnya/" target="_blank">Programming yang sebenarnya: Seperti apa cara pikir Programmer?</a></p>
-      <p>Itu untuk contoh sederhana, kita masuk pada kesalahan kedua yang paling sering terjadi yaitu undefined variabel. Coba lihat kode berikut:</p>
-      <pre><code>variabel = 1
-print(Variabel)</code></pre>
-      <p>Ingat satu hal yang paling sering kau temui di dalam programming, yaitu bahasa pemrograman bersifat sensitive. Meski kode tersebut kelihatan benar, tapi lihatlah huruf kapitalnya. Masih belum paham? Intinya:</p>
-      <pre><code>return Return
-// Dua kode diatas adalah dua kode yang berbeda.</code></pre>
-      <p>Jadi ingatlah bahwa bahasa pemrograman bersifat sensitif. Lalu setelah itu ada error berikutnya yaitu Runtime Error. Coba lihat kode berikut:</p>
-      <pre><code>print(10 / 0)</code></pre>
-      <p>Runtime error biasanya terjadi karena kesalahan logika, kau lihat judul artikel ini? memahami masalah dengan logika. Sebenar apa pun kode, jika tidak sesuai logika ya sama saja salah. Dari kode tersebut mengartikan angka 10 dibagi dengan 0. Apakah dalam matematika angka bisa dibagi dengan 0? Ya enggaklah.</p>
-      <p>Lalu error selanjutnya yang paling sering dialami oleh programmer yang bahkan sudah sering menggunakan framework adalah masalah dependensi. Sebagai contoh kita ambil dari framework laravel, perhatikan kode berikut:</p>
-      <pre><code>$data = $request->validate([
-    'nis'   => ['required', 'numeric', 'min:20', Rule::unique('students', 'nis')->ignore($student->id)],
-]);</code></pre>
-      <p>Tidak ada yang salah kan? benar, jika di bagian atas file kau menambahkan:</p>
-      <pre><code>use Illuminate\Validation\Rule;</code></pre>
-      <p>Kode sebelumnya terdapat bagian Rule::unique(). Kode tersebut diambil dari dependensi Rule yang ada di folder Illuminate\Validation.</p>
-      <p>Masih bingung dengan dependensi? dependensi sendiri adalah kode siap pakai yang digunakan untuk membantu developer dalam menulis kode. Jadi sebenarnya, seorang programmer sangat jarang menulis kode dari awal. Kecuali jika mereka seorang yang memang ahli dan memang diharuskan untuk menulis kode dari awal karena beberapa masalah seperti dependensi yang kurang dipercaya dan lain-lain.</p>
+      <p>Contoh diatas adalah kode dari bahasa pemrograman Python. Syntax dari dari bahasa pemrograman Python berbeda dengan bahasa pemrograman lainnya. Jika di python, kau tidak perlu menggunakan semicolon (;). Sementara di bahasa pemrograman lain seperti PHP, C, dan C++, kau harus menggunakan semicolon (;) di akhir setiap statement.</p>
+      <pre><code>// PHP
+$a = 1;
+if ($a &lt;= 1) {
+    echo "Lebih dari satu";
+} else {
+    echo "Kurang dari satu";
+}
 
-      <h2>Git</h2>
-      <p>Sebelum kau melakukan debugging, cobalah gunakan Git dan buat branch baru untuk membuat lingkungan terisolasi yang tidak memengaruhi kode utamamu. Itu akan sangat-sangat membantu jika kau memiliki banyak sekali error dan tiap error berasal dari lapisan yang berbeda.</p>
+// C / C++
+int a = 1;
+if (a &lt;= 1) {
+    printf("Lebih dari satu");
+} else {
+    printf("Kurang dari satu");
+}     </code></pre>
+      <p>Cobalah untuk memahami dasar-dasar dari bahasa pemrograman yang kau gunakan. Selain dasar pemrograman, kau juga harus paham konsep-konsep dasar dari bahasa pemrograman seperti variabel, tipe data, if-statement, loop, dan lain-lain. Setiap bahasa pemrograman juga memiliki konsep yang mirip, tetapi penulisannya yang berbeda.</p>
+      
+      <h2>Struktur Folder</h2>
+      <p>Satu hal yang paling membuat bingung dalam code reading adalah struktur folder yang ngawur. Mungkin kau pernah melihat struktur folder seperti ini:</p>
+      <pre><code>index.html
+images/
+css/
+js/
+fonts/</code></pre>
+      <p>Struktur tersebut memang tidak salah. Tetapi... ketika kau mulai menggunakan framework seperti Laravel, Vite, AstroJS dan lain-lain, kau pasti menyadari bahwa struktur foldernya akan berbeda-beda. Coba lihat struktur folder dari framework laravel berikut:</p>
+      <pre><code>app/
+bootstrap/
+config/
+database/
+public/
+resources/
+routes/
+storage/
+vendor/
+tests/</code></pre>
+      <p>Setiap framework memiliki struktur folder yang berbeda-beda. Kau harus belajar dan mengerti struktur folder tersebut. Namun yang paling penting adalah memahami relasi antara folder-folder tersebut. Kau harus tahu bagaimana cara menyambungkan file-file dalam struktur folder tersebut.</p>
+      <p>Baca Juga: <a href="../programming-yang-sebenarnya/" target="_blank">Programming yang sebenarnya</a></p>
+      
+      <h2>Logika dan cara kerja kode</h2>
+      <p>Setelah dua hal diatas sudah kau pahami dengan baik. Kita kembali ke bagian dasar dari code reading yaitu memahami logika dan cara kerja kode. Coba lihat kode berikut:</p>
+      <pre><code># Python
+def hitung_total(harga, jumlah):
+    total = harga * jumlah
+    return total
+
+hasil = hitung_total(5000, 3)
+print(hasil)</code></pre>
+      <p>Biarku jelaskan dengan pelan. Dalam memahami logika dan cara kerja kode, ada 5 pertanyaan yang harus lancar kau jawab setelah melihat sebuah kode. Yaitu:</p>
+      <ol>
+        <li type="1">Apa tujuan kode?</li>
+        <li type="1">Dari mana data diambil?</li>
+        <li type="1">Apa yang terjadi?</li>
+        <li type="1">Apa hasilnya?</li>
+        <li type="1">Alasan ditulis seperti ini?</li>
+      </ol>
+      <p>Mulai dari pertanyaan pertama, Coba lihat kembali kode di atas. Apa tujuan dari kode tersebut? Oh ya, kau harus menguasai syntax bahasa pemrograman yang kau gunakan. Tujuan dari kode tersebut adalah menghitung total. Namun, terkadang kau tidak akan menemukan function dengan nama seperti itu, bisa saja kau mendapatkan nama seperti:</p>
+      <pre><code>function student_grade()</code></pre>
+      <p>Jadi untuk menjawab pertanyaan pertama, cobalah lihat penggunaan simbol seperti asterisk (*), plus (+), minus (-), divide (/). Selain itu, pahami juga penggunaan parameter dalam function tersebut. Di sana mengatakan harga dan jumlah, lalu mengembalikan total. Jadi fungsi di atas digunakan untuk menghitung total berdasarkan harga dan jumlah.</p>
+      <p>Pertanyaan kedua, Dari mana data diambil? Dalam kode di atas, data diambil dari parameter function tersebut. Harga dan jumlah adalah data yang diberikan saat memanggil function. Ingatlah bahwa variabel adalah tempat atau wadah untuk menyimpan data. Variabel dalam kode tersebut adalah harga, jumlah, total, dan hasil. Hasil? kenapa hasil dianggap variabel? karena hasil adalah nilai yang dikembalikan oleh function.</p>
+      <pre><code># Python
+def hitung_total(harga, jumlah): &lt;-- fungsi mengambil nilai 5000 dan 3 dari variabel hasil
+    total = harga * jumlah
+    return total
+
+# nilai 5000 adalah harga, sementara 3 adalah jumlah.
+hasil = hitung_total(5000, 3)   &lt;-- disini hasil adalah variabel yang menyimpan nilai yang dikembalikan oleh function hitung_total
+print(hasil)</code></pre>
+      <p>Lanjut kepertanyaan ketiga, Apa yang terjadi? Dalam kode di atas, yang terjadi adalah perkalian antara harga dan jumlah. Setelah data harga dan jumlah di dapatkan, maka fungsi hitung_total melakukan perkalian dan mengembalikan nilai total. Bagian berikut:</p>
+      <pre><code>total = harga * jumlah
+return total</code></pre>
+      <p>Apa hasilnya? Hasilnya adalah nilai yang dikembalikan oleh function hitung_total, yaitu 15000. karena harga * jumlah = 15000</p>
+      <p>Pertanyaan terakhir, kenapa ditulis seperti ini? karena memang beginilah cara penulisan dalam bahasa pemrograman python. Lalu apakah penulisan seperti ini bisa digunakan di bahasa pemrograman lain? Jawabannya adalah tidak, karena bahasa pemrograman lain memiliki cara penulisannya sendiri.</p>
+
       <p>Baca Juga: <a href="../git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
 
       <h2>Kesimpulan</h2>
       <p>
-        Tidak sulit untuk melakukan debugging, yang perlu kau lakukan agar dapat melakukan debugging adalah membaca. Gunakan mata dan pikiranmu untuk meresap maksud dari error yang kau dapat. Error adalah hal yang normal dalam dunia programming. Silakan cek video berikut:
-        <a href="https://youtu.be/X3jw1JVNdPE?si=pFdUf5IpgVN7dc93" target="_blank">
+        Jadi, kesimpulannya adalah membaca. Sebagai developer, kau tidak boleh malas membaca apalagi minus literasi. Ya, kau bisa malas membaca jika mau digantikan oleh AI. Tak hanya itu, kau perlu memahami dasar dan menjawab 5 pertanyaan utama dalam code reading. Kau bisa cek video berikut jika kau memang malas untuk membaca seluruh artikel ini:
+        <a href="https://youtu.be/4t8QcDdrL6Y?si=ifz3zAEWbFoAz6UD" target="_blank">
           Link ke Video.
-          <img src="thumbnail.png" alt="Thumbnail Youtube from Fireship" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+          <img src="thumbnail.png" alt="Thumbnail Youtube from KodeKloud about how to read code in AI era" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
         </a>
       </p>
     </div>
@@ -219,7 +257,7 @@ print(Variabel)</code></pre>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof ARTICLES === 'undefined') return;
-      const related = ARTICLES.filter(a => a.slug !== 'debugging-dalam-programming')
+      const related = ARTICLES.filter(a => a.slug !== 'skill-code-reading')
         .sort(() => Math.random() - 0.5).slice(0, 3);
       const container = document.getElementById('relatedList');
       related.forEach(article => {
