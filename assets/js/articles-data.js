@@ -175,6 +175,17 @@ const ARTICLES = [
     date: "2026-10-18",
     readTime: "10 min",
     url: "/pages/debugging-dalam-programming/"
+  },
+  {
+  id: 17,
+    title: "Code Reading: kemampuan memahami kode hanya dengan melihat kode",
+    slug: "skill-code-reading",
+    summary: "Apa itu Code Reading? Mengapa sangat penting bagi developer? kita bahas di artikel ini.",
+    category: "technology",
+    tags: ["code reading", "coding", "problem solving"],
+    date: "2026-10-24",
+    readTime: "10 min",
+    url: "/pages/skill-code-reading/"
   }
 ];
 
