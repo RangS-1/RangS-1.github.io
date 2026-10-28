@@ -320,7 +320,7 @@ function openArtDetailLightbox(art) {
     if (art.time) {
       metaParts.push(art.time);
     }
-    metaEl.textContent = metaParts.length > 0 ? `Dibuat: ${metaParts.join(' · ')}` : '';
+    metaEl.textContent = metaParts.length > 0 ? `${metaParts.join(' · ')}` : '';
   }
 
   const descEl = document.getElementById('lbDesc');
