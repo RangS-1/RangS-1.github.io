@@ -824,6 +824,45 @@ ul, ol {
   font-size: 12px;
 }
 
+.arts-month-section {
+  margin-bottom: 40px;
+}
+
+.arts-month-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.arts-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.arts-filter-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.arts-filter-btn:hover,
+.arts-filter-btn.active {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-color: var(--btn-bg);
+}
+
 
 .cert-grid {
   columns: 2;
@@ -925,6 +964,9 @@ ul, ol {
 
 .lightbox-img {
   width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  background: var(--bg-alt);
   display: block;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
@@ -933,19 +975,72 @@ ul, ol {
   padding: 20px 24px 24px;
 }
 
+.lightbox-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
 .lightbox-title {
   font-family: var(--font-mono);
   font-size: 16px;
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.02em;
-  margin-bottom: 6px;
 }
 
 .lightbox-meta {
   font-size: 13px;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.lightbox-desc {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 12px 0 16px;
+  white-space: pre-line;
+}
+
+.lightbox-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.lightbox-ref-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  text-decoration: none;
+  border: 1px solid var(--btn-bg);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.lightbox-ref-btn:hover {
+  opacity: 0.88;
+  color: var(--btn-text);
+}
+
+.lightbox-ref-btn.disabled {
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  border-color: var(--border);
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .lightbox-close {

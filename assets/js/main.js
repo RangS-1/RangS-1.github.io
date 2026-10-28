@@ -260,8 +260,215 @@ function initDashboard() {
   if (categorySelect) categorySelect.addEventListener('change', filterArticles);
 }
 
+const INDO_MONTHS = [
+  'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+  'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+];
+
+function parseArtDateInfo(dateStr) {
+  if (!dateStr) return { key: '0000-00', label: 'Lainnya', formatted: '-' };
+  const parts = String(dateStr).trim().split(/[-/]/);
+  if (parts.length >= 2) {
+    const year = parseInt(parts[0], 10);
+    const monthIdx = parseInt(parts[1], 10) - 1;
+    if (!isNaN(year) && monthIdx >= 0 && monthIdx < 12) {
+      const day = parts.length >= 3 ? parseInt(parts[2], 10) : null;
+      const key = `${year}-${String(monthIdx + 1).padStart(2, '0')}`;
+      const label = `${INDO_MONTHS[monthIdx]} ${year}`;
+      const formatted = day && !isNaN(day) ? `${day} ${INDO_MONTHS[monthIdx]} ${year}` : label;
+      return { key, label, formatted, year, month: monthIdx };
+    }
+  }
+  return { key: '0000-00', label: 'Lainnya', formatted: dateStr };
+}
+
+function openArtDetailLightbox(art) {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+
+  const artName = art.artName || art['art-name'] || 'Tanpa Judul';
+  const type = art.type || '';
+  const desc = art.description || '';
+  const ref = art.reference;
+  const dateInfo = parseArtDateInfo(art.date);
+
+  const imgEl = document.getElementById('lbImg');
+  if (imgEl) {
+    imgEl.src = art.image;
+    imgEl.alt = artName;
+  }
+
+  const titleEl = document.getElementById('lbTitle');
+  if (titleEl) titleEl.textContent = artName;
+
+  const typeEl = document.getElementById('lbType');
+  if (typeEl) {
+    if (type) {
+      typeEl.textContent = `#${type}`;
+      typeEl.style.display = 'inline-block';
+    } else {
+      typeEl.style.display = 'none';
+    }
+  }
+
+  const metaEl = document.getElementById('lbMeta');
+  if (metaEl) {
+    metaEl.textContent = dateInfo.formatted ? `Dibuat: ${dateInfo.formatted}` : '';
+  }
+
+  const descEl = document.getElementById('lbDesc');
+  if (descEl) {
+    descEl.textContent = desc;
+    descEl.style.display = desc ? 'block' : 'none';
+  }
+
+  const actionsEl = document.getElementById('lbActions');
+  if (actionsEl) {
+    actionsEl.innerHTML = '';
+    const hasRef = ref && ref.trim() !== '' && ref.trim().toLowerCase() !== 'none';
+    if (hasRef) {
+      const btn = document.createElement('a');
+      btn.className = 'lightbox-ref-btn';
+      btn.href = ref;
+      btn.target = '_blank';
+      btn.rel = 'noopener noreferrer';
+      btn.innerHTML = '↗ Lihat Referensi';
+      actionsEl.appendChild(btn);
+    } else {
+      const btn = document.createElement('span');
+      btn.className = 'lightbox-ref-btn disabled';
+      btn.textContent = 'No reference used';
+      actionsEl.appendChild(btn);
+    }
+  }
+
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightboxArts() {
+  const lb = document.getElementById('lightbox');
+  if (lb) {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function initArts() {
+  const container = document.getElementById('artsContainer');
+  if (!container || typeof ARTS === 'undefined') return;
+
+  const filterBtns = document.querySelectorAll('.arts-filter-btn');
+  let currentFilter = 'all';
+
+  const lb = document.getElementById('lightbox');
+  if (lb && !lb.dataset.listenersBound) {
+    lb.dataset.listenersBound = 'true';
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) closeLightboxArts();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightboxArts();
+    });
+  }
+
+  function renderGallery() {
+    container.innerHTML = '';
+
+    const filtered = ARTS.filter(art => {
+      if (currentFilter === 'all') return true;
+      const type = (art.type || '').toLowerCase();
+      return type === currentFilter.toLowerCase();
+    });
+
+    if (filtered.length === 0) {
+      container.innerHTML = '<div class="no-results">Tidak ada karya yang ditemukan untuk kategori ini.</div>';
+      return;
+    }
+
+    const groupsMap = new Map();
+    filtered.forEach(art => {
+      const dateInfo = parseArtDateInfo(art.date);
+      if (!groupsMap.has(dateInfo.key)) {
+        groupsMap.set(dateInfo.key, {
+          key: dateInfo.key,
+          label: dateInfo.label,
+          items: []
+        });
+      }
+      groupsMap.get(dateInfo.key).items.push(art);
+    });
+
+    groupsMap.forEach(group => {
+      group.items.sort((a, b) => (Number(b.id) || 0) - (Number(a.id) || 0));
+      group.maxId = group.items.length > 0 ? (Number(group.items[0].id) || 0) : 0;
+    });
+
+    const sortedGroups = Array.from(groupsMap.values()).sort((a, b) => {
+      if (b.maxId !== a.maxId) {
+        return b.maxId - a.maxId;
+      }
+      return b.key.localeCompare(a.key);
+    });
+
+    sortedGroups.forEach(group => {
+      const section = document.createElement('section');
+      section.className = 'arts-month-section';
+
+      const title = document.createElement('h2');
+      title.className = 'arts-month-title';
+      title.textContent = group.label;
+      section.appendChild(title);
+
+      const grid = document.createElement('div');
+      grid.className = 'masonry-grid';
+
+      group.items.forEach(art => {
+        const artName = art.artName || art['art-name'] || 'Tanpa Judul';
+        const type = art.type || '';
+        const item = document.createElement('div');
+        item.className = 'masonry-item';
+        item.setAttribute('data-id', art.id);
+        item.setAttribute('data-tag', type.toLowerCase());
+
+        item.innerHTML = `
+          <img src="${art.image}" alt="${artName}" loading="lazy" onerror="this.style.background='#d4cfc6';this.style.minHeight='200px';">
+          <div class="masonry-overlay">
+            <div class="masonry-overlay-text">lihat detail</div>
+          </div>
+          <div class="masonry-item-info">
+            <span class="masonry-item-tag">#${type}</span>
+            <div class="masonry-item-title">${artName}</div>
+          </div>
+        `;
+
+        item.addEventListener('click', () => {
+          openArtDetailLightbox(art);
+        });
+
+        grid.appendChild(item);
+      });
+
+      section.appendChild(grid);
+      container.appendChild(section);
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter || 'all';
+      renderGallery();
+    });
+  });
+
+  renderGallery();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setNavActive();
   initMobileMenu();
   initDashboard();
+  initArts();
 });
