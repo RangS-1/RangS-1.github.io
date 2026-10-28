@@ -313,7 +313,14 @@ function openArtDetailLightbox(art) {
 
   const metaEl = document.getElementById('lbMeta');
   if (metaEl) {
-    metaEl.textContent = dateInfo.formatted ? `Dibuat: ${dateInfo.formatted}` : '';
+    const metaParts = [];
+    if (dateInfo.formatted && dateInfo.formatted !== '-') {
+      metaParts.push(dateInfo.formatted);
+    }
+    if (art.time) {
+      metaParts.push(art.time);
+    }
+    metaEl.textContent = metaParts.length > 0 ? `Dibuat: ${metaParts.join(' · ')}` : '';
   }
 
   const descEl = document.getElementById('lbDesc');
