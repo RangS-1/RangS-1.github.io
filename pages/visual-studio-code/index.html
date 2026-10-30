@@ -97,9 +97,9 @@
         <span>·</span>
         <span>[technology]</span>
         <span>·</span>
-        <span>2026-09-07</span>
+        <span>2026-10-30</span>
         <span>·</span>
-        <span>15 min read</span>
+        <span>20 min read</span>
       </div>
       <h1 class="article-headline">Visual Studio Code: Text Editor open source buatan Microsoft</h1>
       <p class="article-summary">
@@ -113,83 +113,34 @@
     </div>
 
     <div class="article-body">
-      <h2>Apa itu Code Reading?</h2>
-      <p>Code Reading adalah kemampuan untuk memahami dan menganalisis kode sumber tanpa menjalankannya.</p>
+      <h2>Apa itu Visual Studio Code?</h2>
+      <p>Visual Studio Code atau sering juga disebut vscode adalah text editor berbasis electron (Framework JS untuk aplikasi desktop).</p>
       <blockquote>
         "Code is read much more often than it is written."
         <br>
         — Guido Van Rossum, pencipta bahasa pemrograman Python
       </blockquote>
       <p>
-        Pada artikel ini, kita akan bahas tentang Code Reading, terutama pada cara melakukan code reading meski tanpa dokumentasi.
+        Pada artikel ini, kita akan penggunaan Visual Studio Code secara efisien dan cepat, mungkin bisa setara dengan Vim.
       </p>
 
-      <h2>Code Reading</h2>
-      <img src="image.png" alt="Syntax Error Example" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
-      <p>
-        Jadi apa itu Code Reading? Code Reading adalah proses untuk memahami sebuah kode sekaligus menganalisisnya dengan logika yang benar.
-      </p>
-      <p>Code Reading menjadi sangat-sangat penting jika kau bekerja dalam tim atau menghadapi proyek yang kompleks. Code Reading sendiri menjadi salah satu kemampuan yang paling dominan ketika melakukan Debugging.</p>
-      <p>Baca Juga: <a href="../debugging-dalam-programming/" target="_blank">Debugging: kemampuan memahami masalah dengan logika</a></p>
+      <h2>VSCode</h2>
+      <img src="vscode-interface.png" alt="Tampilan awal VSCode saat pertama kali di buka tanpa membuka folder ataupun file" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>Visual Studio Code menjadi text editor dengan pengguna terbanyak karena ukurannya yang relatif ringan. Tidak hanya itu, VSCode juga menjadi text editor yang cukup ramah untuk pemula karena ekosistemnya dan penggunaannya dalam pembelajaran (sekolah ataupun bootcamp).</p>
+      <p>Meski begitu, terdapat beberapa hal lain juga yang membuat vscode ini sangat banyak digunakan.</p>
+      <p>Baca Juga: <a href="../skill-code-reading/" target="_blank">Code Reading: kemampuan memahami kode hanya dengan melihat kode</a></p>
 
-      <h2>Cara melakukan Code Reading</h2>
-      <p>Sesuai dengan namanya, Code Reading adalah membaca kode. Jadi, untuk bisa melakukan code reading, kau harus bisa membaca dengan cermat terhadap kode yang diberikan. Mengapa? Karena jika kau malas membaca kode, ya bagaimana kau bisa memahami kode tersebut.</p>
-      <p>Kita mulai dari contoh paling sederhana. Coba lihat kode berikut:</p>
-      <pre><code>&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Judul Web&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Selamat datang di Webku!&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-      <p>Setiap bahasa pemrograman memiliki struktur dan syntax yang berbeda. Untuk bisa melakukan code reading, kau harus memahami struktur dan syntax dari bahasa pemrograman tersebut. Contoh diatas aku ambil dari HTML. HTML sendiri memiliki penulisan yang khas yaitu &lt;tag&gt; ditutup dengan &lt;/tag&gt;.</p>
-      <p>Maksudku adalah, karena bahasa pemrograman memiliki syntax yang berbeda, kau perlu memahami syntax dan ekosistem dari bahasa pemrograman yang kau gunakan. Contoh lainnya adalah seperti berikut:</p>
-      <pre><code>a = 1
-if a &lt;= 1:
-    print("Lebih dari satu")
-else:
-    print("Kurang dari satu")</code></pre>
-      <p>Contoh diatas adalah kode dari bahasa pemrograman Python. Syntax dari dari bahasa pemrograman Python berbeda dengan bahasa pemrograman lainnya. Jika di python, kau tidak perlu menggunakan semicolon (;). Sementara di bahasa pemrograman lain seperti PHP, C, dan C++, kau harus menggunakan semicolon (;) di akhir setiap statement.</p>
-      <pre><code>// PHP
-$a = 1;
-if ($a &lt;= 1) {
-    echo "Lebih dari satu";
-} else {
-    echo "Kurang dari satu";
-}
+      <h2>Ekstensi</h2>
+      <p>Salah satu ekosistem yang membuat VSCode paling banyak dipakai adalah ekstensi. Ekstensi sendiri adalah fitur tambahan yang dibuat oleh developer lain. Ekstensi sendiri harus diinstall secara terpisah karena tidak selalu tersedia secara langsung ketika pertama kali install vscode. </p>
+      <p>Ekstensi di VSCode tidak hanya tentang fungsionalitas, tetapi juga tampilan. Contoh dari ekstensi tampilan adalah ekstensi material-icon, theme, dan lain-lain. Sementara fungsionalitas seperti Pylance, Laravel Blade Snippet, dan masih banyak lagi.</p>
 
-// C / C++
-int a = 1;
-if (a &lt;= 1) {
-    printf("Lebih dari satu");
-} else {
-    printf("Kurang dari satu");
-}     </code></pre>
-      <p>Cobalah untuk memahami dasar-dasar dari bahasa pemrograman yang kau gunakan. Selain dasar pemrograman, kau juga harus paham konsep-konsep dasar dari bahasa pemrograman seperti variabel, tipe data, if-statement, loop, dan lain-lain. Setiap bahasa pemrograman juga memiliki konsep yang mirip, tetapi penulisannya yang berbeda.</p>
+      <h2>Git</h2>
+      <p>Alasan kedua yang membuat VSCode paling sering dipakai adalah visualisasi Git. Pada sidebar bagian kiri (secara default) terdapat logo branch git. Ketika di klik, maka akan menampilkan perubahan kode, branch saat ini tanpa perlu menggunakan CLI (Command Line Interface lagi).</p>
+      <img src="vscode-git.png" alt="Tampilan antarmuka Git pada VSCode" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>Meski memiliki visualisasi Git, VSCode tetap memperbolehkan penggunaan Terminal tergantung dengan jenis Shell yang digunakan (Shell itu seperti Bash, Zsh, Powershell, CMD, Fish Shell, dan lain-lain).</p>
+      <p>Baca Juga: <a href="../git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
       
-      <h2>Struktur Folder</h2>
-      <p>Satu hal yang paling membuat bingung dalam code reading adalah struktur folder yang ngawur. Mungkin kau pernah melihat struktur folder seperti ini:</p>
-      <pre><code>index.html
-images/
-css/
-js/
-fonts/</code></pre>
-      <p>Struktur tersebut memang tidak salah. Tetapi... ketika kau mulai menggunakan framework seperti Laravel, Vite, AstroJS dan lain-lain, kau pasti menyadari bahwa struktur foldernya akan berbeda-beda. Coba lihat struktur folder dari framework laravel berikut:</p>
-      <pre><code>app/
-bootstrap/
-config/
-database/
-public/
-resources/
-routes/
-storage/
-vendor/
-tests/</code></pre>
-      <p>Setiap framework memiliki struktur folder yang berbeda-beda. Kau harus belajar dan mengerti struktur folder tersebut. Namun yang paling penting adalah memahami relasi antara folder-folder tersebut. Kau harus tahu bagaimana cara menyambungkan file-file dalam struktur folder tersebut.</p>
-      <p>Baca Juga: <a href="../programming-yang-sebenarnya/" target="_blank">Programming yang sebenarnya</a></p>
-      
-      <h2>Logika dan cara kerja kode</h2>
+      <h2>Shortcut pada VSCode</h2>
       <p>Setelah dua hal diatas sudah kau pahami dengan baik. Kita kembali ke bagian dasar dari code reading yaitu memahami logika dan cara kerja kode. Coba lihat kode berikut:</p>
       <pre><code># Python
 def hitung_total(harga, jumlah):
