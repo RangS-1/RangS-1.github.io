@@ -186,6 +186,17 @@ const ARTICLES = [
     date: "2026-10-24",
     readTime: "10 min",
     url: "/pages/skill-code-reading/"
+  },
+  {
+  id: 18,
+    title: "Visual Studio Code: Text Editor dengan ekosistem terbesar buatan microsoft",
+    slug: "visual-studio-code",
+    summary: "Apa itu Visual Studio Code? Mengapa sangat sering dipakai oleh developer? kita bahas di artikel ini.",
+    category: "technology",
+    tags: ["vscode", "text editor", "coding"],
+    date: "2026-10-30",
+    readTime: "20 min",
+    url: "/pages/visual-studio-code/"
   }
 ];
 
