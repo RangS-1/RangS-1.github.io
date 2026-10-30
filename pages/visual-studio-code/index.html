@@ -99,7 +99,7 @@
         <span>·</span>
         <span>2026-10-30</span>
         <span>·</span>
-        <span>20 min read</span>
+        <span>10 min read</span>
       </div>
       <h1 class="article-headline">Visual Studio Code: Text Editor open source buatan Microsoft</h1>
       <p class="article-summary">
@@ -141,48 +141,53 @@
       <p>Baca Juga: <a href="../git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
       
       <h2>Shortcut pada VSCode</h2>
-      <p>Setelah dua hal diatas sudah kau pahami dengan baik. Kita kembali ke bagian dasar dari code reading yaitu memahami logika dan cara kerja kode. Coba lihat kode berikut:</p>
-      <pre><code># Python
-def hitung_total(harga, jumlah):
-    total = harga * jumlah
-    return total
+      <p>Agar penggunaan VSCode lebih efisien, kita harus tahu bagaimana cara menggunakan Shortcut. Salah satu yang paling berguna adalah perintah:</p>
+      <pre><code>code .</code></pre>
+      <p>Perintah diatas digunakan untuk membuka aplikasi VSCode dari terminal. Kenapa sangat berguna? Karena kode tersebut akan membuka vscode sekaligus dengan folder dimana kau berada sebelumnya. Hanya saja, perintah tersebut akan lebih berguna jika kau sangat-sangat sering menggunakan terminal atau CLI. Jadi kusarankan pelajari lebih dulu tentang cara mengggunakan terminal:</p>
+      <p>Baca Juga: <a href="../terminal-sang-kawan-programmer/" target="_blank">Terminal: Kawan Sejati Programmer</a></p>
+      <p>Setelah kau mulai memahami cara kerja dari terminal atau CLI. Saatnya kita bahas shortcut di VSCodenya, berikut adalah list shortcut:</p>
+      <pre><code># Shortcut VSCode
+Ctrl + P #membuka command palette
+Ctrl + Shift + P #membuka command palette
+Ctrl + B #menyembunyikan sidebar
+Ctrl + Shift + E #menampilkan sidebar explorer
+Ctrl + Shift + F #menampilkan sidebar search
+Ctrl + Shift + G #menampilkan sidebar source control
+Ctrl + Shift + D #menampilkan sidebar debug
+Ctrl + Shift + X #menampilkan sidebar extensions
+Ctrl + ` #membuka terminal
+Ctrl + K Ctrl + S #menampilkan semua shortcut
+Ctrl + / #mengaktifkan komentar
 
-hasil = hitung_total(5000, 3)
-print(hasil)</code></pre>
-      <p>Biarku jelaskan dengan pelan. Dalam memahami logika dan cara kerja kode, ada 5 pertanyaan yang harus lancar kau jawab setelah melihat sebuah kode. Yaitu:</p>
-      <ol>
-        <li type="1">Apa tujuan kode?</li>
-        <li type="1">Dari mana data diambil?</li>
-        <li type="1">Apa yang terjadi?</li>
-        <li type="1">Apa hasilnya?</li>
-        <li type="1">Alasan ditulis seperti ini?</li>
-      </ol>
-      <p>Mulai dari pertanyaan pertama, Coba lihat kembali kode di atas. Apa tujuan dari kode tersebut? Oh ya, kau harus menguasai syntax bahasa pemrograman yang kau gunakan. Tujuan dari kode tersebut adalah menghitung total. Namun, terkadang kau tidak akan menemukan function dengan nama seperti itu, bisa saja kau mendapatkan nama seperti:</p>
-      <pre><code>function student_grade()</code></pre>
-      <p>Jadi untuk menjawab pertanyaan pertama, cobalah lihat penggunaan simbol seperti asterisk (*), plus (+), minus (-), divide (/). Selain itu, pahami juga penggunaan parameter dalam function tersebut. Di sana mengatakan harga dan jumlah, lalu mengembalikan total. Jadi fungsi di atas digunakan untuk menghitung total berdasarkan harga dan jumlah.</p>
-      <p>Pertanyaan kedua, Dari mana data diambil? Dalam kode di atas, data diambil dari parameter function tersebut. Harga dan jumlah adalah data yang diberikan saat memanggil function. Ingatlah bahwa variabel adalah tempat atau wadah untuk menyimpan data. Variabel dalam kode tersebut adalah harga, jumlah, total, dan hasil. Hasil? kenapa hasil dianggap variabel? karena hasil adalah nilai yang dikembalikan oleh function.</p>
-      <pre><code># Python
-def hitung_total(harga, jumlah): &lt;-- fungsi mengambil nilai 5000 dan 3 dari variabel hasil
-    total = harga * jumlah
-    return total
+#Shortcut untuk navigasi
+Ctrl + Tab #berpindah ke tab berikutnya
+Ctrl + Shift + Tab #berpindah ke tab sebelumnya
+Ctrl + Page Up #berpindah ke tab sebelumnya
+Ctrl + Page Down #berpindah ke tab berikutnya
 
-# nilai 5000 adalah harga, sementara 3 adalah jumlah.
-hasil = hitung_total(5000, 3)   &lt;-- disini hasil adalah variabel yang menyimpan nilai yang dikembalikan oleh function hitung_total
-print(hasil)</code></pre>
-      <p>Lanjut kepertanyaan ketiga, Apa yang terjadi? Dalam kode di atas, yang terjadi adalah perkalian antara harga dan jumlah. Setelah data harga dan jumlah di dapatkan, maka fungsi hitung_total melakukan perkalian dan mengembalikan nilai total. Bagian berikut:</p>
-      <pre><code>total = harga * jumlah
-return total</code></pre>
-      <p>Apa hasilnya? Hasilnya adalah nilai yang dikembalikan oleh function hitung_total, yaitu 15000. karena harga * jumlah = 15000</p>
-      <p>Pertanyaan terakhir, kenapa ditulis seperti ini? karena memang beginilah cara penulisan dalam bahasa pemrograman python. Lalu apakah penulisan seperti ini bisa digunakan di bahasa pemrograman lain? Jawabannya adalah tidak, karena bahasa pemrograman lain memiliki cara penulisannya sendiri.</p>
+#Shortcut untuk navigasi file
+Ctrl + P #membuka file
+Ctrl + Shift + O #membuka symbol
+Ctrl + G #membuka line number, btw mirip kayak vim
+Ctrl + Shift + M #membuka problems
 
-      <p>Baca Juga: <a href="../git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
+#Shortcut pointer/cursor
+Ctrl + Shift + L #memilih semua kata yang sama
+Ctrl + D #memilih kata yang sama kebawah pointer
+Ctrl + U #membatalkan pilihan kata yang sama
+
+#Ini shortcut di Linux, mungkin di Windows berbeda
+Ctrl + Shift + Arrow Up #menambahkan pointer/cursor keatas
+Ctrl + Shift + Arrow Down #menambahkan pointer/cursor kebawah
+Alt + Arrow Up #memindahkan pointer/cursor keatas
+Alt + Arrow Down #memindahkan pointer/cursor kebawah</code></pre>
 
       <h2>Kesimpulan</h2>
       <p>
-        Jadi, kesimpulannya adalah membaca. Sebagai developer, kau tidak boleh malas membaca apalagi minus literasi. Ya, kau bisa malas membaca jika mau digantikan oleh AI. Tak hanya itu, kau perlu memahami dasar dan menjawab 5 pertanyaan utama dalam code reading. Kau bisa cek video berikut jika kau memang malas untuk membaca seluruh artikel ini:
-        <a href="https://youtu.be/4t8QcDdrL6Y?si=ifz3zAEWbFoAz6UD" target="_blank">
+        Jadi, kesimpulannya adalah Visual Studio Code adalah text editor yang sangat populer karena ukurannya yang ringan, ekosistem ekstensi yang luas, dan fitur visualisasi Git yang memudahkan pengembangan perangkat lunak. Dengan memahami shortcut dan cara menggunakan terminal, pengguna dapat meningkatkan efisiensi mereka dalam menggunakan VSCode. Kau bisa pelajari lebih lanjut dari video buatan Fireship di bawah ini:
+        <a href="https://youtu.be/ifTF3ags0XI?si=q2tQuFNy0brm8k4Q" target="_blank">
           Link ke Video.
-          <img src="thumbnail.png" alt="Thumbnail Youtube from KodeKloud about how to read code in AI era" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Fireship about how to use Visual Studio Code efficiently" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
         </a>
       </p>
     </div>
@@ -208,7 +213,7 @@ return total</code></pre>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof ARTICLES === 'undefined') return;
-      const related = ARTICLES.filter(a => a.slug !== 'skill-code-reading')
+      const related = ARTICLES.filter(a => a.slug !== 'visual-studio-code')
         .sort(() => Math.random() - 0.5).slice(0, 3);
       const container = document.getElementById('relatedList');
       related.forEach(article => {
