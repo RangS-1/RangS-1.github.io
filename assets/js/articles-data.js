@@ -189,7 +189,7 @@ const ARTICLES = [
   },
   {
   id: 18,
-    title: "Visual Studio Code: Text Editor dengan ekosistem terbesar buatan microsoft",
+    title: "Visual Studio Code: Text Editor open source buatan Microsoft",
     slug: "visual-studio-code",
     summary: "Apa itu Visual Studio Code? Mengapa sangat sering dipakai oleh developer? kita bahas di artikel ini.",
     category: "technology",
