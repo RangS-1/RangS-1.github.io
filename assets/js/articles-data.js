@@ -197,6 +197,17 @@ const ARTICLES = [
     date: "2026-10-30",
     readTime: "20 min",
     url: "/pages/visual-studio-code/"
+  },
+  {
+  id: 19,
+    title: "Clean Code: membuat kode standar tanpa kerumitan",
+    slug: "clean-code-dalam-programming",
+    summary: "Apa itu Clean Code? Bagaimana cara melakukannya? kita bahas di artikel ini.",
+    category: "technology",
+    tags: ["clean code", "programming", "coding"],
+    date: "2026-11-06",
+    readTime: "15 min",
+    url: "/pages/clean-code-dalam-programming/"
   }
 ];
 
