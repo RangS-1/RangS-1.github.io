@@ -198,12 +198,26 @@ ul, ol {
   border-bottom: 2px solid transparent;
   transition: all 0.15s ease;
   letter-spacing: -0.02em;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sub-nav a svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
 }
 
 .sub-nav a:hover {
   color: var(--text);
   opacity: 1;
+}
+
+.sub-nav a:hover svg {
+  transform: translateY(-1px);
 }
 
 .sub-nav a.active {
@@ -1335,9 +1349,91 @@ ul, ol {
   .hero-title {
     font-size: 36px;
   }
+
+  /* YouTube-style bottom navigation */
+  .sub-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    border-bottom: none;
+    padding: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .sub-nav-inner {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sub-nav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 8px 2px;
+    margin: 0;
+    border-bottom: none;
+    border-top: 2px solid transparent;
+    font-size: 10.5px;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .sub-nav a svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sub-nav a span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    line-height: 1.2;
+  }
+
+  .sub-nav a:hover svg {
+    transform: none;
+  }
+
+  .sub-nav a.active {
+    color: var(--text);
+    border-top-color: var(--text);
+    background: rgba(0, 0, 0, 0.03);
+  }
+
+  body:has(.sub-nav) {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sub-nav ~ .site-footer {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 @media (max-width: 480px) {
+  .sub-nav a {
+    padding: 6px 1px;
+    font-size: 9.5px;
+    letter-spacing: -0.04em;
+  }
+
+  .sub-nav a svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .masonry-grid {
     columns: 1;
   }
