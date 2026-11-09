@@ -208,6 +208,17 @@ const ARTICLES = [
     date: "2026-11-06",
     readTime: "15 min",
     url: "/pages/clean-code-dalam-programming/"
+  },
+  {
+  id: 20,
+    title: "PATH: memahami environment variable di setiap sistem operasi",
+    slug: "path-environment-variable",
+    summary: "Apa itu PATH? Apakah setiap sistem operasi berbeda? kita bahas di artikel ini.",
+    category: "technology",
+    tags: ["PATH", "env", "os"],
+    date: "2026-11-10",
+    readTime: "4 min",
+    url: "/pages/path-environment-variable/"
   }
 ];
 
