@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PATH: memahami environment variable di setiap sistem operasi — ./RangS Blog</title>
   <meta name="description" content="Apa itu PATH? Apakah setiap sistem operasi berbeda? kita bahas di artikel ini.">
-  <link rel="canonical" href="https://rangs-blog.vercel.app/pages/clean-code-dalam-programming/">
+  <link rel="canonical" href="https://rangs-blog.vercel.app/pages/path-environment-variable/">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="RangS Blog">
   <meta property="og:title" content="PATH: memahami environment variable di setiap sistem operasi">
   <meta property="og:description" content="Apa itu PATH? Apakah setiap sistem operasi berbeda? kita bahas di artikel ini.">
   <meta name="robots" content="index, follow">
-  <meta property="og:image" content="https://rangs-blog.vercel.app/pages/clean-code-dalam-programming/image.png">
+  <meta property="og:image" content="https://rangs-blog.vercel.app/pages/path-environment-variable/image.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PATH: memahami environment variable di setiap sistem operasi">
   <meta name="twitter:description" content="Apa itu PATH? Apakah setiap sistem operasi berbeda? kita bahas di artikel ini.">
-  <meta name="twitter:image" content="https://rangs-blog.vercel.app/pages/clean-code-dalam-programming/image.png">
+  <meta name="twitter:image" content="https://rangs-blog.vercel.app/pages/path-environment-variable/image.png">
 
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="icon" href="../../about/RangS_pfp.png">
@@ -57,17 +57,17 @@
     "@context":"https://schema.org",
     "@type":"BlogPosting",
     "headline":"PATH: memahami environment variable di setiap sistem operasi",
-    "description":"Penjelasan lengkap tentang Clean Code dan prinsip-prinsip dasarnya.",
+    "description":"Penjelasan lengkap tentang PATH dan cara mengaturnya di berbagai sistem operasi.",
     "author":{
       "@type":"Person",
       "name":"RangS"
     },
-    "datePublished":"2026-11-06",
-    "dateModified":"2026-11-06",
+    "datePublished":"2026-11-09",
+    "dateModified":"2026-11-09",
     "keywords":[
-      "clean code",
-      "programming",
-      "coding"
+      "PATH",
+      "environment variable",
+      "sistem operasi"
     ]
   }
   </script>
@@ -97,9 +97,9 @@
         <span>·</span>
         <span>[technology]</span>
         <span>·</span>
-        <span>2026-11-06</span>
+        <span>2026-11-09</span>
         <span>·</span>
-        <span>15 min read</span>
+        <span>6 min read</span>
       </div>
       <h1 class="article-headline">PATH: memahami environment variable di setiap sistem operasi</h1>
       <p class="article-summary">
@@ -114,128 +114,66 @@
 
     <div class="article-body">
       <h2>Apa itu PATH?</h2>
-      <p>PATH adalah istilah yang digunakan untuk menggambarkan kode yang ditulis dengan baik, mudah dibaca, dan mudah dipelihara. Kode yang bersih tidak hanya berfungsi dengan benar, tetapi juga memiliki struktur yang rapi dan mudah dipahami oleh programmer lain.</p>
+      <p>PATH adalah istilah yang digunakan untuk menggambarkan daftar direktori yang akan dicari oleh sistem operasi ketika kita mengetikkan perintah di terminal.</p>
       <blockquote>
-        "Clean code always looks like it was written by someone who cares."
+        "Satu hal yang membuat developer bingung ketika menginstall software dengan GUI adalah karena mereka tidak tahu cara menambahkan PATH"
         <br>
-        — Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship
+        — RangS
       </blockquote>
       <p>
-        Pada artikel ini, kita akan membahas prinsip-prinsip dasar Clean Code dan bagaimana menerapkannya dalam praktik pemrograman.
+        Pada artikel ini, kita akan membahas tentang PATH atau lebih tepatnya environment variable dan bagaimana menerapkannya dalam praktik pemrograman.
       </p>
 
-      <h2>Clean Code</h2>
-      <img src="clean-code-book.png" alt="Cover buku Clean Code karya Robert C. Martin" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
-      <p>Clean Code adalah konsep dalam pemrograman yang menekankan pentingnya menulis kode yang mudah dibaca, dipahami, dan dipelihara. Konsep ini diperkenalkan oleh Robert C. Martin dalam bukunya yang berjudul "Clean Code: A Handbook of Agile Software Craftsmanship".</p>
-      <p>Apa kegunaan dari Clean Code jika program tetap bisa dijalankan dengan lancar? kode memang bisa dibaca oleh mesin, tetapi jika oleh orang lain dalam kerja tim bagaimana? Ingin perusahaan yang kau dirikan memiliki bus factor?</p>
+      <h2>PATH Environment Variable</h2>
+      <img src="bashrc_ss.png" alt="PATH Environment Variable" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>PATH adalah environment variable yang digunakan oleh sistem operasi untuk menentukan lokasi direktori tempat executable file berada. Executable sendiri adalah file yang dapat dijalankan oleh sistem operasi dan biasa berakhiran .exe untuk windows, tapi tidak selalu executable, file script seperti .sh atau .py juga dapat dijalankan. Ketika kita mengetikkan perintah di terminal, sistem akan mencari executable file tersebut di direktori yang tercantum dalam PATH.</p>
+      <p>Jika PATH tidak diatur dengan benar, maka sistem (terutama terminal) tidak akan tahu di mana ia mengeksekusi perintah yang kau minta.</p>
 
-      <h2>Prinsip Clean Code</h2>
-      <p>Prinsip-prinsip Clean Code meliputi:</p>
-      <ol>
-        <li><strong>Kode harus mudah dibaca:</strong> Nama variabel, fungsi, dan kelas harus menjelaskan tujuan dari kode tersebut.</li>
-        <li><strong>Kode harus sederhana:</strong> Hindari kompleksitas yang tidak perlu.</li>
-        <li><strong>Kode harus modular:</strong> Bagi kode menjadi bagian-bagian kecil yang dapat dikelola secara independen.</li>
-      </ol>
-      <p>Selain itu, Clean Code juga menekankan pentingnya menulis kode yang dapat dipelihara dan diperbarui dengan mudah. Mari kita mulai dari prinsip pertama: Kode harus mudah dibaca.</p>
-      <p>Baca Juga: <a href="../skill-code-reading/" target="_blank">Code Reading: kemampuan memahami kode hanya dengan melihat kode</a></p>
-
-      <h2>1. Kode harus mudah dibaca</h2>
-      <p>Coba perhatikan kode berikut:</p>
-      <pre><code>function t(h, k){
-    return h * k;
-}</code></pre>
-      <p>Apa yang kau pikirkan saat pertama kali melihat kode di atas? Kau mungkin berfikir "t" ini apaan? h dan k itu parameter untuk apa? Sangat membingungkan bukan? Nah, coba lihat kode berikut:</p>
-      <pre><code>function totalHarga(harga, kuantitas){
-    return harga * kuantitas;
-}</code></pre>
-      <p>Bagaimana dengan sekarang? lebih mudah dipahami kan? Jadi. Intinya gunakan nama yang deskriptif dan hindari singkatan yang tidak perlu. Maksud dari singkatan tidak perlu ini adalah singkatan yang tidak jelas. Kalau misalkan kau menulis kode koordinat:</p>
-      <pre><code>function koordinat(x, y){
-    console.log(`Koordinat: (${x}, ${y})`);
-}</code></pre>
-      <p>Ini masih boleh dilakukan. Sekali lagi, gunakan nama yang deskriptif dan hindari singkatan yang tidak jelas. Kau akan bingung sendiri jika tidak menggunakan nama variabel yang jelas.</p>
-
-      <h2>2. Sederhana</h2>
-      <p>Prinsip kedua dari clean code adalah membuat kode sederhana. Kode yang sederhana lebih mudah dipahami, di-maintain, dan di-debug. Hindari kompleksitas yang tidak perlu dalam penulisan kode. Sebagai contoh:</p>
-      <pre><code>function hitungDiskon(harga, diskon){
-    if(diskon > 0){
-        return harga - (harga * diskon);
-    } else {
-        return harga;
-    }
-}</code></pre>
-      <p>Kode di atas bisa disederhanakan menjadi:</p>
-      <pre><code>function hitungDiskon(harga, diskon){
-    return diskon > 0 ? harga - (harga * diskon) : harga;
-}</code></pre>
-      <p>Mana yang lebih baik? sudah jelas yang paling atas, yang dijelaskan menggunakan if-else. Kenapa? karena bayangkan seorang junior developer yang baru belajar, lalu ia melihat tanda ? pada kodenya, mungkin ia berfikir "Ini tanda ? untuk apa". Nah, memang kelihatan keren jika menggunakan ternary operator. Tapi... jika kau punya tim yang tidak terlalu familiar dengan ternary operator, mungkin akan lebih baik menggunakan if-else.</p>
-      <p>Oh ya, argumen atau parameter di dalam fungsi lebih baik jangan terlalu banyak, cukup 2-3 argumen.</p>
-      <p>Baca Juga: <a href="../git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
-      
-      <h2>3. Modular / "Satu fungsi, Satu tugas"</h2>
-      <p>Dalam clean code, kau harus membuat kode yang modular. Maksud dari modular adalah membagi kode menjadi bagian-bagian kecil yang memiliki satu tugas spesifik. Ini membuat kode lebih mudah dipahami, di-maintain, dan di-debug.</p>
-      <p>Coba lihat kode berikut:</p>
-      <pre><code>def proses_checkout(keranjang):
-    total = sum(item['harga'] for item in keranjang)
-    
-    for item in keranjang:
-        database.kurangi_stok(item['id'], item['jumlah'])
-        
-    email.kirim("pembeli@email.com", f"Total belanjaan Anda: {total}")</code></pre>
-      <p>Kode di atas melakukan beberapa tugas sekaligus: menghitung total harga, mengurangi stok di database, dan mengirim email. Ini membuat kode sulit dipahami dan di-maintain. Sebaiknya, pisahkan kode menjadi fungsi-fungsi kecil yang memiliki satu tugas spesifik:</p>
-      <pre><code>def hitung_total(keranjang):
-    return sum(item['harga'] for item in keranjang)
-
-def update_stok(keranjang):
-    for item in keranjang:
-        database.kurangi_stok(item['id'], item['jumlah'])
-
-def kirim_email(total):
-    email.kirim("pembeli@email.com", f"Oi! Total Lu foya-foya: {total}")
-    </code></pre>
-      <p>Nah, kode di atas lebih baik karena setiap fungsi memiliki tugasnya masing-masing.</p>
+      <h2>Linux dan MacOS</h2>
+      <p>Di Linux maupun MacOS, PATH juga digunakan untuk menentukan lokasi direktori tempat executable file berada. Untuk mengatur PATH di Linux atau MacOS, kau dapat menambahkan baris berikut ke file konfigurasi shell kau (misalnya .bashrc, .zshrc, dll):</p>
+      <pre><code>export PATH=$PATH:/directory/executable/</code></pre>
       <p>Baca Juga: <a href="../terminal-sang-kawan-programmer/" target="_blank">Terminal: Kawan Sejati Programmer</a></p>
-      
-      <h2>4. Komentar</h2>
-      <p>Komentar? komentar untuk apa? bukannya enggak ngaruh ya? emang enggak ngaruh tapi ngaruh kocak!</p>
-      <p>Biar kuperjelas. Sebuah kode yang baik harus dapat menjelaskan dirinya sendiri ketika orang lain pertama kali melihatnya. Sebagai contoh coba lihat kode berikut:</p>
-      <pre><code>umur = 17
+      <p>Nah, aku sering menggunakan fish sebagai shell utama. Untuk menambahkan path ke dalam fish shell, kau cukup mengetik:</p>
+      <pre><code>fish_add_path /directory/executable/</code></pre>
+      <p>Ah iya, aku hampir lupa. Yang dimasukkan ke dalam PATH adalah lokasi direktori alias folder, bukan file executable itu sendiri. Jadi semisal kau memiliki file executable di /home/user/bin/nama-executable-file, maka kau perlu menambahkan /home/user/bin ke dalam PATH.</p>
+      <p>Kurang lebih cara kerjanya seperti ini:</p>
+      <pre><code>Kau punya file executable di /home/user/bin/nama-executable-file.exe
+Kau menambahkan /home/user/bin ke dalam PATH
+Ketika kau mengetikkan nama-executable-file.exe di terminal, sistem akan mencari file
+executable tersebut di direktori yang tercantum dalam PATH, yaitu /home/user/bin</code></pre>
+      <p>Lalu, jika kau punya beberapa file executable di direktori yang berbeda, kau perlu menambahkan semua direktori tersebut ke dalam PATH dengan tanda ":" untuk memisahkan direktori, misalnya:</p>
+      <pre><code>export PATH="$PATH:/usr/local/sbin:/usr/local/bin/"</code></pre>
+      <p>Kode di atas mengartikan kau mengambil file executable dari direktori /usr/local/sbin dan /usr/local/bin.</p>
 
-if umur >= 18:
-    print("Dewasa")</code></pre>
-      <p>Kalau kau lihat kode di atas, kau pasti langsung paham kan? kalau umur lebih dari sama dengan 18 maka dia dewasa. Nah, coba lihat kode berikut:</p>
-      <pre><code># variabel berisi nilai 17
-umur = 17:
+      <h2>File Executable</h2>
+      <p>Mari kita bahas jenis file executable yang bisa di jalankan oleh sistem operasi:</p>
+      <pre><code>Windows: .exe, .bat, .cmd, .ps1
+Linux: .sh, .run
+MacOS: .sh</code></pre>
+      <p>Sedikit catatan juga, jenis file ini bisa dijalankan jika kau memiliki permission terhadap direktori atau file tersebut. Misalnya:</p>
+      <pre><code>Windows: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Linux & MacOS: chmod +x nama-file.sh</code></pre>
 
-# jika umur lebih dari sama dengan 18 maka dia dewasa
-if umur >= 18:
-    print("Dewasa")</code></pre>
-      <p>Maksudku begini loh, kode diatas sudah sangat menjelaskan dirinya, kau tidak perlu menambahkan komentar. Ayolah, jika kau menambahkan komentar untuk kode yang sudah sangat jelas, kau malah membuat kebisingan visual.</p>
-      <p>Oh ya, aku pernah melihat kode dengan komentar seperti ini:</p>
-      <pre><code># Aku yang tahu kegunaan kode ini, tapi sekarang hanya tuhan yang tahu</code></pre>
-      <p>Malah jadi tempat curhat. Ingat, kau seorang professional. Kau tidak perlu menambahkan komentar yang tidak perlu. Kalau ingin curhat silakan pergi ke psikiater.</p>
-      
-      <h2>5. Gaya Penulisan Variabel</h2>
-      <p>Penulisan variabel tidak berpengaruh terhadap performa kode, tetapi dapat mempengaruhi keterbacaan dan pemeliharaan kode. Ada beberapa gaya penulisan variabel yang bisa kau gunakan, misalnya:</p>
-      <pre>IniAdalahVariabel     #PascalCase
-ini_adalah_variabel   #snake_case
-iniAdalahVariabel     #camelCase
-ini-adalah-variabel   #kebab-case</pre>
-      <p>Gaya penulisan variabel yang digunakan harus konsisten di seluruh kode. Pilih satu gaya penulisan dan gunakan secara konsisten. jujur saja aku lebih suka menggunakan snake_case karena lebih mudah dibaca, atau yang sering kugunakan juga adalah CamelCase terutama jika menggunakan Javascript.
-      <p>Kenapa hal ini penting? karena kode yang memiliki perbedaan dalam penggunaan huruf kapital bisa dianggap berbeda. Misalnya:</p>
-      <pre><code>nilai = 1
-Nilai = 1
-NiLai = 1
-NILaI = 1</code></pre>
-      <p>Kata yang sama, tetapi dianggap berbeda. Bahasa pemrograman bersifat case-sensitive.</p>
+      <h2>Windows</h2>
+      <p>Untuk di windows sendiri, sebenarnya cukup gampang. Ikuti langkah-langkah berikut:</p>
+      <img src="edit-env.png" alt="PATH Environment Variable di windows" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <ol>
+        <li>Search Edit Environment Variables, Enter</li>
+        <li>Pilih Path di bagian System variables, lalu klik Edit</li>
+        <li>Klik New, lalu masukkan direktori tempat executable file berada</li>
+        <li>Klik OK untuk menyimpan perubahan</li>
+      </ol>  
+      <img src="environment-variable-windows.png" alt="PATH Environment Variable di windows" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>Setelah perubahan tersimpan, coba buka shell baru (powershell atau cmd) dan ketik nama file executable yang ingin kau jalankan. Misal, sebelumnya kau memasukkan directory C:\xampp\php\, kau tinggal tes dengan mengetik:</p>
+      <pre><code>php -v</code></pre>
+      <p>Jika berhasil, maka akan muncul versi php yang terinstall di sistemmu. Dan... Ya, mungkin hanya itu yang bisa kujelaskan. Ingatlah kalau yang dimasukkan adalah direktori atau foldernya, BUKAN file executablenya. Aku sering melihat orang salah memasukkan directory ke dalam PATH.</p>
 
-
-      
       <h2>Kesimpulan</h2>
       <p>
-        Jadi, kesimpulannya adalah keterbacaan kode sangat penting dalam pengembangan perangkat lunak. Kode yang mudah dibaca dan dipahami akan mempermudah pemeliharaan dan kolaborasi. Dengan menerapkan prinsip-prinsip clean code, kita dapat menulis kode yang lebih baik dan lebih efisien. Kau bisa pelajari lebih lanjut dari video buatan Arwildo di bawah ini:
-        <a href="https://youtu.be/fk-NNkD9g5s?si=F8DXrbHIOBylrrS_" target="_blank">
+        Jadi, PATH adalah environment variable yang digunakan oleh sistem operasi untuk menentukan lokasi direktori tempat executable file berada. Dengan mengatur PATH dengan benar, kita dapat menjalankan perintah di terminal tanpa harus menyebutkan path lengkap dari executable file tersebut, dengan kata lain kita bisa menjalankan file yang berada di direktori yang berbeda sekalipun. Semoga artikel ini bermanfaat dan membantu kalian memahami konsep PATH di berbagai sistem operasi. Jika ingin pelajari lebih lanjut, silakan cek video berikut:
+        <a href="https://youtu.be/ow2jROvxyH4?si=5VPCEdSjLhrDaaDl" target="_blank">
           Link ke Video.
-          <img src="thumbnail.png" alt="Thumbnail Youtube from Arwildo about how to write clean code" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+          <img src="thumbnail.png" alt="Thumbnail Youtube from ProgrammingKnowledge2 about how to set environment variables in windows 11" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
         </a>
       </p>
     </div>
@@ -261,7 +199,7 @@ NILaI = 1</code></pre>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (typeof ARTICLES === 'undefined') return;
-      const related = ARTICLES.filter(a => a.slug !== 'clean-code-dalam-programming')
+      const related = ARTICLES.filter(a => a.slug !== 'path-environment-variable')
         .sort(() => Math.random() - 0.5).slice(0, 4);
       const container = document.getElementById('relatedList');
       related.forEach(article => {

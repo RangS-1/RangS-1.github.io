@@ -217,7 +217,7 @@ const ARTICLES = [
     category: "technology",
     tags: ["PATH", "env", "os"],
     date: "2026-11-10",
-    readTime: "4 min",
+    readTime: "6 min",
     url: "/pages/path-environment-variable/"
   }
 ];
