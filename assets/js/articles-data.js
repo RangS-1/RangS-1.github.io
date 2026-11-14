@@ -228,7 +228,7 @@ const ARTICLES = [
     category: "technology",
     tags: ["javascript", "programming", "web development"],
     date: "2026-11-15",
-    readTime: "6 min",
+    readTime: "8 min",
     url: "/articles/bahasa-pemrograman-javascript/"
   }
 ];
