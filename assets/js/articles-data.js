@@ -219,6 +219,17 @@ const ARTICLES = [
     date: "2026-11-10",
     readTime: "6 min",
     url: "/articles/path-environment-variable/"
+  },
+  {
+  id: 21,
+    title: "Javascript: Bahasa pemrograman dengan ekosistem terluas",
+    slug: "bahasa-pemrograman-javascript",
+    summary: "Apa itu Javascript? Kenapa memiliki ekosistem yang luas? kita bahas di artikel ini.",
+    category: "technology",
+    tags: ["javascript", "programming", "web development"],
+    date: "2026-11-15",
+    readTime: "6 min",
+    url: "/articles/bahasa-pemrograman-javascript/"
   }
 ];
 
