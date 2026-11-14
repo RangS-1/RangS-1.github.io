@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git: Sang pengontrol versi terbaik andalan programmer — ./RangS Blog</title>
+  <meta name="description" content="Apa itu Git? seberapa penting ia bagi developer? kita bahas lengkap di artikel ini.">
+  <link rel="canonical" href="https://rangs.blog/pages/git-sang-pengontrol/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RangS Blog">
+  <meta property="og:title" content="Git: Sang pengontrol versi terbaik andalan programmer">
+  <meta property="og:description" content="Apa itu Git? seberapa penting ia bagi developer? kita bahas lengkap di artikel ini.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs.blog/pages/git-sang-pengontrol/screenshotgit.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Git: Sang pengontrol versi terbaik andalan programmer">
+  <meta name="twitter:description" content="Apa itu Git? seberapa penting ia bagi developer? kita bahas lengkap di artikel ini.">
+  <meta name="twitter:image" content="https://rangs.blog/pages/git-sang-pengontrol/screenshotgit.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Git: Sang pengontrol versi terbaik andalan programmer",
+    "description":"Apa itu Git? seberapa penting ia bagi developer? kita bahas lengkap di artikel ini.",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-08-08",
+    "dateModified":"2026-08-08",
+    "keywords":[
+      "Git",
+      "Linux",
+      "Version Control",
+      "Programming"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../">home</a>
+    <a href="../../dashboard/" class="active">dashboard</a>
+    <a href="../../about/">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-08-08</span>
+        <span>·</span>
+        <span>25 min read</span>
+      </div>
+      <h1 class="article-headline">Git: Sang pengontrol versi terbaik andalan programmer</h1>
+      <p class="article-summary">
+        Apa itu Git? seberapa penting ia bagi developer? kita bahas lengkap di artikel ini.
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#linux</span>
+        <span class="tag">#git</span>
+        <span class="tag">#version-control</span>
+        <span class="tag">#programming</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2>Apa itu Git?</h2>
+      <p>Git adalah sistem kontrol versi yang digunakan untuk melacak perubahan dalam file dan koordinasi kerja antara beberapa developer.</p>
+      <blockquote>
+        "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'"
+        <br>
+        — Linus Torvalds, pencipta Git 
+      </blockquote>
+      <p>
+        Pada artikel ini, kita akan bahas tentang Git, kegunaannya dalam keseharian developer.
+      </p>
+
+      <h2>Git</h2>
+      <img src="gitlogo.png" alt="Git Logo" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jadi apa itu Git? Git adalah sistem kontrol versi yang digunakan untuk melacak perubahan dari dalam file. 
+        Kenapa file? karena Git tidak hanya melacak perubahan dari source code, tetapi juga bisa melacak perubahan dari file lain seperti dokumen, gambar, video dan lainnya.
+        Apapun file yang kau buat, Git bisa melacaknya. Bahkan Git bisa melacak perubahan dari file yang tidak sengaja dihapus.
+      </p>
+      <p>
+        Git juga bisa digunakan untuk mengembalikan file yang sudah dihapus, atau mengembalikan file ke versi sebelumnya.
+        Git juga bisa digunakan untuk menggabungkan perubahan dari beberapa orang yang bekerja pada proyek yang sama.
+        Jadi Git sangat berguna bagi developer yang bekerja dalam tim, karena Git bisa melacak perubahan dari setiap orang yang bekerja pada proyek tersebut.
+      </p>
+
+      <h2>Install Git</h2>
+      <p>
+        Tapi sebelum menggunakannya, kita harus menginstall Git terlebih dahulu. Bagi pengguna Windows silakan kunjungi website <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a> Lalu klik bagian install dan pilih untuk windows.
+        Begitu pula dengan MacOS, tinggal klik bagian install dan pilih untuk MacOS. Bagi pengguna Linux, silakan buka terminal dan install dengan package manager masing-masing:
+      </p>
+      <pre><code># Distro berbasis Debian/Ubuntu
+sudo apt update && sudo apt install git
+
+# Distro berbasis Arch Linux
+sudo pacman -Syu git
+
+# Distro berbasis Fedora
+sudo dnf install git</code></pre>
+      <p>
+        Setelah menginstall Git, silakan buka terminal. jika di Windows bisa menggunakan Git Bash, PowerShell atau bahkan CMD.
+        Lalu cek versi dengan perintah:
+      </p>
+      <pre><code>git --version</code></pre>
+      <img src="gitversion.png" alt="Git Version Logo" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jika sudah muncul versi Git, berarti Git sudah terinstall.
+      </p>
+      <p>Baca Juga: <a href="../terminal-sang-kawan-programmer/" target="_blank">Terminal sang kawan programmer</a></p>
+
+      <h2>Penggunaan Git</h2>
+      <p>
+        Kita sudah bisa menggunakan git sekarang. Tapi sebelum itu, kita harus mengatur nama dan email terlebih dahulu. Karena Git akan menggunakan nama dan email tersebut untuk menandai setiap perubahan yang kita lakukan.
+      </p>
+      <p>
+        Buka terminal dan ketik perintah berikut:
+      </p>
+      <pre><code>git config --global user.name "Nama mu"
+git config --global user.email "emailmu@gmail.com"</code></pre>
+      <p>
+        Setelah mengatur nama dan email, kita bisa mulai menggunakan Git.
+        Git tidak akan tahu apa yang perlu dilacak olehnya, karena itu kita harus memberitahu Git dengan perintah:
+      </p>
+      <pre><code>git init</code></pre>
+      <p>
+        Oh ya, jika kau menggunakan VSCode, kau bisa menggunakan terminal bawaan VSCode dengan menekan tombol Ctrl+Shift+` (backtick) atau klik menu Terminal > New Terminal.
+      </p>
+      <p>
+        Setelah memberitahu Git, kita perlu menambahkan file ke staging area. Apa itu Staging Area?
+      </p>
+
+      <h2>Staging Area</h2>
+      <p>
+        Staging Area adalah area sementara yang digunakan untuk menampung perubahan yang akan dikommit. Jadi sebelum kita mengkommit perubahan, kita harus menambahkan file ke Staging Area terlebih dahulu.
+        Untuk menambahkan file ke Staging Area, kita bisa menggunakan perintah:
+      </p>
+      <pre><code>git add .
+#Tanda titik diatas mengatakan bahwa kita memasukkan
+#Semua file ke staging area</code></pre>
+      <p>
+        Bayangkan sebuah kotak berisi laporan, dan kita ingin mengirimkan laporan tersebut ke atasan. Kita harus menaruh laporan tersebut ke dalam kotak terlebih dahulu sebelum mengirimkannya.
+        Begitu pula dengan Git, kita harus menaruh perubahan yang kita lakukan ke Staging Area terlebih dahulu sebelum mengkommitnya. Nah, apa itu commit?
+      </p>
+
+      <h2>Commit</h2>
+      <p>
+        Commit adalah perintah yang digunakan untuk menyimpan perubahan yang kita lakukan. Ingat staging area sebelumnya? ya, commit akan menyimpan perubahan yang ada di Staging Area ke dalam repository Git.
+        Untuk melakukan git commit, masukkan perintah:
+      </p>
+      <pre><code>git commit -m "Pesan Kommit"</code></pre>
+      <p>
+        Bayangkan kotak laporan sementara sebelumnya. Setelah kita yakin dengan perubahan yang dilakukan sebelumnya.
+        Git atau bisa kita anggap sebagai manajer akan mendatangi kita untuk menyimpan hasil perubahan oleh Git.
+        Lalu kita tidak hanya memberikan laporan tersebut kepada manajer (Git), tetapi juga memberinya pesan.
+        Misalnya "Pak Manajer, ini laporan saya tolong dicatat ya!", lalu pak manajer berkata "Sip!".
+      </p>
+      <p>
+        Sejauh ini kita hanyalah menggunakan Git dengan diri sendiri, lalu bagaimana dengan orang lain? Disitulah Git Branch muncul.
+      </p>
+
+      <h2>Git Branch</h2>
+      <p>
+        Bayangkan seperti ini, Bos kita memiliki ruangan utama dengan nama main/master.
+        Tentunya kita sebagai pegawai tidak bisa mengubah hasil kerja bos kita kan?
+        Nah, kita harus membuat kantor sendiri untuk membuat perubahan sendiri. Kurang lebih itulah konsep dari Git Branch.
+        Untuk membuat Branch, masukkan perintah berikut:
+      </p>
+      <pre><code>git branch <i>nama_branch</i></code></pre>
+      <p>
+        Nah, kita bisa membuat perubahan di sini. Seperti tadi, kita masukkan ke staging area lalu commit.
+        Ingat bahwa kode diatas hanya membuat branch, kita belum masuk ke dalamnya. Untuk itu, kita harus masuk ke branch atau kantor kita sendiri dengan checkout.
+      </p>
+      
+      <h2>Git Checkout</h2>
+      <p>
+        Bayangkan Git Checkout adalah rute jalan. Git Checkout digunakan untuk pindah dari satu branch ke branch lainnya.
+        Seolah kita masuk kantor orang lain. Dengan berada di kantor orang lain, kita bisa melihat kode yang mereka ubah.
+        Untuk menggunakan git checkout, masukkan perintah berikut:
+      </p>
+      <pre><code>git checkout <i>nama_branch</i></code></pre>
+      <p>
+        Sedikit tips di sini, jika kita ingin membuat branch atau kantor sendiri sekaligus masuk ke dalamnya. Kita bisa gunakan: 
+      </p>
+      <pre><code>git checkout -b <i>nama_branch</i></code></pre>
+      <p>
+        Dengan begitu, kita bisa membuat sekaligus masuk ke kantor sendiri. Jika bos kita ingin mengambil hasil pekerjaan kita bagaimana?
+        Di situlah git merge beraksi.
+      </p>
+
+      <h2>Git Merge</h2>
+      <p>
+        Git Merge digunakan untuk menggabungkan hasil kerja orang lain dengan milik kita.
+        Misal bos kita berada di branch main, maka ia hanya perlu menggunakan perintah:
+      </p>
+      <pre><code>git merge <i>nama_branch</i></code></pre>
+      <p>
+        Selesai, dengan begitu branch milik kita sudah digabungkan dengan milik bos.
+      </p>
+
+      <h2>Git di VSCode</h2>
+      <img src="screenshotgit.png" alt="Screenshot Git di VSCode" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Biasanya, VSCode memiliki git yang sudah terpasang. Jadi seharusnya penggunaan Git lebih mudah.
+        Dan juga, kau bisa melihat perubahan kode atau file secara visual.
+      </p>
+      <p>Baca Juga: <a href="../programming-yang-sebenarnya/" target="_blank">Programming yang sebenarnya</a></p>
+
+      <h2>Kesimpulan</h2>
+      <p>
+        Jujur saja Git adalah alat yang sangat powerful. Di era AI sekalipun, Git tetap bertahan dengan kegunaannya yang tidak bisa digantikan.
+        Mungkin sulit diawal-awal, tapi lama-kelamaan juga akan terbiasa, terlebih lagi dengan banyaknya extensi, plugin ataupun mod Git, harusnya tidak akan sesulit itu.
+        Jika ingin paham lebih lanjut silakan cek video berikut:
+        <a href="https://youtu.be/mAFoROnOfHs?si=X31-iyavqil8nhPW" target="_blank">
+          Link ke Video.
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Witzdome" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'git-sang-pengontrol')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rangs-blog.vercel.app/sitemap.xml
+Sitemap: https://rangs.blog/sitemap.xml

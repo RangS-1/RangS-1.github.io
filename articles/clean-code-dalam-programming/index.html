@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Code: membuat kode standar tanpa kerumitan — ./RangS Blog</title>
+  <meta name="description" content="Apa itu Clean Code? Bagaimana cara melakukannya? kita bahas di artikel ini.">
+  <link rel="canonical" href="https://rangs.blog/pages/clean-code-dalam-programming/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RangS Blog">
+  <meta property="og:title" content="Clean Code: membuat kode standar tanpa kerumitan">
+  <meta property="og:description" content="Apa itu Clean Code? Bagaimana cara melakukannya? kita bahas di artikel ini.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs.blog/pages/clean-code-dalam-programming/image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clean Code: membuat kode standar tanpa kerumitan">
+  <meta name="twitter:description" content="Apa itu Clean Code? Bagaimana cara melakukannya? kita bahas di artikel ini.">
+  <meta name="twitter:image" content="https://rangs.blog/pages/clean-code-dalam-programming/image.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Clean Code: membuat kode standar tanpa kerumitan",
+    "description":"Penjelasan lengkap tentang Clean Code dan prinsip-prinsip dasarnya.",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-11-06",
+    "dateModified":"2026-11-06",
+    "keywords":[
+      "clean code",
+      "programming",
+      "coding"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../">home</a>
+    <a href="../../dashboard/" class="active">dashboard</a>
+    <a href="../../about/">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+    <article>
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-11-06</span>
+        <span>·</span>
+        <span>15 min read</span>
+      </div>
+      <h1 class="article-headline">Clean Code: membuat kode standar tanpa kerumitan</h1>
+      <p class="article-summary">
+        Apa itu Clean Code? Bagaimana cara melakukannya? kita bahas di artikel ini.
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#clean code</span>
+        <span class="tag">#programming</span>
+        <span class="tag">#coding</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+      <h2>Apa itu Clean Code?</h2>
+      <p>Clean Code adalah istilah yang digunakan untuk menggambarkan kode yang ditulis dengan baik, mudah dibaca, dan mudah dipelihara. Kode yang bersih tidak hanya berfungsi dengan benar, tetapi juga memiliki struktur yang rapi dan mudah dipahami oleh programmer lain.</p>
+      <blockquote>
+        "Clean code always looks like it was written by someone who cares."
+        <br>
+        — Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship
+      </blockquote>
+      <p>
+        Pada artikel ini, kita akan membahas prinsip-prinsip dasar Clean Code dan bagaimana menerapkannya dalam praktik pemrograman.
+      </p>
+
+      <h2>Clean Code</h2>
+      <img src="clean-code-book.png" alt="Cover buku Clean Code karya Robert C. Martin" style="width:100%;height:-50%;border-radius:8px;margin:24px 0;">
+      <p>Clean Code adalah konsep dalam pemrograman yang menekankan pentingnya menulis kode yang mudah dibaca, dipahami, dan dipelihara. Konsep ini diperkenalkan oleh Robert C. Martin dalam bukunya yang berjudul "Clean Code: A Handbook of Agile Software Craftsmanship".</p>
+      <p>Apa kegunaan dari Clean Code jika program tetap bisa dijalankan dengan lancar? kode memang bisa dibaca oleh mesin, tetapi jika oleh orang lain dalam kerja tim bagaimana? Ingin perusahaan yang kau dirikan memiliki bus factor?</p>
+
+      <h2>Prinsip Clean Code</h2>
+      <p>Prinsip-prinsip Clean Code meliputi:</p>
+      <ol>
+        <li><strong>Kode harus mudah dibaca:</strong> Nama variabel, fungsi, dan kelas harus menjelaskan tujuan dari kode tersebut.</li>
+        <li><strong>Kode harus sederhana:</strong> Hindari kompleksitas yang tidak perlu.</li>
+        <li><strong>Kode harus modular:</strong> Bagi kode menjadi bagian-bagian kecil yang dapat dikelola secara independen.</li>
+      </ol>
+      <p>Selain itu, Clean Code juga menekankan pentingnya menulis kode yang dapat dipelihara dan diperbarui dengan mudah. Mari kita mulai dari prinsip pertama: Kode harus mudah dibaca.</p>
+      <p>Baca Juga: <a href="../skill-code-reading/" target="_blank">Code Reading: kemampuan memahami kode hanya dengan melihat kode</a></p>
+
+      <h2>1. Kode harus mudah dibaca</h2>
+      <p>Coba perhatikan kode berikut:</p>
+      <pre><code>function t(h, k){
+    return h * k;
+}</code></pre>
+      <p>Apa yang kau pikirkan saat pertama kali melihat kode di atas? Kau mungkin berfikir "t" ini apaan? h dan k itu parameter untuk apa? Sangat membingungkan bukan? Nah, coba lihat kode berikut:</p>
+      <pre><code>function totalHarga(harga, kuantitas){
+    return harga * kuantitas;
+}</code></pre>
+      <p>Bagaimana dengan sekarang? lebih mudah dipahami kan? Jadi. Intinya gunakan nama yang deskriptif dan hindari singkatan yang tidak perlu. Maksud dari singkatan tidak perlu ini adalah singkatan yang tidak jelas. Kalau misalkan kau menulis kode koordinat:</p>
+      <pre><code>function koordinat(x, y){
+    console.log(`Koordinat: (${x}, ${y})`);
+}</code></pre>
+      <p>Ini masih boleh dilakukan. Sekali lagi, gunakan nama yang deskriptif dan hindari singkatan yang tidak jelas. Kau akan bingung sendiri jika tidak menggunakan nama variabel yang jelas.</p>
+
+      <h2>2. Sederhana</h2>
+      <p>Prinsip kedua dari clean code adalah membuat kode sederhana. Kode yang sederhana lebih mudah dipahami, di-maintain, dan di-debug. Hindari kompleksitas yang tidak perlu dalam penulisan kode. Sebagai contoh:</p>
+      <pre><code>function hitungDiskon(harga, diskon){
+    if(diskon > 0){
+        return harga - (harga * diskon);
+    } else {
+        return harga;
+    }
+}</code></pre>
+      <p>Kode di atas bisa disederhanakan menjadi:</p>
+      <pre><code>function hitungDiskon(harga, diskon){
+    return diskon > 0 ? harga - (harga * diskon) : harga;
+}</code></pre>
+      <p>Mana yang lebih baik? sudah jelas yang paling atas, yang dijelaskan menggunakan if-else. Kenapa? karena bayangkan seorang junior developer yang baru belajar, lalu ia melihat tanda ? pada kodenya, mungkin ia berfikir "Ini tanda ? untuk apa". Nah, memang kelihatan keren jika menggunakan ternary operator. Tapi... jika kau punya tim yang tidak terlalu familiar dengan ternary operator, mungkin akan lebih baik menggunakan if-else.</p>
+      <p>Oh ya, argumen atau parameter di dalam fungsi lebih baik jangan terlalu banyak, cukup 2-3 argumen.</p>
+      <p>Baca Juga: <a href="../git-sang-pengontrol/" target="_blank">Git: Sang pengontrol versi terbaik andalan programmer</a></p>
+      
+      <h2>3. Modular / "Satu fungsi, Satu tugas"</h2>
+      <p>Dalam clean code, kau harus membuat kode yang modular. Maksud dari modular adalah membagi kode menjadi bagian-bagian kecil yang memiliki satu tugas spesifik. Ini membuat kode lebih mudah dipahami, di-maintain, dan di-debug.</p>
+      <p>Coba lihat kode berikut:</p>
+      <pre><code>def proses_checkout(keranjang):
+    total = sum(item['harga'] for item in keranjang)
+    
+    for item in keranjang:
+        database.kurangi_stok(item['id'], item['jumlah'])
+        
+    email.kirim("pembeli@email.com", f"Total belanjaan Anda: {total}")</code></pre>
+      <p>Kode di atas melakukan beberapa tugas sekaligus: menghitung total harga, mengurangi stok di database, dan mengirim email. Ini membuat kode sulit dipahami dan di-maintain. Sebaiknya, pisahkan kode menjadi fungsi-fungsi kecil yang memiliki satu tugas spesifik:</p>
+      <pre><code>def hitung_total(keranjang):
+    return sum(item['harga'] for item in keranjang)
+
+def update_stok(keranjang):
+    for item in keranjang:
+        database.kurangi_stok(item['id'], item['jumlah'])
+
+def kirim_email(total):
+    email.kirim("pembeli@email.com", f"Oi! Total Lu foya-foya: {total}")
+    </code></pre>
+      <p>Nah, kode di atas lebih baik karena setiap fungsi memiliki tugasnya masing-masing.</p>
+      <p>Baca Juga: <a href="../terminal-sang-kawan-programmer/" target="_blank">Terminal: Kawan Sejati Programmer</a></p>
+      
+      <h2>4. Komentar</h2>
+      <p>Komentar? komentar untuk apa? bukannya enggak ngaruh ya? emang enggak ngaruh tapi ngaruh kocak!</p>
+      <p>Biar kuperjelas. Sebuah kode yang baik harus dapat menjelaskan dirinya sendiri ketika orang lain pertama kali melihatnya. Sebagai contoh coba lihat kode berikut:</p>
+      <pre><code>umur = 17
+
+if umur >= 18:
+    print("Dewasa")</code></pre>
+      <p>Kalau kau lihat kode di atas, kau pasti langsung paham kan? kalau umur lebih dari sama dengan 18 maka dia dewasa. Nah, coba lihat kode berikut:</p>
+      <pre><code># variabel berisi nilai 17
+umur = 17:
+
+# jika umur lebih dari sama dengan 18 maka dia dewasa
+if umur >= 18:
+    print("Dewasa")</code></pre>
+      <p>Maksudku begini loh, kode diatas sudah sangat menjelaskan dirinya, kau tidak perlu menambahkan komentar. Ayolah, jika kau menambahkan komentar untuk kode yang sudah sangat jelas, kau malah membuat kebisingan visual.</p>
+      <p>Oh ya, aku pernah melihat kode dengan komentar seperti ini:</p>
+      <pre><code># Aku yang tahu kegunaan kode ini, tapi sekarang hanya tuhan yang tahu</code></pre>
+      <p>Malah jadi tempat curhat. Ingat, kau seorang professional. Kau tidak perlu menambahkan komentar yang tidak perlu. Kalau ingin curhat silakan pergi ke psikiater.</p>
+      
+      <h2>5. Gaya Penulisan Variabel</h2>
+      <p>Penulisan variabel tidak berpengaruh terhadap performa kode, tetapi dapat mempengaruhi keterbacaan dan pemeliharaan kode. Ada beberapa gaya penulisan variabel yang bisa kau gunakan, misalnya:</p>
+      <pre>IniAdalahVariabel     #PascalCase
+ini_adalah_variabel   #snake_case
+iniAdalahVariabel     #camelCase
+ini-adalah-variabel   #kebab-case</pre>
+      <p>Gaya penulisan variabel yang digunakan harus konsisten di seluruh kode. Pilih satu gaya penulisan dan gunakan secara konsisten. jujur saja aku lebih suka menggunakan snake_case karena lebih mudah dibaca, atau yang sering kugunakan juga adalah CamelCase terutama jika menggunakan Javascript.
+      <p>Kenapa hal ini penting? karena kode yang memiliki perbedaan dalam penggunaan huruf kapital bisa dianggap berbeda. Misalnya:</p>
+      <pre><code>nilai = 1
+Nilai = 1
+NiLai = 1
+NILaI = 1</code></pre>
+      <p>Kata yang sama, tetapi dianggap berbeda. Bahasa pemrograman bersifat case-sensitive.</p>
+
+
+      
+      <h2>Kesimpulan</h2>
+      <p>
+        Jadi, kesimpulannya adalah keterbacaan kode sangat penting dalam pengembangan perangkat lunak. Kode yang mudah dibaca dan dipahami akan mempermudah pemeliharaan dan kolaborasi. Dengan menerapkan prinsip-prinsip clean code, kita dapat menulis kode yang lebih baik dan lebih efisien. Kau bisa pelajari lebih lanjut dari video buatan Arwildo di bawah ini:
+        <a href="https://youtu.be/fk-NNkD9g5s?si=F8DXrbHIOBylrrS_" target="_blank">
+          Link ke Video.
+          <img src="thumbnail.png" alt="Thumbnail Youtube from Arwildo about how to write clean code" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; air mineral!</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'clean-code-dalam-programming')
+        .sort(() => Math.random() - 0.5).slice(0, 4);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

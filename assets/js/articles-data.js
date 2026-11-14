@@ -9,7 +9,7 @@ const ARTICLES = [
     tags: ["review", "indie-game", "celeste", "game"],
     date: "2026-05-20",
     readTime: "15 min",
-    url: "/pages/celeste-game-review/"
+    url: "/articles/celeste-game-review/"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const ARTICLES = [
     tags: ["review", "linux", "distro", "arch"],
     date: "2026-05-30",
     readTime: "20 min",
-    url: "/pages/absolute-arch-linux-experience/"
+    url: "/articles/absolute-arch-linux-experience/"
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const ARTICLES = [
     tags: ["review", "linux", "distro", "arch"],
     date: "2026-06-7",
     readTime: "20 min",
-    url: "/pages/programming-yang-sebenarnya/"
+    url: "/articles/programming-yang-sebenarnya/"
   },
   {
   id: 4,
@@ -42,7 +42,7 @@ const ARTICLES = [
     tags: ["terminal", "shell", "linux", "programming"],
     date: "2026-06-16",
     readTime: "20 min",
-    url: "/pages/terminal-sang-kawan-programmer/"
+    url: "/articles/terminal-sang-kawan-programmer/"
   },
   {
   id: 5,
@@ -53,7 +53,7 @@ const ARTICLES = [
     tags: ["android", "developer", "kotlin", "programming"],
     date: "2026-06-30",
     readTime: "15 min",
-    url: "/pages/android-studio-experience/"
+    url: "/articles/android-studio-experience/"
   },
   {
   id: 6,
@@ -64,7 +64,7 @@ const ARTICLES = [
     tags: ["music", "song", "theory", "love"],
     date: "2026-07-11",
     readTime: "15 min",
-    url: "/pages/the-bird-song/"
+    url: "/articles/the-bird-song/"
   },
   {
   id: 7,
@@ -75,7 +75,7 @@ const ARTICLES = [
     tags: ["linux", "arch", "aur", "package", "repository", "yay"],
     date: "2026-07-18",
     readTime: "25 min",
-    url: "/pages/arch-user-repository/"
+    url: "/articles/arch-user-repository/"
   },
   {
   id: 8,
@@ -86,7 +86,7 @@ const ARTICLES = [
     tags: ["linux", "arch", "environment", "package", "desktop environment", "KDE Plasma"],
     date: "2026-07-26",
     readTime: "10 min",
-    url: "/pages/kde-plasma-experience/"
+    url: "/articles/kde-plasma-experience/"
   },
   {
   id: 9,
@@ -97,7 +97,7 @@ const ARTICLES = [
     tags: ["linux", "root", "sudo"],
     date: "2026-08-01",
     readTime: "10 min",
-    url: "/pages/mode-root-linux/"
+    url: "/articles/mode-root-linux/"
   },
   {
   id: 10,
@@ -108,7 +108,7 @@ const ARTICLES = [
     tags: ["linux", "git", "version control", "programming"],
     date: "2026-08-08",
     readTime: "25 min",
-    url: "/pages/git-sang-pengontrol/"
+    url: "/articles/git-sang-pengontrol/"
   },
   {
   id: 11,
@@ -119,7 +119,7 @@ const ARTICLES = [
     tags: ["linux", "operating system", "kernel"],
     date: "2026-08-15",
     readTime: "20 min",
-    url: "/pages/linux-adalah-kernel/"
+    url: "/articles/linux-adalah-kernel/"
   },
   {
   id: 12,
@@ -130,7 +130,7 @@ const ARTICLES = [
     tags: ["freebsd", "operating system", "apple"],
     date: "2026-08-15",
     readTime: "20 min",
-    url: "/pages/freebsd-sang-nenek-moyang-macos/"
+    url: "/articles/freebsd-sang-nenek-moyang-macos/"
   },
   {
   id: 13,
@@ -141,7 +141,7 @@ const ARTICLES = [
     tags: ["bash", "terminal", "shell"],
     date: "2026-08-15",
     readTime: "20 min",
-    url: "/pages/bash-scripting/"
+    url: "/articles/bash-scripting/"
   },
   {
   id: 14,
@@ -152,7 +152,7 @@ const ARTICLES = [
     tags: ["winget", "windows", "package manager"],
     date: "2026-08-15",
     readTime: "20 min",
-    url: "/pages/winget-package-manager/"
+    url: "/articles/winget-package-manager/"
   },
   {
   id: 15,
@@ -163,7 +163,7 @@ const ARTICLES = [
     tags: ["pull request", "github", "open source"],
     date: "2026-09-16",
     readTime: "10 min",
-    url: "/pages/memahami-pull-request/"
+    url: "/articles/memahami-pull-request/"
   },
   {
   id: 16,
@@ -174,7 +174,7 @@ const ARTICLES = [
     tags: ["debugging", "coding", "problem solving"],
     date: "2026-10-18",
     readTime: "10 min",
-    url: "/pages/debugging-dalam-programming/"
+    url: "/articles/debugging-dalam-programming/"
   },
   {
   id: 17,
@@ -185,7 +185,7 @@ const ARTICLES = [
     tags: ["code reading", "coding", "problem solving"],
     date: "2026-10-24",
     readTime: "10 min",
-    url: "/pages/skill-code-reading/"
+    url: "/articles/skill-code-reading/"
   },
   {
   id: 18,
@@ -196,7 +196,7 @@ const ARTICLES = [
     tags: ["vscode", "text editor", "coding"],
     date: "2026-10-30",
     readTime: "20 min",
-    url: "/pages/visual-studio-code/"
+    url: "/articles/visual-studio-code/"
   },
   {
   id: 19,
@@ -207,7 +207,7 @@ const ARTICLES = [
     tags: ["clean code", "programming", "coding"],
     date: "2026-11-06",
     readTime: "15 min",
-    url: "/pages/clean-code-dalam-programming/"
+    url: "/articles/clean-code-dalam-programming/"
   },
   {
   id: 20,
@@ -218,7 +218,7 @@ const ARTICLES = [
     tags: ["PATH", "env", "os"],
     date: "2026-11-10",
     readTime: "6 min",
-    url: "/pages/path-environment-variable/"
+    url: "/articles/path-environment-variable/"
   }
 ];
 

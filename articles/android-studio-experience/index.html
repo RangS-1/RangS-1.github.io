@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Studio: Pengalaman pahit manisnya Android Developer — ./RangS Blog</title>
+  <meta name="description" content="Mempelajari dasar android studio dan pengalaman berbasis proyek.">
+  <link rel="canonical" href="https://rangs.blog/pages/android-studio-experience">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RangS Blog">
+  <meta property="og:title" content="Android Studio: Pengalaman manis pahitnya android developer">
+  <meta property="og:description" content="Android Developer dengan Android Studio">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://rangs.blog/pages/android-studio-experience/android-ide.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pengalaman Android Studio">
+  <meta name="twitter:description" content="Belajar pemahaman dan instalasi Android Studio">
+  <meta name="twitter:image" content="https://rangs.blog/pages/android-studio-experience/android-ide.png">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../about/RangS_pfp.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEKTW2R4R9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EEKTW2R4R9');
+  </script>
+  <style>
+    .article-nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .article-nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .article-nav-link:hover { color: var(--text); opacity: 1; }
+    .article-nav-link.prev::before { content: '← '; }
+    .article-nav-link.next::after { content: ' →'; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"Belajar Terminal untuk Pemula",
+    "description":"Panduan Terminal untuk pemula mulai dari sejarah, shell hingga command dasar.",
+    "author":{
+      "@type":"Person",
+      "name":"RangS"
+    },
+    "datePublished":"2026-06-15",
+    "dateModified":"2026-06-15",
+    "keywords":[
+      "android",
+      "developer",
+      "kotlin",
+      "programming"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="main-nav">
+    <a href="../../" class="nav-logo">./RangS Blog</a>
+    <ul class="nav-links">
+      <li><a href="../../">home</a></li>
+      <li><a href="../../dashboard/" class="active">dashboard</a></li>
+      <li><a href="../../about/">about</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../../index.html">home</a>
+    <a href="../../dashboard/index.html" class="active">dashboard</a>
+    <a href="../../about/index.html">about</a>
+  </div>
+
+  <main class="page-wrapper narrow">
+
+    <div class="article-header">
+      <div class="article-header-meta">
+        <a href="../../dashboard/index.html">← semua artikel</a>
+        <span>·</span>
+        <span>[technology]</span>
+        <span>·</span>
+        <span>2026-06-15</span>
+        <span>·</span>
+        <span>20 min read</span>
+      </div>
+      <h1 class="article-headline">Android Studio: Pengalaman Pahit Manisnya Android Developer</h1>
+      <p class="article-summary">
+        Bagaimana cara kerja dari Android Studio? Seperti apa rasanya?
+      </p>
+      <div class="article-tags-row">
+        <span class="tag">#android</span>
+        <span class="tag">#development</span>
+        <span class="tag">#experience</span>
+        <span class="tag">#kotlin</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <h2>Apa itu Android?</h2>
+      <p>
+        Tentunya kita perlu tahu dulu android itu apa. Android adalah sistem operasi
+        dengan pengguna terbanyak di dunia, terutama karena handphone yang menjadi faktor besar
+        dalam peningkatan ekosistem android. Tak hanya melalui handphone, android juga terdapat
+        dalam TV. 
+      </p>
+      <blockquote>
+        "I am very happy about Android obviously. I use Android, and it's actually made cellphones very usable."
+        <br>
+        — Linus Torvalds, pencipta Linux
+      </blockquote>
+      <p>
+        Dalam artikel ini, kita tidak akan membahas tentang android melainkan pengalaman yang kudapat setelah belajar development di ekosistem Android.
+      </p>
+
+      <h2>Kotlin</h2>
+      <img src="programiz-kotlin.png" alt="Tampilan website Programiz untuk belajar Kotlin" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Jujur saja dari dulu aku tidak tertarik untuk belajar android development. Namun karena ingin menambah wawasan,
+        Aku pun belajar bahasa pemrogramannya yaitu Kotlin. Kotlin adalah bahasa pemrograman yang dikembangkan
+        oleh JetBrains dan terkenal dalam kemampuannya dalam menggantikan Java. Java juga bahasa pemrograman ya!
+      </p>
+      <p>
+        Pada hari pertama aku belajar Kotlin di website bernama Programiz. Aku belajar basicnya mulai dari 
+        Data Types, If Statements, Loop, dan lain-lain. Semakin jauh aku semakin paham bahwa Kotlin ini 
+        merupakan bahasa pemrograman berbasis Object Oriented Programming. Bukan bahasa pemrograman biasa 
+        yang bisa menggunakan Functional Programming. 
+      </p>
+      <p>
+        Setelah aku belajar Kotlin, aku juga belajar sedikit tentang bahasa pemrograman Java. Aku hanya 
+        mempelajari Java sampai pada tahap mengubah tipe data. Setelah itu, saatnya aku install Android Studio. 
+      </p>
+      <p>Baca juga: <a href="../programming-yang-sebenarnya/">Programmer yang sebenarnya</a></p>
+
+      <h2>Instalasi Android Studio</h2>
+      <img src="android-studio.png" alt="Tampilan website Android Studio" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Android Studio adalah Environment untuk membuat aplikasi Android. 
+        Layaknya Visual Studio 2022 yang sering digunakan oleh developer game untuk Unity.
+        Aku agak terkejut saat melihat ukuran file installernya yang mencapai sekitaran 1.2+ GB.
+        Karena biasanya installer sengaja diperkecil agar instalasi lebih cepat. Tapi okelah, mungkin 
+        memang harus sebesar itu. 
+      </p>
+      <p>
+        Setelah ku install Installer, aku jalankan file Installer dan next-next saja sampai selesai. 
+        Setelah selesai, aku buka Android Studio dan pada tampilan awalnya aku langsung klik New Project.
+        Nanti akan ada pilihan untuk membuat aplikasi pada Device apa, ada Phone and Tablet, Wear OS (Aku tak tahu ini Device apaan),
+        Television, Car, XR. Tentunya aku pilih Phone and Tablet dan klik yang Empty Activity. Setelahnya tinggal next.
+      </p>
+      <img src="empty-activity.png" alt="Tampilan Empty Activity" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Aku pun tulis Nama Aplikasinya. Untuk Package Name, aku tak mengerti untuk apa jadi asal isi saja.
+        Lalu yang Minimum SDK, Aku pilih API 24 ("Nougat", Android 7.0) karena rekomendasi dari AI.
+        Aku agak bingung kenapa nama Android harus pakai nama makanan?. Lalu pada Build Configuration Language 
+        aku pilih Kotlin DSL (build.gradle.kts) karena terdapat tulisan [Recommended]. Lagi pula saat aku klik bagian paling bawah itu, 
+        hanya muncul pilihan Groovy DSL (build.gradle) yang mana aku tak tahu sama sekali itu apa.
+      </p>
+
+      <h2>SDK Manager</h2>
+      <img src="android-ide.png" alt="Tampilan IDE android studio" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        IDE android studio ini agak berbeda dari IDE biasanya. Jika di VSCode menggunakan 
+        Ctrl+Shift+Up akan memblok baris, di android studio justru memindahkan baris tersebut ke atas, 
+        Bukan membloknya. Lalu setelah sedikit pemanasan dengan IDE baru, waktunya untuk install SDK.
+      </p>
+      <p>
+        SDK atau Software Development Kit adalah seperangkat alat lengkap yang disediakan untuk membantu developer,
+        HARUSNYA! Aku tanya AI untuk versi mana yang harus ku install terutama bagi pemula sepertiku.
+        AI merekomendasikan untuk install versi:
+      </p>
+      <ul>
+        <li>Android 17.0 ("CinnamonBun") 37.0</li>
+        <li>Android 16.0 ("Baklava") 36.1</li>
+        <li>Android 7.1.1 ("Nougat") 24</li>
+      </ul>
+      <p>
+        Untuk install, cukup klik gerigi di kanan atas (samping foto profil), klik SDK Manager dan klik Android SDK, pilih SDK Platforms 
+        dan centang mana saja versi SDK yang perlu diinstall. Klik tombol oke dan tunggu hingga selesai.
+      </p>
+      <p>Baca juga: <a href="../terminal-sang-kawan-programmer/">Terminal: Sang Kawan Programmer!</a></p>
+
+      <h2>Virtualisasi</h2>
+      <p>
+        Hanya dengan mendengar kata Virtualisasi, aku sudah mencium bau-bau Error. 
+        Jadi Android Studio ini memerlukan virtualisasi atau device android virtual 
+        untuk menjalankan aplikasi android. Di bagian kanan, terdapat Device Manager.
+        Aku klik itu dan klik tombol +. Lalu aku install device mana yang kuinginkan.
+      </p>
+      <img src="new-device.png" alt="Pilihan Device untuk diinstall" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Aku pilih Medium Phone karena ya... Medium, Pertengahan gitu. Aku Next-Next saja 
+        dan serius dah, ukuran filenya bisa sebesar itu. sekitaran 3 GB kalau tidak salah.
+        Sejauh ini terdengar lancar-lancar saja ya? Waktunya kita masuk ke bagian paling menyebalkan dari Android Development.
+      </p>
+
+      <h2>Error Pertama</h2>
+      <p>
+        Saat aku klik tombol Run App (Shift+F10), masalah bertubi-tubi mulai muncul. Pertama adalah error berikut:
+<pre><code>1. Dependency 'androidx.core:core:1.19.0' requires libraries and applications that 
+depend on it to compile against version 37 or later of the Android APIs. 
+:app is currently compiled against android-36.1. 
+Recommended action: Update this project to use a newer compileSdk of 37. 
+Note that updating a library or application's compileSdk (which allows newer APIs to be used) can be done separately from updating 
+targetSdk (which opts the app in to new runtime behavior) and minSdk (which determines which devices the app can be installed on). 
+
+2. Dependency 'androidx.core:core-ktx:1.19.0' requires libraries and applications that depend on it to compile against version 37 or later of the Android APIs. 
+:app is currently compiled against android-36.1. 
+Recommended action: Update this project to use a newer compileSdk of 37. 
+Note that updating a library or application's compileSdk 
+(which allows newer APIs to be used) can be done separately from updating targetSdk (which opts the app in to new runtime behavior) and minSdk (which determines which devices the app can be installed on).
+</code></pre>
+      </p>
+      <p>
+        Inti dari pesan tersebut adalah kesalahan dependency. Mungkin terdengar sepele,
+        Tapi tahu berapa lama aku harus memperbaiki hal ini? Sekitar 5-7 Jam hanya untuk membereskan hal ini!
+        Ingat ya, aku tidak tahu apa-apa soal android studio apalagi tentang Konfigurasi sistem sana-sini. 
+        Yang aku tahu hanyalah Kotlin sebagai bahasa pemrogramannya dan android studio sebagai alat untuk membuat aplikasi android, Hanya itu.
+      </p>
+      <p>
+        Untungnya sudah kuselesaikan dengan INSTALL ULANG DARI AWAL dan mengubah konfigurasi pada file 
+        build.gradle.kts menjadi seperti berikut:
+<pre><code>app/src/build.gradle.kts
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
+}
+
+android {
+    namespace = "com.azrielstech.androidtodo"
+    compileSdk {
+        version = release(36) {
+            minorApiLevel = 1
+        }
+    }
+
+    defaultConfig {
+        applicationId = "com.azrielstech.androidtodo"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            optimization {
+                enable = false
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        compose = true
+    }
+}
+
+dependencies {
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+}
+</code></pre>
+      </p>
+
+      <h2>Error Kedua</h2>
+      <p>
+        Error kedua adalah Virtualisasi. Yes, seperti yang kukatakan sebelumnya bahwa aku 
+        sudah mencium bau-bau error. Setelah aku klik tombol Run App (Shift+F10), Device Manager
+        terus menerus loading tak tahu kenapa. Aku restart beberapa kali Device Managernya. 
+        Dalam beberapa momen, aku tak bisa restart karena device sedang berjalan. Namun ditunjukkan PIDnya.
+        Jika tak tahu PID, PID itu semacam kode proses yang sedang berjalan di windows.
+      </p>
+      <img src="qemu.png" alt="Contoh tampilan penggunaan QEMU" loading="lazy" style="width:100%;border-radius:8px;margin:24px 0;">
+      <p>
+        Aku buka task manager dan hendak mematikannya, aku masukkan PIDnya pada pencarian dan aku menemukan masalahnya.
+        Ternyata Android Studio ini menggunaan QEMU untuk menjalankan Virtual Android Device.
+        Kenapa aku tahu ini masalahnya? karena QEMU itu adalah emulator yang berjalan lancar jika menggunakan KVM, dan KVM hanya ada di Linux.
+      </p>
+      <p>
+        Aku menggunakan Windows yang kalau tidak salah menggunakan Intel-Vtx. Yang dimana QEMU akan kewalahan untuk virtualisasi.
+        Jadi ya, masalah ku atasi setelah AI menyarankanku untuk menggunakan HP android asli yang disambungkan ke laptop dengan USB.
+        Lebih tepatnya melakukan USB Debugging, untungnya HP ku yang merek Realme sudah support Developer Mode, jadi aku bisa lanjut belajar.
+      </p>
+
+      <h2>Project Pertama: Nilai Siswa</h2>
+      <p>
+        Untuk project pertama, AI menyarankanku untuk membuat aplikasi penghitung nilai siswa sederhana.
+        Yang dimana siswa memasukkan nilai harian, UTS dan UAS lalu diproses menghasilkan output grade/nilai tertentu.
+      </p>
+      <p>
+        Untuk membuat inputan, di android studio bisa menggunakan TextField. Lalu data dari TextField diproses 
+        menggunakan if statements. Namun aku belajar hal baru tentang TextField, seperti namanya "TextField" atau kolom teks yang artinya 
+        akan menghasilkan nilai/data berupa String, bukan integer. Jadi untuk ubah menjadi integer, harus menggunakan fungsi khusus yaitu
+        toIntOrNull(). Tidak hanya itu, aku juga belajar tentang mutableStateOf() yang berfungsi untuk mengubah UI oleh JetPack Compose. 
+      </p>
+<pre><code>var nilaiAkhir by remember { mutableStateOf("")}
+val nUTSInt = nilaiUTS.toIntOrNull() ?: 0
+val nUASInt = nilaiUAS.toIntOrNull() ?: 0
+val nilaiRataRata = (nHarianInt + nUTSInt + nUASInt) / 3
+nilaiAkhir = if (nilaiRataRata in 90..100){
+    "A"
+} else if (nilaiRataRata in 80..89) {
+    "B (Baik)"
+} else if (nilaiRataRata in 70..79) {
+    "C (Cukup)"
+} else if (nilaiRataRata in 60..69) {
+    "D (Kurang)"
+} else {
+    "E (Tidak Lulus)"
+}
+</code></pre>
+      <p>
+        Oh iya, aku hampir lupa tentang JetPack Compose. JetPack Compose itu semacam
+        toolkit UI modern dari google untuk membuat antarmuka aplikasi secara native.
+        Dan juga kode utama dari aplikasi android ini berada di 
+<pre><code>/app/src/main/java/com/azrielstech/nilaisiswa/MainActivity.kt</code></pre>
+      </p>
+      <p>
+        Jika ingin cek project ini, bisa lihat di Githubku: <a href="https://github.com/RangS-1/Learning/blob/main/Something/Wikrama1Garut_Project/AndroidStudioProject/NilaiSiswa/app/src/main/java/com/azrielstech/nilaisiswa/MainActivity.kt">Link ke Repo/Source Code</a>
+      </p>
+
+      <h2>Project Kedua: Android Calculator</h2>
+      <p>
+        Pada project kedua, aku membuat aplikasi Calculator sederhana untuk android.
+        Sebenarnya project ini paling gampang dari sebelumnya, hanya saja aku punya masalah 
+        ketika hendak ubah tipe data. Mengingat dalam kalkulator, jika user memasukkan nilai yang tak bisa dibagi, Kalau 
+        tidak salah menghasilkan nilai 0. Misalnya 2 / 5 = 0. Anehkan? jadi dari pada menggunakan Integer, aku menggunakan Float.
+      </p>
+      <p>
+        Pada project ini juga aku belajar untuk membuat tombol reset yang dimana 
+        akan menghapus isi dari TextField atau inputan user menjadi kosong.
+      </p>
+      <p>
+        Jika ingin cek project ini, bisa lihat di Githubku: <a href="https://github.com/RangS-1/Learning/blob/main/Something/Wikrama1Garut_Project/AndroidStudioProject/AndroidCalc/app/src/main/java/com/azrielstech/androidcalc/MainActivity.kt">Link ke Repo/Source Code</a>
+      </p>
+
+      <h2>Project Ketiga: Android To-Do List</h2>
+      <p>
+        Pada Project ketiga ini, aku membuat aplikasi To-Do List sederhana.
+        Project ketiga ini mengajarkan cara membuat Array, mengisi data dan menghapus data pada Array.
+        Berbeda dengan project sebelumnya, untuk menyimpan Array di sini menggunakan mutableStateListOf(). 
+      </p>
+      <p>
+        Tidak hanya itu, project ini juga mengajarkanku untuk mengubah data Array menjadi String
+<pre><code>val tasklist = remember { mutableStateListOf()}</code></pre>
+      </p>
+      <p>
+        Jika ingin cek project ini, bisa lihat di Githubku: <a href="https://github.com/RangS-1/Learning/blob/main/Something/Wikrama1Garut_Project/AndroidStudioProject/AndroidTodo/app/src/main/java/com/azrielstech/androidtodo/MainActivity.kt">Link ke Repo/Source Code</a>
+      </p>
+
+      <h2>Kesimpulan</h2>
+      <p>
+        Bisa dibilang membuat aplikasi Android ini memang menyenangkan, hanya saja 
+        masalah seperti dependency benar-benar membingungkan terutama jika menggunakan IDE yang baru.
+        Dan juga virtualisasi yang sering tidak berjalan mulus menjadi pembelajaran sendiri. 
+        Terakhir kali aku menggunakan QEMU (Saat artikel ini dibuat) adalah saat virtualisasi grub.
+        You know lah, Tipikal pengguna Arch Linux, apa saja pengen di kustomisasi, bahkan Bootloader sekalipun.
+      </p>
+      <p>
+        Jika ingin mempelajari tentang Android Development, cobalah gunakan AI. Namun, bukan meminta AI untuk membuat kode yang benar secara langsung melainkan beritahu konsep dasar apa saja hal yang perlu dimengerti,
+        cukup tanyakan pada AI apa yang harus dibuat. Syntax apa yang harus digunakan atau apapun itu. 
+        Selama membuat ketiga project tersebut, aku menggunakan AI tapi tidak minta untuk memberi kode yang benar melainkan untuk mengarahkan sampai project selesai. 
+        Mintalah saran dan tunjukkan kode yang telah kau buat dan biarkan AI memberi saran. Bisa tonton video berikut untuk belajar Kotlin:
+        <a href="https://youtu.be/dzUc9vrsldM?si=3S7VkcivnwxHO72-" target="_blank">Link ke video
+        <img src="thumbnail.png" alt="Thumbnail Video" style="width:100%;border-radius:8px;margin:24px 0;">
+        </a>
+      </p>
+    </div>
+
+    <div class="article-nav-row">
+      <a href="../../dashboard/index.html" class="article-nav-link prev">semua artikel</a>
+    </div>
+
+    <div class="related-articles">
+      <p class="section-label">// Artikel lainnya</p>
+      <div class="related-list" id="relatedList"></div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <span class="footer-logo">./RangS Blog</span>
+    <span class="footer-text">dibuat dengan tangan &amp; kopi ☕</span>
+  </footer>
+
+  <script src="../../assets/js/articles-data.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ARTICLES === 'undefined') return;
+      const related = ARTICLES.filter(a => a.slug !== 'article1')
+        .sort(() => Math.random() - 0.5).slice(0, 3);
+      const container = document.getElementById('relatedList');
+      related.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.cursor = 'pointer';
+        card.innerHTML = `
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:6px;">${article.date} · [${article.category}]</div>
+          <div class="card-title" style="font-size:14px;margin-bottom:6px;">${article.title}</div>
+          <div class="card-body" style="font-size:13px;">${article.summary.substring(0,80)}…</div>
+        `;
+        card.addEventListener('click', () => { window.location.href = article.url; });
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
