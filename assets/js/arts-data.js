@@ -1,24 +1,10 @@
-/**
- * Arts Data - RangS Blog
- * 
- * Fields:
- * - id: Unique numerical identifier (highest id will appear first)
- * - artName: Name / title of the art
- * - date: Creation date (YYYY-MM-DD or YYYY-MM)
- * - time: Creation time (e.g. "21:45", "14:30")
- * - image: Relative path to the image
- * - type: Type of art ('abstract', 'character', 'OC', 'Pixel')
- * - description: Detailed description of the artwork
- * - reference: URL string or "none" (if "none", button displays "No reference used")
- */
-
 const ARTS = [
   {
     id: 1,
     artName: "Azriel - The Last Candle (OC)",
     date: "2026-10-09",
     time: "01 Jam : 43 Menit",
-    image: "images/oktober-2026/Azriel-The_Last_Candle.png",
+    image: "images/oktober-2026/Azriel-The_Last_Candle.jpeg",
     type: "OC",
     description: "Ini adalah karakter original (OC) pertama yang coba kubuat. Namanya Azriel. Entah kenapa nama itu tiba-tiba muncul dipikiranku. Tidak hanya itu, gambar ini juga digunakan untuk belajar teknik hitam legam (Memang ada? Ya gak tau kok tanya saya!). Jujur saja masih kesulitan belajar anatomi dan desain karakter.",
     reference: "none"
@@ -58,7 +44,7 @@ const ARTS = [
     artName: "Sunset_with_a_gate",
     date: "2026-10-19",
     time: "50 Menit",
-    image: "images/oktober-2026/Sunset_with_a_gate.png",
+    image: "images/oktober-2026/Sunset_with_a_gate.jpeg",
     type: "Pixel",
     description: "Gambar ini dibuat sebagai remastered dari gambar yang kubuat saat masih SD, tentunya bukan pixel. Gate warna merah tersebut terinspirasi dari game Celeste, lebih tepatnya mod Strawberry Jam Collab. Tetapi aku mencari referensi lain di internet, nama gerbang tersebut adalah gerbang torii (鳥居).",
     reference: "https://pin.it/1CKvvtYrJ"
