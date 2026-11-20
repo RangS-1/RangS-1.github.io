@@ -230,6 +230,17 @@ const ARTICLES = [
     date: "2026-11-15",
     readTime: "8 min",
     url: "/articles/bahasa-pemrograman-javascript/"
+  },
+  {
+  id: 22,
+    title: "The Winner Takes It All: Musik yang bukan untuk seorang pemenang",
+    slug: "the-winner-takes-it-all",
+    summary: "Apa itu The Winner Takes It All? Mengapa lagu ini begitu terkenal? kita bahas di artikel ini.",
+    category: "music",
+    tags: ["the winner takes it all", "musik", "abba"],
+    date: "2026-11-20",
+    readTime: "4 min",
+    url: "/articles/the-winner-takes-it-all/"
   }
 ];
 
